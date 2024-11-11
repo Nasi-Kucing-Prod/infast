@@ -5,6 +5,9 @@ const nextConfig = {
       {
         hostname: "cryptologos.cc",
       },
+      {
+        hostname: "www.benzinga.com",
+      },
     ],
   },
 };
