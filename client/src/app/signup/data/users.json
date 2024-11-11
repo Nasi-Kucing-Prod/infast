@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "name": "InFast",
+      "email": "infast2forius@gmail.com",
+      "phone": "081234567890",
+      "password": "infast"
+    },
+    {
+      "name": "wahib kurniawan",
+      "email": "seller22213@mail.com",
+      "phone": "081234567890",
+      "password": "asdadasd"
+    }
+  ]
+}
