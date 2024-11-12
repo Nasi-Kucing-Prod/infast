@@ -7,13 +7,14 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className="w-screen bg-white drop-shadow-md flex justify-between items-center px-16 py-2">
-      <div className="text-3xl max-[767px]:text-2xl">
+    <div className="w-screen bg-white drop-shadow-md flex justify-between items-center px-16 py-2 max-[1017px]:px-5 text-center">
+      <div className="sm:text-3xl text-2xl">
         <Link href={"/"}>
           <h1 className="font-bold text-emerald-800">Infast</h1>
         </Link>
       </div>
-      <div className="max-[682px]:overflow-x-scroll flex gap-4 font-medium">
+
+      <div className="sm:flex gap-4 font-medium hidden text-center items-center">
         <Link
           href={"/market"}
           className={
@@ -45,7 +46,7 @@ export default function Navbar() {
           About Us
         </Link>
       </div>
-      <div className="flex gap-4 font-semibold">
+      <div className="sm:flex gap-4 font-semibold hidden text-center items-center">
         <Link
           href={"/signup"}
           className="text-emerald-800 border border-emerald-800 px-2 py-1 rounded-md"

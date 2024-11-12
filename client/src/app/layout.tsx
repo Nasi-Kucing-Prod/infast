@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={"antialiased"}>
         <Navbar />
-        {children}
+        <div className="px-16 max-[1017px]:px-5">{children}</div>
         <Footer />
       </body>
     </html>
