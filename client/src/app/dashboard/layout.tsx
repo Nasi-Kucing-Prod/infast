@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import SideBar from "@/components/SideBar";
+import { DashboardProvider } from "@/context/DashboardContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,9 +14,11 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex">
-      <SideBar />
-      {children}
-    </div>
+    <DashboardProvider>
+      <div className="flex">
+        <SideBar />
+        {children}
+      </div>
+    </DashboardProvider>
   );
 }

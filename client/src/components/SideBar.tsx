@@ -9,15 +9,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useDashboardContext } from "@/context/DashboardContext";
 
 export default function SideBar() {
+  const { sidebarMenu, toggleSidebarMenu } = useDashboardContext();
+
   return (
     <section className="relative space-y-4 pb-5 pt-4 px-5 my-2 z-50 w-[300px]">
-      <div className="flex justify-between">
+      <div className="flex ">
         <div className="text-2xl font-bold">Infast</div>
-        <button>
-          <PanelLeftClose />
-        </button>
       </div>
       <hr />
       <nav className="flex flex-col gap-3">
