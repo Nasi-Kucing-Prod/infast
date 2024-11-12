@@ -2,8 +2,18 @@ import GainersCard from "@/components/GainersCard";
 import MosttradedCard from "@/components/MosttradedCard";
 import NewsCard from "@/components/NewsCard";
 import Link from "next/link";
+interface NewsItem {
+  title: string;
+  url: string;
+  summary: string;
+  overall_sentiment_label: string;
+  banner_image: string;
+}
 
-export default function Home() {
+export default async function Home() {
+  const res = await fetch(`http://localhost:8000/fee`, { cache: "no-cache" });
+  const data: NewsItem[] = (await res.json()) || [];
+  console.log(data, "ini berhasil");
   return (
     <div className="flex flex-col font-poppins sm:gap-20 gap-10">
       {/* hero section */}
@@ -100,18 +110,23 @@ export default function Home() {
 
       <div className="flex flex-col gap-5">
         <div className="">
-          <h1 className="font-semibold sm:text-2xl text-xl hover:text-emerald-800 cursor-pointer">
-            News Flash &gt;
-          </h1>
+          <Link href="/news">
+            <h1 className="font-semibold sm:text-2xl text-xl hover:text-emerald-800 cursor-pointer">
+              News Flash &gt;
+            </h1>
+          </Link>
           <p className="text-gray-500 text-sm sm:text-lg">
             See what&apos;s on tranding news
           </p>
         </div>
         <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 max-[500px]:grid-cols-1 justify-start gap-10 place-items-center">
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
+          {data && data.length > 0 ? (
+            data
+              .slice(0, 8)
+              .map((news, index) => <NewsCard key={index} {...news} />)
+          ) : (
+            <p className="text-gray-500">No news available at the moment.</p>
+          )}
         </div>
       </div>
     </div>

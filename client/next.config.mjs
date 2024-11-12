@@ -2,11 +2,10 @@
 const nextConfig = {
   images: {
     remotePatterns: [
+      { protocol: "https", hostname: "**" },
       {
-        hostname: "cryptologos.cc",
-      },
-      {
-        hostname: "www.benzinga.com",
+        protocol: "http",
+        hostname: "**",
       },
     ],
   },

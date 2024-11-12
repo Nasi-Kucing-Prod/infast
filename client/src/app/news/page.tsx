@@ -1,6 +1,25 @@
+import Error from "@/components/Error";
 import NewsCardAll from "@/components/NewsCardAll";
 
-const Page = () => {
+interface NewsItem {
+  title: string;
+  url: string;
+  authors: string[];
+  summary: string;
+  overall_sentiment_label: string;
+  banner_image: string;
+  ticker_sentiment?: { ticker: string }[];
+}
+
+const Page = async () => {
+  const res = await fetch(`http://localhost:8000/feed`, { cache: "no-cache" });
+  const data: NewsItem[] = (await res.json()) || [];
+  console.log(data, "ini berhasil");
+
+  if (!res.ok) {
+    return <Error />;
+  }
+
   return (
     <>
       <div className="flex flex-col font-poppins sm:gap-20 gap-10">
@@ -17,7 +36,7 @@ const Page = () => {
           <p className="text-sm sm:text-lg text-gray-500">
             Bitcoin has entered full manipulation mode. The waves are
             accelerating, and as warned yesterday, the slow bleed has begun.
-            There's a top red trendline that connect the wicks...
+            There&apos;s a top red trendline that connect the wicks...
           </p>
         </div>
 
@@ -31,10 +50,11 @@ const Page = () => {
             </p>
           </div>
           <div className="border rounded-md p-5 bg-white drop-shadow-md">
-            <NewsCardAll />
-            <NewsCardAll />
-            <NewsCardAll />
-            <NewsCardAll />
+            {data && data.length > 0 ? (
+              data.map((news, index) => <NewsCardAll key={index} {...news} />)
+            ) : (
+              <p className="text-gray-500">No news available at the moment.</p>
+            )}
           </div>
         </div>
       </div>
