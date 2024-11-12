@@ -11,7 +11,7 @@ interface NewsItem {
 }
 
 export default async function Home() {
-  const res = await fetch(`http://localhost:8000/fee`, { cache: "no-cache" });
+  const res = await fetch(`http://localhost:8000/feed`, { cache: "no-cache" });
   const data: NewsItem[] = (await res.json()) || [];
   console.log(data, "ini berhasil");
   return (
