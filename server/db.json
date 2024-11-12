@@ -1,0 +1,1720 @@
+{
+  "feed": [
+    {
+      "title": "Home Depot, Tyson Foods And 3 Stocks To Watch Heading Into Tuesday - Tyson Foods  ( NYSE:TSN ) ",
+      "url": "https://www.benzinga.com/news/earnings/24/11/41892426/home-depot-tyson-foods-and-3-stocks-to-watch-heading-into-tuesday",
+      "time_published": "20241112T065553",
+      "authors": ["Avi Kapoor"],
+      "summary": "With U.S. stock futures trading lower this morning on Tuesday, some of the stocks that may grab investor focus today are as follows: Wall Street expects Tyson Foods, Inc. TSN to report quarterly earnings at 69 cents per share on revenue of $13.39 billion before the opening bell, according to data ...",
+      "banner_image": "https://cdn.benzinga.com/files/images/story/2024/11/12/HomeDepot.jpeg?width=1200&height=800&fit=crop",
+      "source": "Benzinga",
+      "category_within_source": "Trading",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Energy & Transportation",
+          "relevance_score": "0.2"
+        },
+        {
+          "topic": "Technology",
+          "relevance_score": "0.2"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "0.2"
+        },
+        {
+          "topic": "Retail & Wholesale",
+          "relevance_score": "0.2"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.365926"
+        },
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "0.2"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.998645"
+        }
+      ],
+      "overall_sentiment_score": 0.268971,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "OXY",
+          "relevance_score": "0.395012",
+          "ticker_sentiment_score": "0.479695",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "HD",
+          "relevance_score": "0.395012",
+          "ticker_sentiment_score": "0.093392",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "GRAB",
+          "relevance_score": "0.269776",
+          "ticker_sentiment_score": "0.230955",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "JRVR",
+          "relevance_score": "0.395012",
+          "ticker_sentiment_score": "-0.094483",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "TSN",
+          "relevance_score": "0.269776",
+          "ticker_sentiment_score": "0.299878",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Tesla Offers A Year Of Supercharging For Free In Europe As It Chases Record Q4 Deliveries To Outpace A Slowdown - Tesla  ( NASDAQ:TSLA ) ",
+      "url": "https://www.benzinga.com/tech/24/11/41892379/tesla-offers-a-year-of-supercharging-for-free-in-europe-as-it-chases-record-q4-deliveries-to-outpace-a-slowd",
+      "time_published": "20241112T064853",
+      "authors": ["Anan Ashraf"],
+      "summary": "Tesla Inc. TSLA is now offering a year of Supercharging for customers in Europe who take delivery of the Model Y SUV before Dec. 31, among other offers aimed at increasing delivery numbers by the end of the year. What Happened: \"1 year of free Supercharging.",
+      "banner_image": "https://cdn.benzinga.com/files/images/story/2024/11/12/Tesla-Supercharger.jpeg?width=1200&height=800&fit=crop",
+      "source": "Benzinga",
+      "category_within_source": "News",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.108179"
+        },
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.198534,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "TSLA",
+          "relevance_score": "0.759278",
+          "ticker_sentiment_score": "0.322137",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Shopify Gears Up For Q3 Print; Here Are The Recent Forecast Changes From Wall Street's Most Accurate Analysts - Shopify  ( NYSE:SHOP ) ",
+      "url": "https://www.benzinga.com/24/11/41892306/shopify-gears-up-for-q3-print-here-are-the-recent-forecast-changes-from-wall-streets-most-accurate-analysts",
+      "time_published": "20241112T064553",
+      "authors": ["Avi Kapoor"],
+      "summary": "Shopify Inc. SHOP will release earnings results for its third quarter, before the opening bell on Tuesday, Nov. 12. Analysts expect the Ottawa, Canada-based company to report quarterly earnings at 37 cents per share, up from 32 cents per share in the year-ago period.",
+      "banner_image": "https://editorial-assets.benzinga.com/wp-content/uploads/2024/11/12014347/image-111-1024x557.png",
+      "source": "Benzinga",
+      "category_within_source": "Trading",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.214378"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.744043"
+        },
+        {
+          "topic": "Technology",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "0.5"
+        }
+      ],
+      "overall_sentiment_score": 0.256951,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "SHOP",
+          "relevance_score": "0.542261",
+          "ticker_sentiment_score": "0.471071",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "BNS",
+          "relevance_score": "0.118064",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "C",
+          "relevance_score": "0.118064",
+          "ticker_sentiment_score": "0.095521",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "VANTAGE DRILLING ANNOUNCES APPOINTMENT OF GENERAL COUNSEL, CHIEF COMPLIANCE OFFICER AND CORPORATE SECRETARY",
+      "url": "https://www.globenewswire.com/news-release/2024/11/12/2978699/0/en/VANTAGE-DRILLING-ANNOUNCES-APPOINTMENT-OF-GENERAL-COUNSEL-CHIEF-COMPLIANCE-OFFICER-AND-CORPORATE-SECRETARY.html",
+      "time_published": "20241112T064500",
+      "authors": ["Vantage Drilling International"],
+      "summary": "Appointment of General Counsel, Chief Compliance Officer and Corporate Secretary Appointment of General Counsel, Chief Compliance Officer and Corporate Secretary ...",
+      "banner_image": "https://ml.globenewswire.com/Resource/Download/cf5d7c58-50a5-4402-ba28-502a05b0e0f0",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.360215"
+        }
+      ],
+      "overall_sentiment_score": 0.226202,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "VTGDF",
+          "relevance_score": "0.578355",
+          "ticker_sentiment_score": "0.318946",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "FLSmidth & Co. Group Interim Report for Q3 2024: Continued increases in profitability reflect structural business improvements from ongoing transformation activities",
+      "url": "https://www.globenewswire.com/news-release/2024/11/12/2978694/0/en/FLSmidth-Co-Group-Interim-Report-for-Q3-2024-Continued-increases-in-profitability-reflect-structural-business-improvements-from-ongoing-transformation-activities.html",
+      "time_published": "20241112T063200",
+      "authors": ["FLSmidth A/S"],
+      "summary": "COMPANY ANNOUNCEMENT NO. 11-2024 12 November 2024, Copenhagen, Denmark ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/8c4b7f08-611f-4600-ab70-d0ea17d06288",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.623304"
+        }
+      ],
+      "overall_sentiment_score": 0.197954,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": []
+    },
+    {
+      "title": "Bureau Veritas continues to build capabilities in the energy and renewables sector through the acquisition of Versatec Energy B.V.",
+      "url": "https://www.globenewswire.com/news-release/2024/11/12/2978691/0/en/Bureau-Veritas-continues-to-build-capabilities-in-the-energy-and-renewables-sector-through-the-acquisition-of-Versatec-Energy-B-V.html",
+      "time_published": "20241112T063000",
+      "authors": ["BUREAU VERITAS"],
+      "summary": "PRESS RELEASE ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/abe98ab4-3acc-4d0f-97e5-d96a945bd095",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [],
+      "overall_sentiment_score": 0.554406,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "BVRDF",
+          "relevance_score": "0.489394",
+          "ticker_sentiment_score": "0.701527",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Tesla Bull Ross Gerber Hails Bitcoin As The 'True Winner' Of Election As The Apex Crypto Breaks Records - Grayscale Bitcoin Mini Trust  ( BTC )  Common units of fractional undivided beneficial interest  ( ARCA:BTC ) ",
+      "url": "https://www.benzinga.com/markets/cryptocurrency/24/11/41892111/tesla-bull-ross-gerber-hails-bitcoin-as-the-true-winner-of-election-as-the-apex-crypto-bre",
+      "time_published": "20241112T061250",
+      "authors": ["Aniket Verma"],
+      "summary": "Influential investor and CEO of Gerber Kawasaki Wealth and Investment Management, Ross Gerber, declared Bitcoin BTC/USD as the true winner of the U.S. elections amid the leading cryptocurrency's record-shattering rally. What Happened: Gerber took to X, expressing his views on the post-election ...",
+      "banner_image": "https://cdn.benzinga.com/files/images/story/2024/11/12/bitcoin-bull-shutter3.jpeg?width=1200&height=800&fit=crop",
+      "source": "Benzinga",
+      "category_within_source": "Markets",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Blockchain",
+          "relevance_score": "0.682689"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.77141"
+        },
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.354646,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "NVDA",
+          "relevance_score": "0.22595",
+          "ticker_sentiment_score": "0.277514",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "TSLA",
+          "relevance_score": "0.114137",
+          "ticker_sentiment_score": "-0.047547",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "CRYPTO:BTC",
+          "relevance_score": "0.885652",
+          "ticker_sentiment_score": "0.643455",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "CRYPTO:ETH",
+          "relevance_score": "0.22595",
+          "ticker_sentiment_score": "-0.07304",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Before you continue",
+      "url": "https://consent.google.com/m",
+      "time_published": "20241112T060111",
+      "authors": [],
+      "summary": "Elon Musk's AI nightmares could blunt Donald Trump's tech ambitions Business Standard ...",
+      "banner_image": null,
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "consent.google.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.086343,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.213048",
+          "ticker_sentiment_score": "0.142784",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Santhera Enters into Exclusive Supply Agreement for AGAMREE®  ( Vamorolone )  with Ali Al Suwaidi Trading Establishment  ( ASTE )  in Qatar",
+      "url": "https://www.globenewswire.com/news-release/2024/11/12/2978682/0/en/Santhera-Enters-into-Exclusive-Supply-Agreement-for-AGAMREE-Vamorolone-with-Ali-Al-Suwaidi-Trading-Establishment-ASTE-in-Qatar.html",
+      "time_published": "20241112T060000",
+      "authors": ["Santhera Pharmaceuticals Holding AG"],
+      "summary": "Pratteln, Switzerland, November 12, 2024 - Santhera Pharmaceuticals ( SIX: SANN ) announces the signing of an exclusive supply agreement with Ali Al Suwaidi Trading Est. ( ASTE ) for the treatment of patients with Duchenne muscular dystrophy ( DMD ) with AGAMREE under a Named Patient Program.",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/63cd960e-70ce-4ba8-8984-92f72954c235",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Life Sciences",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.161647"
+        }
+      ],
+      "overall_sentiment_score": 0.282518,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "CPRX",
+          "relevance_score": "0.039679",
+          "ticker_sentiment_score": "0.095915",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "SPHDF",
+          "relevance_score": "0.039679",
+          "ticker_sentiment_score": "0.034446",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Before you continue",
+      "url": "https://consent.google.com/m",
+      "time_published": "20241112T060000",
+      "authors": [],
+      "summary": "HLE Glascoat zooms after Q2 PAT climbs 33% YoY to Rs 14 cr Business Standard ...",
+      "banner_image": null,
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "consent.google.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.086343,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.213048",
+          "ticker_sentiment_score": "0.142784",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "The net asset value of EfTEN Real Estate Fund AS shares as of 31.10.2024",
+      "url": "https://www.globenewswire.com/news-release/2024/11/12/2978680/0/en/The-net-asset-value-of-EfTEN-Real-Estate-Fund-AS-shares-as-of-31-10-2024.html",
+      "time_published": "20241112T060000",
+      "authors": ["EfTEN Real Estate Fund AS"],
+      "summary": "In October, EfTEN Real Estate Fund AS earned a consolidated rental income of 2,570 thousand euros, an increase of 19 thousand euros compared to September. This increase is primarily attributed to the first month of rental income from the new investment Härgmäe logistics center.",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/fbc2590a-fde1-4b7e-a0b7-56c76da8ae0b",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.962106"
+        }
+      ],
+      "overall_sentiment_score": 0.194111,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:EUR",
+          "relevance_score": "0.090474",
+          "ticker_sentiment_score": "0.083746",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "LHV Group Results October 2024",
+      "url": "https://www.globenewswire.com/news-release/2024/11/12/2978681/0/en/LHV-Group-Results-October-2024.html",
+      "time_published": "20241112T060000",
+      "authors": ["AS LHV Group"],
+      "summary": "LHV's loan portfolio and other business volumes continued to grow strongly in October, thereby balancing the impact of faster than planned falling interest rates on interest income.",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/dcd4f21c-acd0-4695-a05a-5a923cf6329b",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.769861"
+        },
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.310843"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.998333"
+        }
+      ],
+      "overall_sentiment_score": 0.281572,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": []
+    },
+    {
+      "title": "Valneva to Present and Hold Investor Meetings at Upcoming U.S. and European Healthcare Conferences",
+      "url": "https://www.globenewswire.com/news-release/2024/11/12/2978679/0/en/Valneva-to-Present-and-Hold-Investor-Meetings-at-Upcoming-U-S-and-European-Healthcare-Conferences.html",
+      "time_published": "20241112T060000",
+      "authors": ["VALNEVA"],
+      "summary": "Saint-Herblain ( France ) , November 12, 2024 - Valneva SE ( Nasdaq: VALN. Euronext Paris: VLA ) , a specialty vaccine company, today announced that its senior management will present and participate in 1-on-1 meetings with institutional investors at upcoming investor conferences in the United ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/04f398df-96ac-4b7a-8544-2a2ce2495778",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Life Sciences",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Technology",
+          "relevance_score": "0.5"
+        }
+      ],
+      "overall_sentiment_score": 0.147372,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "VALN",
+          "relevance_score": "0.551295",
+          "ticker_sentiment_score": "0.08825",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "PFE",
+          "relevance_score": "0.179788",
+          "ticker_sentiment_score": "0.157199",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Latest generation of ORBCOMM®'s dry container monitoring solution can detect unauthorized container access, identify possible fires and reveal container damage",
+      "url": "https://www.benzinga.com/pressreleases/24/11/g41892052/latest-generation-of-orbcomm-s-dry-container-monitoring-solution-can-detect-unauthorized-container",
+      "time_published": "20241112T060000",
+      "authors": ["Globe Newswire"],
+      "summary": "STERLING, Va., Nov. 12, 2024 ( GLOBE NEWSWIRE ) -- Today ORBCOMM introduced the latest generation of its dry container IoT solution, designed to increase container security, protect cargo integrity and improve asset visibility.",
+      "banner_image": "https://ml.globenewswire.com/Resource/Download/a598f303-7835-4371-934c-921cd4424ca9/ct-1010-2000px.jpg",
+      "source": "Benzinga",
+      "category_within_source": "News",
+      "source_domain": "www.benzinga.com",
+      "topics": [],
+      "overall_sentiment_score": 0.23581,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:GBP",
+          "relevance_score": "0.079392",
+          "ticker_sentiment_score": "0.133682",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "CoinShares Launches 'Crypto Puppies' Campaign to Educate and Warm the Hearts of Swedish Investors",
+      "url": "https://www.globenewswire.com/news-release/2024/11/12/2978678/0/en/CoinShares-Launches-Crypto-Puppies-Campaign-to-Educate-and-Warm-the-Hearts-of-Swedish-Investors.html",
+      "time_published": "20241112T060000",
+      "authors": ["CoinShares International Limited"],
+      "summary": "12th November 2024 | SAINT HELIER, Jersey-CoinShares International Limited ( \"CoinShares\" or the \"Company\" ) ( Nasdaq Stockholm: CS. US OTCQX: CNSRF ) , Europe's leading investment firm specialising in digital assets, today announced the launch of its unexpected yet heartwarming campaign, ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/8ff8acfa-148b-402b-b289-7bf6973541be",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.962106"
+        }
+      ],
+      "overall_sentiment_score": 0.299758,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": []
+    },
+    {
+      "title": "Ensurge Micropower ASA - 3Q 2024",
+      "url": "https://www.globenewswire.com/news-release/2024/11/12/2978685/0/en/Ensurge-Micropower-ASA-3Q-2024.html",
+      "time_published": "20241112T060000",
+      "authors": ["Ensurge Micropower ASA"],
+      "summary": "Highlights ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/b466945f-1e07-4d71-b797-b2d5361af71d",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.360215"
+        }
+      ],
+      "overall_sentiment_score": 0.515684,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "ESGI",
+          "relevance_score": "0.416844",
+          "ticker_sentiment_score": "0.655529",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "WLDS",
+          "relevance_score": "0.145145",
+          "ticker_sentiment_score": "0.346079",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Belite Bio Reports Third Quarter 2024 Financial Results and Provides a Corporate Update",
+      "url": "https://www.globenewswire.com/news-release/2024/11/12/2978687/0/en/Belite-Bio-Reports-Third-Quarter-2024-Financial-Results-and-Provides-a-Corporate-Update.html",
+      "time_published": "20241112T060000",
+      "authors": ["Inc", "Belite Bio"],
+      "summary": "SAN DIEGO, Nov. 12, 2024 ( GLOBE NEWSWIRE ) -- Belite Bio, Inc ( NASDAQ: BLTE ) ( \"Belite\" or the \"Company\" ) , a clinical-stage biopharmaceutical drug development company focused on advancing novel therapeutics targeting degenerative retinal diseases that have significant unmet medical needs, ...",
+      "banner_image": "https://ml.globenewswire.com/Resource/Download/7f86ac70-6347-41c6-a622-e7000c42ad35",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.769861"
+        },
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.158519"
+        }
+      ],
+      "overall_sentiment_score": 0.14657,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "BLTE",
+          "relevance_score": "0.150749",
+          "ticker_sentiment_score": "0.11275",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "META",
+          "relevance_score": "0.025272",
+          "ticker_sentiment_score": "0.043348",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Coop Pank AS results for October 2024",
+      "url": "https://www.globenewswire.com/news-release/2024/11/12/2978684/0/en/Coop-Pank-AS-results-for-October-2024.html",
+      "time_published": "20241112T060000",
+      "authors": ["Coop Pank AS"],
+      "summary": "Coop Pank's financial results in October ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/18ed7e2b-c5c1-464c-bd7a-ac6894233dad",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.451494"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.990999"
+        }
+      ],
+      "overall_sentiment_score": 0.344106,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": []
+    },
+    {
+      "title": "Google's Standalone 'Gemini' App For iPhone Spotted With Live Activity - What It Could Mean For Your AI Experience - Alphabet  ( NASDAQ:GOOG ) , Alphabet  ( NASDAQ:GOOGL ) ",
+      "url": "https://www.benzinga.com/tech/24/11/41891904/googles-standalone-gemini-app-for-iphone-spotted-with-live-activity-what-it-could-mean-for-your-ai-experienc",
+      "time_published": "20241112T054959",
+      "authors": ["Ananya Gairola"],
+      "summary": "Alphabet Inc.'s GOOG GOOGL Google Gemini app has been spotted as a standalone app on the App Store. What Happened: Over the weekend, an iPhone user took to Reddit and shared that they discovered a standalone version of the Google Gemini app that includes access to Gemini Live.",
+      "banner_image": "https://editorial-assets.benzinga.com/wp-content/uploads/2024/11/11235728/gemini-on-iphone-just-launched-v0-op9kii3kh30e1-474x1024.webp",
+      "source": "Benzinga",
+      "category_within_source": "News",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.495866"
+        },
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.188268,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "RDDT",
+          "relevance_score": "0.228073",
+          "ticker_sentiment_score": "0.104452",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.807885",
+          "ticker_sentiment_score": "0.08007",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "'Ethereum is starting to catch a bid' - US ETFs hit record $295M inflow",
+      "url": "https://cointelegraph.com/news/spot-ether-etfs-record-295-million-inflows-ether-rallies-8-percent",
+      "time_published": "20241112T054921",
+      "authors": ["Brayden Lindrea"],
+      "summary": "Fidelity's spot Ether ETF led the pack with $115.5 million worth of inflows on Nov. 11, while BlackRock, Grayscale and Bitwise's Ether ETFs also saw inflows.",
+      "banner_image": "https://s3.cointelegraph.com/uploads/2024-11/01931ee3-fb80-7a31-acc4-4df8236e54a2",
+      "source": "Cointelegraph",
+      "category_within_source": "n/a",
+      "source_domain": "cointelegraph.com",
+      "topics": [
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.795202"
+        }
+      ],
+      "overall_sentiment_score": 0.210893,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "CRYPTO:BTC",
+          "relevance_score": "0.297061",
+          "ticker_sentiment_score": "0.288578",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "CRYPTO:ETH",
+          "relevance_score": "0.98899",
+          "ticker_sentiment_score": "0.3422",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Tesla Stock Surges 8% Post-Market as Bitcoin Holdings Exceed $1 Billion",
+      "url": "https://decrypt.co/291222/tesla-stock-surges-8-post-market-as-bitcoin-holdings-exceed-1-billion",
+      "time_published": "20241112T054606",
+      "authors": ["Vismaya V"],
+      "summary": "The value of Telsa's Bitcoin holdings has more than doubled since the start of this year amid a heady resurgence in crypto.",
+      "banner_image": "https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2021/04/Tesla-gID_7.jpg",
+      "source": "Decrypt.co",
+      "category_within_source": "n/a",
+      "source_domain": "decrypt.co",
+      "topics": [
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.839681"
+        },
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Technology",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Blockchain",
+          "relevance_score": "0.158519"
+        }
+      ],
+      "overall_sentiment_score": 0.377523,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "MSTR",
+          "relevance_score": "0.182506",
+          "ticker_sentiment_score": "0.202953",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.09186",
+          "ticker_sentiment_score": "0.166999",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "TSLA",
+          "relevance_score": "0.270773",
+          "ticker_sentiment_score": "0.252377",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "CRYPTO:BTC",
+          "relevance_score": "0.916507",
+          "ticker_sentiment_score": "0.564439",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "European Shares Likely To Open On Tepid Note",
+      "url": "https://markets.businessinsider.com/news/stocks/european-shares-likely-to-open-on-tepid-note-1033995951",
+      "time_published": "20241112T053850",
+      "authors": ["markets.businessinsider.com"],
+      "summary": "( RTTNews ) - European stocks may open on a sluggish note Tuesday as investors fret about China's economic recovery and wait for policy hints from the Trump administration. The downside, however, may remain limited after U.S. stocks rose for a fifth session overnight.",
+      "banner_image": "https://markets.businessinsider.com/Images/FacebookIcon.jpg",
+      "source": "Business Insider",
+      "category_within_source": "RSS",
+      "source_domain": "markets.businessinsider.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.451494"
+        },
+        {
+          "topic": "Economy - Macro",
+          "relevance_score": "0.158519"
+        }
+      ],
+      "overall_sentiment_score": -0.089873,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:USD",
+          "relevance_score": "0.113062",
+          "ticker_sentiment_score": "-0.129685",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "China's big air show opened with a glitzy aerial display of its fighters, but crowds couldn't see much in the smog",
+      "url": "https://www.businessinsider.com/smog-china-zhuhai-air-show-opening-fighters-j10-j35-2024-11",
+      "time_published": "20241112T053731",
+      "authors": ["Matthew Loh"],
+      "summary": "• China's hyped air show kicked off with performances from its aerobatics team on Tuesday. • But the grand display was dampened by smog filling the skies over Zhuhai, Guangdong. • The hazy opening comes as China tries to shed the reputation of its cities being heavily polluted.",
+      "banner_image": null,
+      "source": "Business Insider",
+      "category_within_source": "RSS",
+      "source_domain": "www.businessinsider.com",
+      "topics": [
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.002409,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "BA",
+          "relevance_score": "0.073773",
+          "ticker_sentiment_score": "0.071533",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "EHang to Report Third Quarter 2024 Unaudited Financial Results on Monday, November 18, 2024 - EHang Holdings  ( NASDAQ:EH ) ",
+      "url": "https://www.benzinga.com/pressreleases/24/11/g41891825/ehang-to-report-third-quarter-2024-unaudited-financial-results-on-monday-november-18-2024",
+      "time_published": "20241112T053500",
+      "authors": ["Globe Newswire"],
+      "summary": "GUANGZHOU, China, Nov. 12, 2024 ( GLOBE NEWSWIRE ) -- EHang Holdings Limited ( \"EHang\" or the \"Company\" ) EH, the world's leading Urban Air Mobility ( \"UAM\" ) technology platform company, today announced that it will release its unaudited financial results for the third quarter ended September ...",
+      "banner_image": "https://ml.globenewswire.com/media/19006c6d-836c-4ed3-958a-c75a0d3edec2/small/ehang-nasdaqlisted-logo-png.png",
+      "source": "Benzinga",
+      "category_within_source": "News",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Energy & Transportation",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.360215"
+        }
+      ],
+      "overall_sentiment_score": 0.141828,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "EH",
+          "relevance_score": "0.503424",
+          "ticker_sentiment_score": "0.384005",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "EHang to Report Third Quarter 2024 Unaudited Financial Results on Monday, November 18, 2024",
+      "url": "https://markets.businessinsider.com/news/stocks/ehang-to-report-third-quarter-2024-unaudited-financial-results-on-monday-november-18-2024-1033995626",
+      "time_published": "20241112T053500",
+      "authors": ["markets.businessinsider.com"],
+      "summary": "EHang to Report Third Quarter 2024 Unaudited Financial Results on Monday, November ...",
+      "banner_image": "https://ml.globenewswire.com/media/ZGFjMjk3MTctMjkzMi00NjIxLTk3N2UtNGQ3ODFkZWY1NTM3LTEyMDM4MzA=/tiny/EHang-Holdings-Limited.png",
+      "source": "Business Insider",
+      "category_within_source": "RSS",
+      "source_domain": "markets.businessinsider.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Energy & Transportation",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.251558,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "EH",
+          "relevance_score": "0.73856",
+          "ticker_sentiment_score": "0.485186",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "EHang to Report Third Quarter 2024 Unaudited Financial Results on Monday, November 18, 2024",
+      "url": "https://www.globenewswire.com/news-release/2024/11/12/2978676/0/en/EHang-to-Report-Third-Quarter-2024-Unaudited-Financial-Results-on-Monday-November-18-2024.html",
+      "time_published": "20241112T053500",
+      "authors": ["EHang Holdings Limited"],
+      "summary": "GUANGZHOU, China, Nov. 12, 2024 ( GLOBE NEWSWIRE ) -- EHang Holdings Limited ( \"EHang\" or the \"Company\" ) ( Nasdaq: EH ) , the world's leading Urban Air Mobility ( \"UAM\" ) technology platform company, today announced that it will release its unaudited financial results for the third quarter ...",
+      "banner_image": "https://ml.globenewswire.com/Resource/Download/19006c6d-836c-4ed3-958a-c75a0d3edec2",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Energy & Transportation",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.158519"
+        }
+      ],
+      "overall_sentiment_score": 0.125506,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "EH",
+          "relevance_score": "0.48182",
+          "ticker_sentiment_score": "0.39858",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Before you continue",
+      "url": "https://consent.google.com/m",
+      "time_published": "20241112T053304",
+      "authors": [],
+      "summary": "Triveni Turbine share price jumps 12% on posting 42% rise in Q2 profit YoY Business Standard ...",
+      "banner_image": null,
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "consent.google.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.086343,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.213048",
+          "ticker_sentiment_score": "0.142784",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "PSP Swiss Property achieved again good operating results and confirms the guidance of an ebitda of CHF 300 million for FY 2024. The vacancy rate is now expected to be 3.5% at year-end 2024.",
+      "url": "https://markets.businessinsider.com/news/stocks/psp-swiss-property-achieved-again-good-operating-results-and-confirms-the-guidance-of-an-ebitda-of-chf-300-million-for-fy-2024-the-vacancy-rate-is-now-expected-to-be-3-5-at-year-end-2024-1033995633",
+      "time_published": "20241112T053110",
+      "authors": ["markets.businessinsider.com"],
+      "summary": "PSP Swiss Property AG / Key word ( s ) : Quarter Results PSP Swiss Property achieved again good operating results and confirms the guidance of an ebitda of CHF 300 million for FY 2024. The vacancy rate is now expected to be 3.5% at year-end 2024. Release of an ad hoc announcement pursuant to ...",
+      "banner_image": "https://eqs-cockpit.com/cgi-bin/fncls.ssp?fn=show_t_gif&amp;application_id=2027479&amp;application_name=news&amp;site_id=finanzen_net~~~069d1026-6a45-454f-953c-2a2c4451f1d6",
+      "source": "Business Insider",
+      "category_within_source": "RSS",
+      "source_domain": "markets.businessinsider.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.976671"
+        },
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.495866"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.882182"
+        }
+      ],
+      "overall_sentiment_score": 0.179117,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "MCO",
+          "relevance_score": "0.024572",
+          "ticker_sentiment_score": "0.110195",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "PSPSF",
+          "relevance_score": "0.024572",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Amazon Singapore Invites Customers to celebrate Black Friday Sale with the Amazon.sg Holiday Playground, happening between 22-23 November",
+      "url": "https://markets.businessinsider.com/news/stocks/amazon-singapore-invites-customers-to-celebrate-black-friday-sale-with-the-amazon-sg-holiday-playground-happening-between-22-23-november-1033995635",
+      "time_published": "20241112T053002",
+      "authors": ["markets.businessinsider.com"],
+      "summary": "EQS Newswire / 12/11/2024 / 06:30 CET/CEST Amazon.sg's Black Friday Sale: Discover Tens of Thousands of Deals from Top Brands and Small Businesses, 21 November-2 December Amazon.sg Holiday Playground: A Fun-Filled, Family-Friendly Event Open to the Public at SuperPark Singapore",
+      "banner_image": "https://images.media-outreach.com/Images/Thumb/550x/562572/562572-Amazon-sg-Holiday-Playgro.jpeg",
+      "source": "Business Insider",
+      "category_within_source": "RSS",
+      "source_domain": "markets.businessinsider.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.524497,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "META",
+          "relevance_score": "0.065685",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Sohu.com Slips To Loss In Q3, Revenues Rise; Sees Loss In Q4",
+      "url": "https://markets.businessinsider.com/news/stocks/sohu-com-slips-to-loss-in-q3-revenues-rise-sees-loss-in-q4-1033995317",
+      "time_published": "20241112T052627",
+      "authors": ["markets.businessinsider.com"],
+      "summary": "Sohu.com Slips To Loss In Q3, Revenues Rise. Sees Loss In ...",
+      "banner_image": "https://markets.businessinsider.com/Images/FacebookIcon.jpg",
+      "source": "Business Insider",
+      "category_within_source": "RSS",
+      "source_domain": "markets.businessinsider.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.9545"
+        }
+      ],
+      "overall_sentiment_score": -0.024121,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": []
+    },
+    {
+      "title": "Before you continue",
+      "url": "https://consent.google.com/m",
+      "time_published": "20241112T052428",
+      "authors": [],
+      "summary": "Meghalaya Police Admit Card 2024 out: Here's steps to check and download Business Standard ...",
+      "banner_image": null,
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "consent.google.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.086343,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.213048",
+          "ticker_sentiment_score": "0.142784",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Tether launches open-source wallet development kit for humans and AI",
+      "url": "https://cointelegraph.com/news/tether-launches-open-source-wallet-development-kit-humans-and-ai",
+      "time_published": "20241112T052415",
+      "authors": ["Martin Young"],
+      "summary": "The WDK will enable developers to integrate non-custodial wallets for USDT and Bitcoin into any app, website or device.",
+      "banner_image": "https://s3.cointelegraph.com/uploads/2024-11/01931eca-9a05-7059-a06d-c1fcf7bc760a",
+      "source": "Cointelegraph",
+      "category_within_source": "n/a",
+      "source_domain": "cointelegraph.com",
+      "topics": [
+        {
+          "topic": "Blockchain",
+          "relevance_score": "0.682689"
+        }
+      ],
+      "overall_sentiment_score": 0.205764,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "CRYPTO:BTC",
+          "relevance_score": "0.439786",
+          "ticker_sentiment_score": "0.153484",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "CRYPTO:ETH",
+          "relevance_score": "0.337811",
+          "ticker_sentiment_score": "0.089601",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "CRYPTO:USDT",
+          "relevance_score": "0.439786",
+          "ticker_sentiment_score": "0.124056",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Before you continue",
+      "url": "https://consent.google.com/m",
+      "time_published": "20241112T052400",
+      "authors": [],
+      "summary": "Awfis Space Solutions signs service agreement with NSE Business Standard ...",
+      "banner_image": null,
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "consent.google.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.086343,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.213048",
+          "ticker_sentiment_score": "0.142784",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "What In The World Is Going On With Dogecoin?",
+      "url": "https://www.benzinga.com/news/24/11/41891708/what-in-the-world-is-going-on-with-dogecoin-3",
+      "time_published": "20241112T052011",
+      "authors": ["Henry Khederian"],
+      "summary": "Following Donald Trump's 2024 presidential win last week, Dogecoin DOGE/USD has surged 159% to 41 cents since election day, spurred by market anticipation of a more favorable crypto environment and a new all-time high for Bitcoin.",
+      "banner_image": "https://cdn.benzinga.com/files/images/story/2024/11/12/dog-2522812.jpeg?width=1200&height=800&fit=crop",
+      "source": "Benzinga",
+      "category_within_source": "News",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.310843"
+        },
+        {
+          "topic": "Blockchain",
+          "relevance_score": "0.310843"
+        }
+      ],
+      "overall_sentiment_score": 0.431394,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "CRYPTO:BTC",
+          "relevance_score": "0.392948",
+          "ticker_sentiment_score": "0.481824",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "CRYPTO:DOGE",
+          "relevance_score": "0.608634",
+          "ticker_sentiment_score": "0.693053",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "European Economic News Preview: UK Unemployment Data Due",
+      "url": "https://markets.businessinsider.com/news/interestrates/european-economic-news-preview-uk-unemployment-data-due-1033995305",
+      "time_published": "20241112T051840",
+      "authors": ["markets.businessinsider.com"],
+      "summary": "( RTTNews ) - Unemployment data from the UK and economic confidence from Germany are the top economic news due on Tuesday. At 2.00 am ET, the Office for National Statistics releases UK labor market data.",
+      "banner_image": "https://markets.businessinsider.com/Images/FacebookIcon.jpg",
+      "source": "Business Insider",
+      "category_within_source": "RSS",
+      "source_domain": "markets.businessinsider.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.451494"
+        }
+      ],
+      "overall_sentiment_score": -0.069383,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": []
+    },
+    {
+      "title": "Dogecoin, Bitcoin Returns Are Dazzling But First Neiro On Ethereum And Popcat Have Run Up 55000% and 20000% So Far In 2024 - Grayscale Ethereum Mini Trust  ( ETH )  Common units of fractional undivided beneficial interest  ( ARCA:ETH ) ",
+      "url": "https://www.benzinga.com/trading-ideas/movers/24/11/41891682/dogecoin-bitcoin-returns-are-dazzling-but-first-neiro-on-ethereum-and-popcat-have-run-up-550",
+      "time_published": "20241112T051749",
+      "authors": ["Aniket Verma"],
+      "summary": "The ongoing cryptocurrency bull run resulted in a dramatic rise in fortunes, with some coins seeing their year-to-date returns go through the roof. What happened: Meme coins have taken the lead, with Popcat and First Neiro on Ethereum netting eye-popping returns to their holders in 2024.",
+      "banner_image": "https://cdn.benzinga.com/files/images/story/2024/11/12/Cryptocurrency-Photo-by-CMP-NZ-on-Shutte.jpeg?width=1200&height=800&fit=crop",
+      "source": "Benzinga",
+      "category_within_source": "Trading",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Blockchain",
+          "relevance_score": "0.682689"
+        }
+      ],
+      "overall_sentiment_score": 0.288213,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "CRYPTO:BTC",
+          "relevance_score": "0.263942",
+          "ticker_sentiment_score": "0.280227",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "CRYPTO:ETH",
+          "relevance_score": "0.386875",
+          "ticker_sentiment_score": "0.259338",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "CRYPTO:DOGE",
+          "relevance_score": "0.600602",
+          "ticker_sentiment_score": "0.566478",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "CRYPTO:SOL",
+          "relevance_score": "0.133841",
+          "ticker_sentiment_score": "0.151536",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "CRYPTO:XRP",
+          "relevance_score": "0.263942",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Before you continue",
+      "url": "https://consent.google.com/m",
+      "time_published": "20241112T051520",
+      "authors": [],
+      "summary": "'Congress wants civil war in India': Union Minister Giriraj Singh on Kharge Business Standard ...",
+      "banner_image": null,
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "consent.google.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.086343,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.213048",
+          "ticker_sentiment_score": "0.142784",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Ross Gerber, Cathie Wood Or Gary Black? Whose Funds Stack Up Against S&P 500's Gains In 2024? - The Future Fund Active ETF  ( ARCA:FFND ) , ARK Innovation ETF  ( ARCA:ARKK ) ",
+      "url": "https://www.benzinga.com/news/global/24/11/41891628/ross-gerber-cathie-wood-or-gary-black-whose-funds-stack-up-against-sp-500s-gains-in-2024",
+      "time_published": "20241112T050901",
+      "authors": ["Kaustubh Bagalkote"],
+      "summary": "In a year marked by strong market performance, prominent fund managers Gary Black, Ross Gerber, and Cathie Wood are showing mixed results against the benchmark S&P 500's impressive 25.97% year-to-date return, according to recent market data.",
+      "banner_image": "https://cdn.benzinga.com/files/images/story/2024/11/12/Hedge-Fund-Billionaire-Daniel-Loeb-Bets-.jpeg?width=1200&height=800&fit=crop",
+      "source": "Benzinga",
+      "category_within_source": "Markets",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.714479"
+        },
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "0.5"
+        }
+      ],
+      "overall_sentiment_score": 0.321832,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "MSFT",
+          "relevance_score": "0.262522",
+          "ticker_sentiment_score": "0.178084",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "NVDA",
+          "relevance_score": "0.262522",
+          "ticker_sentiment_score": "0.297362",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "TSLA",
+          "relevance_score": "0.262522",
+          "ticker_sentiment_score": "0.175027",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Before you continue",
+      "url": "https://consent.google.com/m",
+      "time_published": "20241112T050300",
+      "authors": [],
+      "summary": "RBI finalises operational framework for reclassification of Foreign Portfolio Investment by Foreign Portfolio Investors to Foreign Direct Investment Business Standard ...",
+      "banner_image": null,
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "consent.google.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.086343,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.213048",
+          "ticker_sentiment_score": "0.142784",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "ETF flows smash full year record",
+      "url": "https://www.ft.com/content/46528a78-fe59-4f14-9909-59001cf45fb2",
+      "time_published": "20241112T050008",
+      "authors": ["Steve Johnson"],
+      "summary": "The $1.4tn pumped into global ETFs in the first 10 months of the year surpasses the $1.33tn racked up in all of ...",
+      "banner_image": "https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd6c748xw2pzm8.cloudfront.net%2Fprod%2Ff1c7c640-a03f-11ef-b642-0721774940c3-standard.png?source=next-article&fit=scale-down&quality=highest&width=700&dpr=1",
+      "source": "Financial Times",
+      "category_within_source": "Markets",
+      "source_domain": "www.ft.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.310843"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.179834,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "MORN",
+          "relevance_score": "0.117104",
+          "ticker_sentiment_score": "-0.020635",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "STT",
+          "relevance_score": "0.03916",
+          "ticker_sentiment_score": "0.059682",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "SOHU.COM REPORTS THIRD QUARTER 2024 UNAUDITED FINANCIAL RESULTS - Sohu.com  ( NASDAQ:SOHU ) ",
+      "url": "https://www.benzinga.com/pressreleases/24/11/n41891576/sohu-com-reports-third-quarter-2024-unaudited-financial-results",
+      "time_published": "20241112T050000",
+      "authors": ["PRNewswire"],
+      "summary": "BEIJING, Nov. 12, 2024 /PRNewswire/ -- Sohu.com Limited SOHU ( \"Sohu\" or the \"Company\" ) , a leading Chinese online media, video, and game business group, today reported unaudited financial results for the third quarter ended September 30, 2024.",
+      "banner_image": "https://mma.prnewswire.com/media/74524/sohu_com_logo.jpg",
+      "source": "Benzinga",
+      "category_within_source": "General",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.999897"
+        },
+        {
+          "topic": "Economy - Macro",
+          "relevance_score": "0.451494"
+        }
+      ],
+      "overall_sentiment_score": 0.081577,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:USD",
+          "relevance_score": "0.012994",
+          "ticker_sentiment_score": "0.034247",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "ROHM's New SiC Schottky Barrier Diodes for High-Voltage xEV Systems: Featuring a Unique Package Design for Improved Insulation Resistance",
+      "url": "https://markets.businessinsider.com/news/stocks/rohm-s-new-sic-schottky-barrier-diodes-for-high-voltage-xev-systems-featuring-a-unique-package-design-for-improved-insulation-resistance-1033995258",
+      "time_published": "20241112T050000",
+      "authors": ["markets.businessinsider.com"],
+      "summary": "Santa Clara, CA and Kyoto, Japan, Nov. 12, 2024 ( GLOBE NEWSWIRE ) -- ROHM Semiconductor today announced new surface mount SiC Schottky barrier diodes ( SBDs ) that improve insulation resistance by increasing the creepage distance between terminals.",
+      "banner_image": "https://ml.globenewswire.com/media/NzFmZDlhMzYtYzhmZC00YTYzLWE4MWQtNjI1NGJiYzE5NTAxLTEwOTg3OTE=/tiny/ROHM-Semiconductor.png",
+      "source": "Business Insider",
+      "category_within_source": "RSS",
+      "source_domain": "markets.businessinsider.com",
+      "topics": [],
+      "overall_sentiment_score": 0.141333,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "ROHCF",
+          "relevance_score": "0.049629",
+          "ticker_sentiment_score": "-0.045756",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "ROHM's New SiC Schottky Barrier Diodes for High-Voltage xEV Systems: Featuring a Unique Package Design for Improved Insulation Resistance",
+      "url": "https://www.benzinga.com/pressreleases/24/11/g41891569/rohms-new-sic-schottky-barrier-diodes-for-high-voltage-xev-systems-featuring-a-unique-package-desi",
+      "time_published": "20241112T050000",
+      "authors": ["Globe Newswire"],
+      "summary": "Santa Clara, CA and Kyoto, Japan, Nov. 12, 2024 ( GLOBE NEWSWIRE ) -- ROHM Semiconductor today announced new surface mount SiC Schottky barrier diodes ( SBDs ) that improve insulation resistance by increasing the creepage distance between terminals.",
+      "banner_image": "https://www.benzinga.com/next-assets/images/schema-image-default.png",
+      "source": "Benzinga",
+      "category_within_source": "General",
+      "source_domain": "www.benzinga.com",
+      "topics": [],
+      "overall_sentiment_score": 0.143715,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "ROHCF",
+          "relevance_score": "0.046006",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Before you continue",
+      "url": "https://consent.google.com/m",
+      "time_published": "20241112T045748",
+      "authors": [],
+      "summary": "Q2 results today: Hyundai and Nykaa among over 500 firms to post earnings Business Standard ...",
+      "banner_image": null,
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "consent.google.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.086343,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.213048",
+          "ticker_sentiment_score": "0.142784",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Elon Musk is no Kissinger, but may help improve U.S.-China relations, experts say",
+      "url": "https://www.cnbc.com/2024/11/12/elon-musk-is-no-kissinger-but-may-help-improve-us-china-relations-experts-say-.html",
+      "time_published": "20241112T045727",
+      "authors": [],
+      "summary": "Musk's relationship with Trump has fueled expectations that he could soften U.S. policy toward Beijing, but experts caution against putting too much stock into the Tesla CEO.",
+      "banner_image": null,
+      "source": "CNBC",
+      "category_within_source": "Top News",
+      "source_domain": "www.cnbc.com",
+      "topics": [
+        {
+          "topic": "Finance",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "0.5"
+        }
+      ],
+      "overall_sentiment_score": 0.186936,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "BX",
+          "relevance_score": "0.046816",
+          "ticker_sentiment_score": "0.071931",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "TSLA",
+          "relevance_score": "0.230892",
+          "ticker_sentiment_score": "0.222337",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Monday.com  ( MNDY )  Q3 2024 Earnings Call Transcript",
+      "url": "https://www.fool.com/earnings/call-transcripts/2024/11/11/mondaycom-mndy-q3-2024-earnings-call-transcript/",
+      "time_published": "20241112T044520",
+      "authors": ["Motley Fool Transcribing"],
+      "summary": "MNDY earnings call for the period ending September 30, 2024.",
+      "banner_image": "https://g.foolcdn.com/misc-assets/fool-transcripts-logo.png",
+      "source": "Motley Fool",
+      "category_within_source": "n/a",
+      "source_domain": "www.fool.com",
+      "topics": [
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.993781"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Mergers & Acquisitions",
+          "relevance_score": "0.310843"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.272242,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "BCS",
+          "relevance_score": "0.005338",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "C",
+          "relevance_score": "0.005338",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "BAC",
+          "relevance_score": "0.005338",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "GS",
+          "relevance_score": "0.005338",
+          "ticker_sentiment_score": "0.068613",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "WFC",
+          "relevance_score": "0.005338",
+          "ticker_sentiment_score": "0.135744",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Zeta Global  ( ZETA )  Q3 2024 Earnings Call Transcript",
+      "url": "https://www.fool.com/earnings/call-transcripts/2024/11/11/zeta-global-zeta-q3-2024-earnings-call-transcript/",
+      "time_published": "20241112T044516",
+      "authors": ["Motley Fool Transcribing"],
+      "summary": "ZETA earnings call for the period ending September 30, 2024.",
+      "banner_image": "https://g.foolcdn.com/misc-assets/fool-transcripts-logo.png",
+      "source": "Motley Fool",
+      "category_within_source": "n/a",
+      "source_domain": "www.fool.com",
+      "topics": [
+        {
+          "topic": "IPO",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.999997"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Mergers & Acquisitions",
+          "relevance_score": "0.684621"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.299522,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "BCS",
+          "relevance_score": "0.004166",
+          "ticker_sentiment_score": "0.214252",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "TGHI",
+          "relevance_score": "0.004166",
+          "ticker_sentiment_score": "0.088026",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "BAC",
+          "relevance_score": "0.004166",
+          "ticker_sentiment_score": "0.214252",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "CCORF",
+          "relevance_score": "0.004166",
+          "ticker_sentiment_score": "0.111979",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "MS",
+          "relevance_score": "0.004166",
+          "ticker_sentiment_score": "0.214252",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Before you continue",
+      "url": "https://consent.google.com/m",
+      "time_published": "20241112T043954",
+      "authors": [],
+      "summary": "Bhartia family, Goldman Sachs in talks for 40% stake in Coca-Cola Beverages Business Standard ...",
+      "banner_image": null,
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "consent.google.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.086343,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.213048",
+          "ticker_sentiment_score": "0.142784",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Before you continue",
+      "url": "https://consent.google.com/m",
+      "time_published": "20241112T042951",
+      "authors": [],
+      "summary": "Here's why AuSom Enterprise stock hit 5% upper circuit today. details Business Standard ...",
+      "banner_image": null,
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "consent.google.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.086343,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.213048",
+          "ticker_sentiment_score": "0.142784",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Apple's Smart Camera Coming In 2026, Cupertino Eyeing 'Tens of Millions' In Annual Shipments, Says Top Supply Chain Analyst - Apple  ( NASDAQ:AAPL ) ",
+      "url": "https://www.benzinga.com/tech/24/11/41891237/apples-smart-camera-coming-in-2026-cupertino-eyeing-tens-of-millions-in-annual-shipments-says-top-supply-cha",
+      "time_published": "20241112T035851",
+      "authors": ["Ananya Gairola"],
+      "summary": "Apple Inc. AAPL reportedly plans to make its \"first foray\" into the smart home IP camera market in 2026, aiming for \"tens of millions\" of annual shipments, according to Ming-Chi Kuo.",
+      "banner_image": "https://cdn.benzinga.com/files/images/story/2024/11/11/Apple-September-9-Glowtime-Event-Heres-E.jpeg?width=1200&height=800&fit=crop",
+      "source": "Benzinga",
+      "category_within_source": "News",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.495866"
+        },
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.684621"
+        }
+      ],
+      "overall_sentiment_score": 0.294819,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "AAPL",
+          "relevance_score": "0.653656",
+          "ticker_sentiment_score": "0.442449",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    }
+  ]
+}
