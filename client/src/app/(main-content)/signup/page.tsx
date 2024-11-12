@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Head from "next/head";
-import Link from 'next/link';
+import Link from "next/link";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -153,7 +153,10 @@ const SignUp = () => {
             </div>
             <div className="mt-0 mb-4 text-center">
               <span>Already have an account?</span>{" "}
-              <Link href='/login' className='text-blue-500 hover:text-indigo-500'>
+              <Link
+                href="/login"
+                className="text-blue-500 hover:text-indigo-500"
+              >
                 Login Here
               </Link>
             </div>
