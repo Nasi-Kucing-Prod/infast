@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import GainersCard from "@/components/GainersCard";
 import MosttradedCard from "@/components/MosttradedCard";
 import Navbar from "@/components/Navbar";
@@ -137,6 +138,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
