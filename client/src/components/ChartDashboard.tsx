@@ -4,13 +4,6 @@ import * as React from "react";
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
 
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
@@ -102,7 +95,7 @@ export function ChartDashboard() {
   );
 
   return (
-    <section className="w-7/12 h-full bg-white rounded-xl p-5 flex flex-col justify-between">
+    <section className="w-full md:w-7/12  bg-white rounded-xl p-5 flex flex-col justify-between h-[350px]">
       <div className="flex gap-2">
         <div className="bg-emerald-200/30 text-emerald-800 border-2 border-emerald-400/30 rounded-full p-2 w-10 h-10 flex items-center justify-center">
           GT

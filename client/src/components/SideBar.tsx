@@ -15,7 +15,11 @@ export default function SideBar() {
   const { sidebarMenu, toggleSidebarMenu } = useDashboardContext();
 
   return (
-    <section className="relative space-y-4 pb-5 pt-4 px-5 my-2 z-50 w-[300px]">
+    <section
+      className={`fixed bg-white rounded-md drop-shadow-md h-[calc(100vh-20px)]   m-5 sm:bg-transparent sm:drop-shadow-none sm:rounded-none sm:h-fit sm:m-0 md:block sm:relative space-y-4 pb-5 pt-4 px-5 my-2 z-50 w-[300px] ${
+        !sidebarMenu ? "hidden" : ""
+      }`}
+    >
       <div className="flex ">
         <div className="text-2xl font-bold">Infast</div>
       </div>

@@ -65,9 +65,9 @@ export default function Dashboard() {
     <main className="bg-gray-100 w-full px-5 pb-5 m-2 rounded-3xl">
       <DashboardHeader />
       <div className="space-y-5">
-        <div className="flex w-full gap-5 h-[350px]">
+        <div className="flex flex-col md:flex-row w-full gap-5 ">
           <ChartDashboard />
-          <section className="w-5/12 h-full bg-white rounded-xl p-5 flex flex-col">
+          <section className="w-full md:w-5/12 h-[350px] bg-white rounded-xl p-5 flex flex-col ">
             <div className="space-y-2">
               <h2 className="text-lg font-semibold text-emerald-800">News</h2>
               <hr className="border-emerald-800" />
@@ -95,8 +95,8 @@ export default function Dashboard() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {invoices.map((invoice) => (
-                <TableRow key={invoice.invoice}>
+              {invoices.map((invoice, idx) => (
+                <TableRow key={idx}>
                   <TableCell className="font-medium">
                     {invoice.invoice}
                   </TableCell>
