@@ -4,6 +4,10 @@ import MosttradedCard from "@/components/MosttradedCard";
 import Navbar from "@/components/Navbar";
 import NewsCard from "@/components/NewsCard";
 import Link from "next/link";
+
+interface NewsRes {
+  feed: NewsItem[];
+}
 interface NewsItem {
   title: string;
   url: string;
@@ -13,8 +17,8 @@ interface NewsItem {
 }
 
 export default async function Home() {
-  const res = await fetch(`http://localhost:8000/feed`, { cache: "no-cache" });
-  const data: NewsItem[] = (await res.json()) || [];
+  const res = await fetch("http://localhost:8000/news", { cache: "no-cache" });
+  const data: NewsRes = (await res.json()) || [];
   console.log(data, "ini berhasil");
   return (
     <>
@@ -125,8 +129,8 @@ export default async function Home() {
               </p>
             </div>
             <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 max-[500px]:grid-cols-1 justify-start gap-10 place-items-center">
-              {data && data.length > 0 ? (
-                data
+              {data && data.feed.length > 0 ? (
+                data.feed
                   .slice(0, 8)
                   .map((news, index) => <NewsCard key={index} {...news} />)
               ) : (

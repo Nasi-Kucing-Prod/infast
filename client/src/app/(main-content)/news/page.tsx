@@ -1,6 +1,9 @@
 import Error from "@/components/Error";
 import NewsCardAll from "@/components/NewsCardAll";
 
+interface NewsRes {
+  feed: NewsItem[];
+}
 interface NewsItem {
   title: string;
   url: string;
@@ -12,8 +15,8 @@ interface NewsItem {
 }
 
 const Page = async () => {
-  const res = await fetch(`http://localhost:8000/feed`, { cache: "no-cache" });
-  const data: NewsItem[] = (await res.json()) || [];
+  const res = await fetch("http://localhost:8000/news", { cache: "no-cache" });
+  const data: NewsRes = (await res.json()) || [];
   console.log(data, "ini berhasil");
 
   if (!res.ok) {
@@ -50,8 +53,10 @@ const Page = async () => {
             </p>
           </div>
           <div className="border rounded-md p-5 bg-white drop-shadow-md">
-            {data && data.length > 0 ? (
-              data.map((news, index) => <NewsCardAll key={index} {...news} />)
+            {data && data.feed.length > 0 ? (
+              data.feed.map((news, index) => (
+                <NewsCardAll key={index} {...news} />
+              ))
             ) : (
               <p className="text-gray-500">No news available at the moment.</p>
             )}
