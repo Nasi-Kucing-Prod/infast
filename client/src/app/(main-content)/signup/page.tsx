@@ -1,7 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useState, createContext, useContext } from "react";
 import Head from "next/head";
 import Link from "next/link";
+
+interface AuthContextType {
+  token: string | null;
+  setToken: (token: string | null) => void;
+}
+
+const AuthContext = createContext<AuthContextType>({
+  token: null,
+  setToken: () => {},
+});
+
+export const useAuth = () => useContext(AuthContext);
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +26,8 @@ const SignUp = () => {
   const [errors, setErrors] = useState<any>({});
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [serverError, setServerError] = useState<string | null>(null);
+
+  const { setToken } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -39,7 +53,7 @@ const SignUp = () => {
     }
 
     try {
-      const response = await fetch("signup/api/signup", {
+      const response = await fetch("signup/api/signup", { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,6 +65,11 @@ const SignUp = () => {
 
       if (response.ok) {
         setSuccessMessage(result.message);
+        // Menyimpan token ke localStorage
+        if (result.token) {
+          localStorage.setItem("token", result.token);
+          setToken(result.token);
+        }
         setFormData({
           name: "",
           email: "",
