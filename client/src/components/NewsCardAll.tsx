@@ -20,12 +20,42 @@ const NewsCardAll: React.FC<NewsCardAllProp> = ({
   banner_image,
   ticker_sentiment,
 }) => {
+  let sentimentClass = "";
+  let borderColor = "";
+
+  switch (overall_sentiment_label.toLowerCase()) {
+    case "neutral":
+      sentimentClass = "text-gray-500";
+      borderColor = "border-gray-500";
+      break;
+    case "bearish":
+      sentimentClass = "text-red-800"; 
+      borderColor = "border-red-800";
+      break;
+    case "somewhat-bearish":
+      sentimentClass = "text-red-500"; 
+      borderColor = "border-red-500";
+      break;
+    case "somewhat-bullish":
+      sentimentClass = "text-green-500"; 
+      borderColor = "border-green-500";
+      break;
+    case "bullish":
+      sentimentClass = "text-green-800"; 
+      borderColor = "border-green-800";
+      break;
+    default:
+      sentimentClass = "text-gray-500";
+      borderColor = "border-gray-500";
+  }
   return (
     <>
       <div className="flex sm:flex-row flex-col-reverse justify-between gap-5 py-5">
         <div className="flex flex-col gap-3 sm:w-3/4 w-full">
           <div className="flex gap-5 items-center text-center">
-            <p className="border border-emerald-800 p-1 px-2 rounded-md text-emerald-800 font-semibold sm:text-sm text-xs">
+            <p
+              className={`border ${borderColor} p-1 px-2 rounded-md ${sentimentClass} font-semibold sm:text-sm text-xs`}
+            >
               {overall_sentiment_label}
             </p>
             <p className="sm:text-sm text-xs">
