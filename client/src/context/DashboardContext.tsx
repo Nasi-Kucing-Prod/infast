@@ -16,7 +16,6 @@ export const DashboardProvider = ({
 
   const toggleSidebarMenu = () => {
     setSidebarMenu((prevState) => !prevState);
-    console.log(sidebarMenu);
   };
 
   return (

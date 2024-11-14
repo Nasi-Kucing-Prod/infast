@@ -32,7 +32,7 @@ export const DashboardHeader = () => {
         </BreadcrumbList>
       </Breadcrumb>
       <div className="flex gap-5 items-center">
-        <button className="hidden" onClick={() => toggleSidebarMenu()}>
+        <button className="block md:hidden" onClick={() => toggleSidebarMenu()}>
           <PanelLeftOpen />
         </button>
         <div className="flex gap-2 items-center">
