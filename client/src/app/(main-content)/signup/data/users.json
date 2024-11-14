@@ -1,16 +1,11 @@
 {
   "users": [
     {
-      "name": "InFast",
-      "email": "infast2forius@gmail.com",
-      "phone": "081234567890",
-      "password": "infast"
-    },
-    {
       "name": "wahib kurniawan",
-      "email": "seller22213@mail.com",
+      "email": "seller22@mail.com",
       "phone": "081234567890",
-      "password": "asdadasd"
+      "password": "123454",
+      "token": "2a2ea707-0200-4c72-abc3-ddee530e249b"
     }
   ]
 }
