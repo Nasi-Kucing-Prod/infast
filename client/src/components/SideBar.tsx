@@ -17,7 +17,9 @@ export default function SideBar() {
   return (
     <section className="relative space-y-4 pb-5 pt-4 px-5 my-2 z-50 w-[300px]">
       <div className="flex ">
-        <div className="text-2xl font-bold">Infast</div>
+        <Link href={"/"}>
+          <h1 className="font-bold text-emerald-800 text-2xl">Infast</h1>
+        </Link>
       </div>
       <hr />
       <nav className="flex flex-col gap-3">

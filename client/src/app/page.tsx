@@ -54,7 +54,7 @@ export default async function Home() {
                 href={"/about-us"}
                 className="text-emerald-800 border border-emerald-800 sm:p-3 p-2 rounded-md sm:text-base text-sm"
               >
-                About Us
+                About Infast
               </Link>
             </div>
           </div>

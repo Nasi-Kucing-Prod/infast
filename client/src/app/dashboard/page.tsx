@@ -1,15 +1,12 @@
-import React from "react";
-import { NewsDashboardRow } from "@/components/NewsDashboardRow";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChartDashboard } from "@/components/ChartDashboard";
 import { DashboardHeader } from "@/components/DashboardHeader";
+import { NewsDashboardRow } from "@/components/NewsDashboardRow";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,

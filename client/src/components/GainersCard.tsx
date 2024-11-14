@@ -5,7 +5,7 @@ const GainersCard = () => {
     <>
       <div className="flex flex-col border rounded-md h-full w-full p-5 gap-5 drop-shadow-md bg-white">
         <div className="flex flex-col">
-          <h1 className="font-semibold sm:text-2xl text-xl">Stock Grainers</h1>
+          <h1 className="font-semibold sm:text-2xl text-xl">Stock Gainers</h1>
           <p className="text-gray-500 text-sm sm:text-base">
             See what gains the most
           </p>
