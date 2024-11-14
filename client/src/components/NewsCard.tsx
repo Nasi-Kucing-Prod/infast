@@ -16,6 +16,34 @@ const NewsCard: React.FC<NewsCardProp> = ({
   overall_sentiment_label,
   banner_image,
 }) => {
+  let sentimentClass = "";
+  let borderColor = "";
+
+  switch (overall_sentiment_label.toLowerCase()) {
+    case "neutral":
+      sentimentClass = "text-gray-500";
+      borderColor = "border-gray-500";
+      break;
+    case "bearish":
+      sentimentClass = "text-red-800";
+      borderColor = "border-red-800";
+      break;
+    case "somewhat-bearish":
+      sentimentClass = "text-red-500";
+      borderColor = "border-red-500";
+      break;
+    case "somewhat-bullish":
+      sentimentClass = "text-green-500";
+      borderColor = "border-green-500";
+      break;
+    case "bullish":
+      sentimentClass = "text-green-800";
+      borderColor = "border-green-800";
+      break;
+    default:
+      sentimentClass = "text-gray-500";
+      borderColor = "border-gray-500";
+  }
   return (
     <>
       <div className="border rounded-md p-5 flex flex-col w-full gap-3 bg-white drop-shadow-md">
@@ -47,7 +75,9 @@ const NewsCard: React.FC<NewsCardProp> = ({
             {summary}
           </p>
           {/* overall_sentiment_label */}
-          <p className="border border-emerald-800 p-1 text-emerald-800 rounded-md sm:text-sm text-xs w-fit">
+          <p
+            className={`border ${borderColor} p-1 px-2 rounded-md ${sentimentClass} font-semibold sm:text-sm text-xs w-fit`}
+          >
             {overall_sentiment_label}
           </p>
         </div>
