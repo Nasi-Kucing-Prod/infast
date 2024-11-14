@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import SideBar from "@/components/SideBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -17,7 +16,9 @@ export default function Layout({
   return (
     <>
       <Navbar />
-      <div className="px-16 max-[1017px]:px-5">{children}</div>
+      <div className="px-16 max-[1017px]:px-5 min-h-screen">
+        {children}
+      </div>
       <Footer />
     </>
   );
