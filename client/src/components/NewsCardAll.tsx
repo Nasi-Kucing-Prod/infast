@@ -25,23 +25,23 @@ const NewsCardAll: React.FC<NewsCardAllProp> = ({
 
   switch (overall_sentiment_label.toLowerCase()) {
     case "neutral":
-      sentimentClass = "text-gray-500";
-      borderColor = "border-gray-500";
+      sentimentClass = "text-gray-600";
+      borderColor = "border-gray-600";
       break;
     case "bearish":
-      sentimentClass = "text-red-800"; 
+      sentimentClass = "text-red-800";
       borderColor = "border-red-800";
       break;
     case "somewhat-bearish":
-      sentimentClass = "text-red-500"; 
+      sentimentClass = "text-red-500";
       borderColor = "border-red-500";
       break;
     case "somewhat-bullish":
-      sentimentClass = "text-green-500"; 
+      sentimentClass = "text-green-500";
       borderColor = "border-green-500";
       break;
     case "bullish":
-      sentimentClass = "text-green-800"; 
+      sentimentClass = "text-green-800";
       borderColor = "border-green-800";
       break;
     default:
