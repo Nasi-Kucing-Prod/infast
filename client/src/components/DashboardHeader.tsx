@@ -19,6 +19,9 @@ export const DashboardHeader = () => {
 
   return (
     <section className="flex justify-between  items-center px-5 p-3">
+      <button className="block md:hidden" onClick={() => toggleSidebarMenu()}>
+        <PanelLeftOpen />
+      </button>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>

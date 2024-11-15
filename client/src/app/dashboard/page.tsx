@@ -7,9 +7,7 @@ import { DashboardHeader } from "@/components/DashboardHeader";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -65,9 +63,9 @@ export default function Dashboard() {
     <main className="bg-gray-100 w-full px-5 pb-5 m-2 rounded-3xl">
       <DashboardHeader />
       <div className="space-y-5">
+        <ChartDashboard />
         <div className="flex flex-col md:flex-row w-full gap-5 ">
-          <ChartDashboard />
-          <section className="w-full md:w-5/12 h-[350px] bg-white rounded-xl p-5 flex flex-col ">
+          <section className="w-full md:w-8/12 h-full bg-white rounded-xl p-5 flex flex-col ">
             <div className="space-y-2">
               <h2 className="text-lg font-semibold text-emerald-800">News</h2>
               <hr className="border-emerald-800" />
@@ -83,35 +81,35 @@ export default function Dashboard() {
                 ))}
             </ScrollArea>
           </section>
-        </div>
-        <section className="px-5 py-2 bg-white rounded-xl">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="w-[100px]">No</TableHead>
-                <TableHead>Assest Name</TableHead>
-                <TableHead className="text-right">Lastest Price</TableHead>
-                <TableHead className="text-right">% Change</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {invoices.map((invoice, idx) => (
-                <TableRow key={idx}>
-                  <TableCell className="font-medium">
-                    {invoice.invoice}
-                  </TableCell>
-                  <TableCell>{invoice.Assest}</TableCell>
-                  <TableCell className="text-right">
-                    {invoice.LastPrice}
-                  </TableCell>
-                  <TableCell className="text-right">
-                    {invoice.Percentage}
-                  </TableCell>
+          <section className="px-5 py-2 bg-white rounded-xl w-full">
+            <Table>
+              <TableHeader>
+                <TableRow className="text-nowrap">
+                  <TableHead className="w-[100px]">No</TableHead>
+                  <TableHead>Assest Name</TableHead>
+                  <TableHead className="text-right">Lastest Price</TableHead>
+                  <TableHead className="text-right">% Change</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </section>
+              </TableHeader>
+              <TableBody>
+                {invoices.map((invoice, idx) => (
+                  <TableRow key={idx}>
+                    <TableCell className="font-medium">
+                      {invoice.invoice}
+                    </TableCell>
+                    <TableCell>{invoice.Assest}</TableCell>
+                    <TableCell className="text-right">
+                      {invoice.LastPrice}
+                    </TableCell>
+                    <TableCell className="text-right">
+                      {invoice.Percentage}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </section>
+        </div>
       </div>
     </main>
   );

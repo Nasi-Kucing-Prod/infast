@@ -1,20 +1,23 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { createChart } from "lightweight-charts";
+import { createChart, IChartApi } from "lightweight-charts";
 
 export function ChartDashboard() {
-  const chartContainerRef = useRef(null);
+  const chartContainerRef = useRef<HTMLDivElement>(null);
+  const chartRef = useRef<IChartApi | null>(null);
 
   useEffect(() => {
-    // Pastikan chart hanya dirender di sisi klien
     if (typeof window !== "undefined" && chartContainerRef.current) {
+      // Inisialisasi chart
       const chartOptions = {
         layout: {
           textColor: "black",
           background: { color: "white" },
         },
       };
+
       const chart = createChart(chartContainerRef.current, chartOptions);
+      chartRef.current = chart; // Simpan referensi chart
 
       // Area Series
       const areaSeries = chart.addAreaSeries({
@@ -116,16 +119,30 @@ export function ChartDashboard() {
         },
       ]);
 
-      // Fit content to ensure chart scales correctly
       chart.timeScale().fitContent();
 
-      // Bersihkan grafik ketika komponen di-unmount
-      return () => chart.remove();
+      // Tambahkan ResizeObserver untuk responsivitas
+      const resizeObserver = new ResizeObserver((entries) => {
+        for (const entry of entries) {
+          const { width, height } = entry.contentRect;
+          chart.applyOptions({
+            width: Math.floor(width),
+            height: Math.floor(height),
+          });
+        }
+      });
+      resizeObserver.observe(chartContainerRef.current);
+
+      return () => {
+        resizeObserver.disconnect();
+        chart.remove();
+      };
     }
   }, []);
+
   return (
-    <section className="w-full md:w-7/12  bg-white rounded-xl p-5 flex flex-col justify-between h-[350px]">
-      <div className="flex gap-2">
+    <section className="w-full bg-white rounded-xl p-5 flex flex-col justify-between h-full">
+      <div className="flex gap-2 mb-10">
         <div className="bg-emerald-200/30 text-emerald-800 border-2 border-emerald-400/30 rounded-full p-2 w-10 h-10 flex items-center justify-center">
           GT
         </div>
