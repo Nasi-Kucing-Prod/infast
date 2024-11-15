@@ -36,9 +36,9 @@ export default function Navbar() {
           News
         </Link>
         <Link
-          href={"/about-us"}
+          href={"/AboutUs"}
           className={
-            pathname === "/about-us"
+            pathname === "/AboutUs"
               ? "text-emerald-800 border-b border-emerald-800"
               : "text-black"
           }

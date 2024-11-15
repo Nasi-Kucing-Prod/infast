@@ -73,7 +73,7 @@ export default async function Home() {
                 Get Started
               </Link>
               <Link
-                href={"/about-us"}
+                href={"/AboutUs"}
                 className="text-emerald-800 border border-emerald-800 sm:p-3 p-2 rounded-md sm:text-base text-sm"
               >
                 About Us
