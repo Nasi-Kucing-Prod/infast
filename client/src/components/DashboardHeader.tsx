@@ -12,6 +12,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { useDashboardContext } from "@/context/DashboardContext";
+import Profile from './Profile';
 
 export const DashboardHeader = () => {
   const { sidebarMenu, toggleSidebarMenu } = useDashboardContext();
@@ -35,15 +36,10 @@ export const DashboardHeader = () => {
         </BreadcrumbList>
       </Breadcrumb>
       <div className="flex gap-5 items-center">
-        <div className="flex gap-2 items-center">
-          <div className="text-right">
-            <h2 className="text-sm">User 1</h2>
-            <h3 className="text-xs">ID: 3133</h3>
-          </div>
-          <div className="bg-emerald-200/30 text-emerald-800 border-2 border-emerald-400/30 rounded-full p-2 w-10 h-10 flex items-center justify-center">
-            ?
-          </div>
-        </div>
+        <button className="block md:hidden" onClick={() => toggleSidebarMenu()}>
+          <PanelLeftOpen />
+        </button>
+        <Profile />
       </div>
     </section>
   );

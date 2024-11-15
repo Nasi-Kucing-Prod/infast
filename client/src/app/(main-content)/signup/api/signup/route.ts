@@ -4,17 +4,32 @@ import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
 
 interface ISignUpData {
+  id: number;
   name: string;
   email: string;
   phone: string;
   password: string;
-  token?: string;
+  token: string;
 }
 
-const usersFilePath = path.join(process.cwd(), 'src', 'app','(main-content)' ,'signup', 'data', 'users.json');
+const usersFilePath = path.join(process.cwd(), 'src', 'app', '(main-content)', 'signup', 'data', 'users.json');
+const idFilePath = path.join(process.cwd(), 'src', 'app', '(main-content)', 'signup', 'data', 'id.json');
+
+const getLastId = (): number => {
+  if (fs.existsSync(idFilePath)) {
+    const idData = fs.readFileSync(idFilePath, 'utf-8');
+    const parsedIdData = JSON.parse(idData);
+    return parsedIdData.lastId;
+  }
+  return 0; 
+};
+
+const saveLastId = (lastId: number): void => {
+  fs.writeFileSync(idFilePath, JSON.stringify({ lastId }, null, 2));
+};
 
 export async function POST(req: NextRequest) {
-  const { name, email, phone, password }: ISignUpData = await req.json();
+  const { name, email, phone, password }: Omit<ISignUpData, 'id' | 'token'> = await req.json();
 
   const errors: { [key in keyof ISignUpData]?: string } = {};
 
@@ -45,29 +60,29 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    // Membaca data pengguna yang ada
     let parsedData: { users: ISignUpData[] } = { users: [] };
     if (fs.existsSync(usersFilePath)) {
       const fileData = fs.readFileSync(usersFilePath, 'utf-8');
       parsedData = JSON.parse(fileData);
     }
 
-    // Memeriksa apakah email sudah terdaftar
     const emailExists = parsedData.users.some((user: ISignUpData) => user.email === email);
     if (emailExists) {
       return NextResponse.json({ message: 'Email already exists' }, { status: 400 });
     }
 
+    const lastId = getLastId();
+    const newId = lastId + 1;
     const token = uuidv4();
 
-    // Menambahkan pengguna baru dengan token
-    const newUser: ISignUpData = { name, email, phone, password, token };
+    const newUser: ISignUpData = { id: newId, name, email, phone, password, token };
     parsedData.users.push(newUser);
 
-    // Menyimpan ke JSON
     fs.writeFileSync(usersFilePath, JSON.stringify(parsedData, null, 2));
 
-    return NextResponse.json({ message: 'Sign Up Successful', token }, { status: 201 });
+    saveLastId(newId);
+
+    return NextResponse.json({ message: 'Sign Up Successful', token, id: newId }, { status: 201 });
 
   } catch (error) {
     console.error('Error reading or writing to users.json:', error);
