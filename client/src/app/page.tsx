@@ -16,10 +16,32 @@ interface NewsItem {
   banner_image: string;
 }
 
+interface AssetData {
+  top_gainers: Array<{
+    ticker: string;
+    price: string;
+    change_amount: string;
+    change_percentage: string;
+    volume: string;
+  }>;
+  most_actively_traded: Array<{
+    ticker: string;
+    price: string;
+    change_amount: string;
+    change_percentage: string;
+    volume: string;
+  }>;
+}
+
 export default async function Home() {
   const res = await fetch("http://localhost:8000/news", { cache: "no-cache" });
   const data: NewsRes = (await res.json()) || [];
-  console.log(data, "ini berhasil");
+
+  const assetRes = await fetch("http://localhost:8000/assets", {
+    cache: "no-cache",
+  });
+  const assetData: AssetData = (await assetRes.json()) || {};
+
   return (
     <>
       <Navbar />
@@ -108,10 +130,10 @@ export default async function Home() {
           {/* assets sec */}
           <div className="flex flex-col md:flex-row gap-5 w-full">
             <div className="md:w-1/2 w-full">
-              <GainersCard />
+              <GainersCard gainers={assetData.top_gainers} />
             </div>
             <div className="md:w-1/2 w-full">
-              <MosttradedCard />
+              <MosttradedCard traded={assetData.most_actively_traded} />
             </div>
           </div>
 
