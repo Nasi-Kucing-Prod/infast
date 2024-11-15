@@ -1,11 +1,12 @@
 {
   "users": [
     {
+      "id": 2,
       "name": "wahib kurniawan",
-      "email": "seller22@mail.com",
+      "email": "seller3@mail.com",
       "phone": "081234567890",
-      "password": "123454",
-      "token": "2a2ea707-0200-4c72-abc3-ddee530e249b"
+      "password": "seller3",
+      "token": "7ce826ac-f20c-47ec-838d-cd268411dbc0"
     }
   ]
 }

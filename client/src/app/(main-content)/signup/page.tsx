@@ -6,11 +6,15 @@ import Link from "next/link";
 interface AuthContextType {
   token: string | null;
   setToken: (token: string | null) => void;
+  userId: string | null;
+  setUserId: (userId: string | null) => void;
 }
 
 const AuthContext = createContext<AuthContextType>({
   token: null,
   setToken: () => {},
+  userId: null,
+  setUserId: () => {},
 });
 
 export const useAuth = () => useContext(AuthContext);
@@ -27,7 +31,7 @@ const SignUp = () => {
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [serverError, setServerError] = useState<string | null>(null);
 
-  const { setToken } = useAuth();
+  const { setToken, setUserId } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -45,8 +49,7 @@ const SignUp = () => {
     if (!formData.name.trim()) validationErrors.name = "Name is required";
     if (!formData.email.trim()) validationErrors.email = "Email is required";
     if (!formData.phone.trim()) validationErrors.phone = "Phone is required";
-    if (!formData.password.trim())
-      validationErrors.password = "Password is required";
+    if (!formData.password.trim()) validationErrors.password = "Password is required";
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
@@ -58,18 +61,27 @@ const SignUp = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          password: formData.password,
+        }),
       });
 
       const result = await response.json();
 
       if (response.ok) {
         setSuccessMessage(result.message);
-        // Menyimpan token ke localStorage
+
         if (result.token) {
-          localStorage.setItem("token", result.token);
-          setToken(result.token);
+          setToken(result.token); 
         }
+
+        if (result.id) {
+          setUserId(result.id);
+        }
+
         setFormData({
           name: "",
           email: "",
