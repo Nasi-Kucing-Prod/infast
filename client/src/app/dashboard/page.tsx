@@ -1,6 +1,4 @@
 import React from "react";
-import { NewsDashboardRow } from "@/components/NewsDashboardRow";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChartDashboard } from "@/components/ChartDashboard";
 import { DashboardHeader } from "@/components/DashboardHeader";
 
@@ -12,6 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import NewsDashboard from "@/components/NewsDashboard";
 
 const invoices = [
   {
@@ -65,22 +64,7 @@ export default function Dashboard() {
       <div className="space-y-5">
         <ChartDashboard />
         <div className="flex flex-col md:flex-row w-full gap-5 ">
-          <section className="w-full md:w-8/12 h-full bg-white rounded-xl p-5 flex flex-col ">
-            <div className="space-y-2">
-              <h2 className="text-lg font-semibold text-emerald-800">News</h2>
-              <hr className="border-emerald-800" />
-            </div>
-            <ScrollArea className="flex-1 mt-2 ">
-              {Array(6)
-                .fill(0)
-                .map((_, idx) => (
-                  <>
-                    <NewsDashboardRow key={idx} />
-                    <hr />
-                  </>
-                ))}
-            </ScrollArea>
-          </section>
+          <NewsDashboard />
           <section className="px-5 py-2 bg-white rounded-xl w-full">
             <Table>
               <TableHeader>
