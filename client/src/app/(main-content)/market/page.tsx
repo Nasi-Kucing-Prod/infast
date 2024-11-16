@@ -1,170 +1,151 @@
-import Link from "next/link";
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
+import MarketTable from "@/components/MarketTable";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-const invoices = [
-  {
-    invoice: "1",
-    Assest: "DOGE",
-    LastPrice: "$250.00",
-    Percentage: "+51.00%",
-  },
-  {
-    invoice: "2",
-    Assest: "USTD",
-    LastPrice: "$150.00",
-    Percentage: "-0.67%",
-  },
-  {
-    invoice: "3",
-    Assest: "BTC",
-    LastPrice: "$350.00",
-    Percentage: "-4.25%",
-  },
-  {
-    invoice: "4",
-    Assest: "PEPE",
-    LastPrice: "$450.00",
-    Percentage: "+31.03%",
-  },
-  {
-    invoice: "5",
-    Assest: "ETH",
-    LastPrice: "$550.00",
-    Percentage: "-1.10%",
-  },
-  {
-    invoice: "6",
-    Assest: "CTRN",
-    LastPrice: "$200.00",
-    Percentage: "+51.00%",
-  },
-  {
-    invoice: "7",
-    Assest: "MNTB",
-    LastPrice: "$300.00",
-    Percentage: "-4.25%",
-  },
-  {
-    invoice: "8",
-    Assest: "SOL",
-    LastPrice: "$200.00",
-    Percentage: "+10.25%",
-  },
-  {
-    invoice: "9",
-    Assest: "ADA",
-    LastPrice: "$100.00",
-    Percentage: "-2.50%",
-  },
-  {
-    invoice: "10",
-    Assest: "XRP",
-    LastPrice: "$120.00",
-    Percentage: "+5.00%",
-  },
-  {
-    invoice: "11",
-    Assest: "DOT",
-    LastPrice: "$450.00",
-    Percentage: "+9.00%",
-  },
-  {
-    invoice: "12",
-    Assest: "AVAX",
-    LastPrice: "$300.00",
-    Percentage: "-6.00%",
-  },
-  {
-    invoice: "13",
-    Assest: "LTC",
-    LastPrice: "$350.00",
-    Percentage: "+3.00%",
-  },
-  {
-    invoice: "14",
-    Assest: "LINK",
-    LastPrice: "$500.00",
-    Percentage: "-1.50%",
-  },
-  {
-    invoice: "15",
-    Assest: "MATIC",
-    LastPrice: "$250.00",
-    Percentage: "+7.00%",
-  },
+interface MarketData {
+  id: string;
+  symbol: string;
+  name: string;
+  image: string;
+  current_price: string;
+  market_cap_rank: number;
+  market_cap_change_percentage_24h: number;
+  currency: string;
+}
+
+const currencies = [
+  "btc",
+  "eth",
+  "ltc",
+  "bch",
+  "bnb",
+  "eos",
+  "xrp",
+  "xlm",
+  "link",
+  "dot",
+  "yfi",
+  "usd",
+  "aed",
+  "ars",
+  "aud",
+  "bdt",
+  "bhd",
+  "bmd",
+  "brl",
+  "cad",
+  "chf",
+  "clp",
+  "cny",
+  "czk",
+  "dkk",
+  "eur",
+  "gbp",
+  "gel",
+  "hkd",
+  "huf",
+  "idr",
+  "ils",
+  "inr",
+  "jpy",
+  "krw",
+  "kwd",
+  "lkr",
+  "mmk",
+  "mxn",
+  "myr",
+  "ngn",
+  "nok",
+  "nzd",
+  "php",
+  "pkr",
+  "pln",
+  "rub",
+  "sar",
+  "sek",
+  "sgd",
+  "thb",
+  "try",
+  "twd",
+  "uah",
+  "vef",
+  "vnd",
+  "zar",
+  "xdr",
+  "xag",
+  "xau",
+  "bits",
+  "sats",
 ];
 
 const Page = () => {
+  const [marketData, setMarketData] = useState<MarketData[]>([]);
+  const [selectedCurrency, setSelectedCurrency] = useState<string>("usd");
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const fetchMarketData = async (currency: string) => {
+    setLoading(true);
+    try {
+      const res = await fetch(
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}`,
+
+        {
+          headers: {
+            "x-cg-demo-api-key": "CG-UUnXrRvqEcPATphhGCBjK9jY",
+            accept: "application/json",
+          },
+
+          cache: "no-cache",
+        }
+      );
+      const data = await res.json();
+      setMarketData(data || []);
+    } catch (error) {
+      console.error("Error fetching market data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchMarketData(selectedCurrency);
+  }, [selectedCurrency]);
   return (
     <>
       <div className="my-10 flex flex-col gap-5">
-        <div className="flex items-center text-center gap-5">
-          <Link href={"/market"}>
-            <p className="border border-emerald-800 py-1 px-2 rounded-md text-emerald-800 font-medium">
-              All Market
-            </p>
-          </Link>
-          <Link href={"/market"}>
-            <p className="border border-emerald-800 py-1 px-2 rounded-md text-emerald-800 font-medium">
-              Watchlist
-            </p>
-          </Link>
-        </div>
-
-        <section className="px-5 py-2 bg-white rounded-xl border">
-          <Table>
-            <TableHeader>
-              <TableRow className="text-nowrap">
-                <TableHead className="w-[100px] text-black">No</TableHead>
-                <TableHead className="w-7/12 text-black">Assest Name</TableHead>
-                <TableHead className="text-center text-black">
-                  Lastest Price
-                </TableHead>
-                <TableHead className="text-center text-black">
-                  % Change
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {invoices.map((invoice) => (
-                <TableRow key={invoice.invoice}>
-                  <TableCell className="font-medium">
-                    {invoice.invoice}
-                  </TableCell>
-                  <TableCell className="uppercase font-semibold md:text-xl text-base">
-                    {invoice.Assest}
-                  </TableCell>
-                  <TableCell className="text-center font-semibold md:text-xl text-base">
-                    {invoice.LastPrice}
-                  </TableCell>
-                  <TableCell
-                    className={`text-center font-semibold md:text-xl text-base ${
-                      invoice.Percentage.startsWith("-")
-                        ? "text-red-500"
-                        : "text-green-500"
-                    }`}
-                  >
-                    {invoice.Percentage}
-                  </TableCell>
-                </TableRow>
+        <div className="flex gap-3 mb-3 text-center items-center">
+          <h1 className="font-semibold md:text-2xl text-xl">Crypto</h1>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="border-emerald-800 rounded-md px-2 py-1 text-emerald-800 text-sm border font-semibold cursor-pointer">
+              Select Currencies
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="max-h-96 overflow-y-auto border border-gray-200 rounded-md shadow-md bg-white">
+              <DropdownMenuLabel>Currencies</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              {currencies.map((currency) => (
+                <DropdownMenuItem
+                  key={currency}
+                  onClick={() => setSelectedCurrency(currency)}
+                  className="cursor-pointer"
+                >
+                  {currency.toUpperCase()}
+                </DropdownMenuItem>
               ))}
-            </TableBody>
-          </Table>
-        </section>
-
-        <button className="text-end font-semibold text-emerald-800 hover:underline">
-          See More
-        </button>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+        <MarketTable marketData={marketData} loading={loading} />
       </div>
     </>
   );
 };
+
 export default Page;
