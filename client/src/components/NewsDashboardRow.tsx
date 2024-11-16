@@ -1,13 +1,17 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
 
-export const NewsDashboardRow = () => {
+export const NewsDashboardRow = ({ item }: { item: NewsItem }) => {
   return (
     <article className="flex justify-between py-2">
       <div className="w-3/4">
-        <h3 className="line-clamp-1">TSAA Rally: Whats Next?</h3>
-        <p className="line-clamp-1">
-          Lorem ipsum odor amet, consectetuer adipiscing elit.
+        <h3 className="line-clamp-1">{item.title}</h3>
+        <p className="line-clamp-1 space-x-3">
+          {item.ticker_sentiment?.map((el, idx) => (
+            <span key={idx} className="">
+              {el.ticker}
+            </span>
+          ))}
         </p>
       </div>
       <button className="mr-2">
