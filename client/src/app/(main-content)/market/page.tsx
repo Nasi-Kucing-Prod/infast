@@ -10,17 +10,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-interface MarketData {
-  id: string;
-  symbol: string;
-  name: string;
-  image: string;
-  current_price: string;
-  market_cap_rank: number;
-  market_cap_change_percentage_24h: number;
-  currency: string;
-}
-
 const currencies = [
   "btc",
   "eth",

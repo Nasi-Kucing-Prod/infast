@@ -1,19 +1,6 @@
 import Error from "@/components/Error";
 import NewsCardAll from "@/components/NewsCardAll";
 
-interface NewsRes {
-  feed: NewsItem[];
-}
-interface NewsItem {
-  title: string;
-  url: string;
-  authors: string[];
-  summary: string;
-  overall_sentiment_label: string;
-  banner_image: string;
-  ticker_sentiment?: { ticker: string }[];
-}
-
 const Page = async () => {
   const res = await fetch("http://localhost:8000/news", { cache: "no-cache" });
   const data: NewsRes = (await res.json()) || [];
