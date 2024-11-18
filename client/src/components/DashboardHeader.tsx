@@ -12,7 +12,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { useDashboardContext } from "@/context/DashboardContext";
-import Profile from './Profile';
+import Profile from "./Profile";
 
 export const DashboardHeader = () => {
   const { sidebarMenu, toggleSidebarMenu } = useDashboardContext();

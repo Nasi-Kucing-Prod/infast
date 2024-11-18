@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 
 import {
@@ -11,66 +12,66 @@ import {
 } from "@/components/ui/table";
 import TableRowDashboard from "./TableRowDashboard";
 
-export default function TableDashboard() {
-  const [data, setData] = useState<Ticker[][]>([]);
+export default function TableDashboard({ market }: TableDashboardProps) {
+  const [data, setData] = useState<TickerDashboard[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const [nextUrl, setNextUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const apiKey = "vyXQ8mt1exG0nXMhxgiq2xaeuUKaLAT_";
+  const [error, setError] = useState<string | null>(null);
+  const itemsPerPage = 8;
 
-  const fetchData = async (url: string, pageIndex: number) => {
+  const fetchData = async () => {
     setLoading(true);
+    setError(null);
     try {
-      const response = await fetch(url);
-
+      const response = await fetch("http://localhost:8000/dashboard");
       if (!response.ok) {
-        throw new Error(`Error: ${response.statusText}`);
+        throw new Error(
+          `HTTP error: ${response.status} - ${response.statusText}`
+        );
       }
-
-      const json: ApiResponse = await response.json();
-
-      if (Array.isArray(json.results)) {
-        setData((prevData) => {
-          const newData = [...prevData];
-          newData[pageIndex] = json.results;
-          return newData;
-        });
-        setNextUrl(json.next_url ? `${json.next_url}&apiKey=${apiKey}` : null);
+      const json = await response.json();
+      if (Array.isArray(json.result)) {
+        setData(json.result);
       } else {
-        console.warn("Unexpected data format:", json);
+        throw new Error("Unexpected response format");
       }
-    } catch (error) {
-      console.error("Error fetching data:", error);
+    } catch (err: any) {
+      setError(err.message || "An error occurred while fetching data.");
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    const initialUrl = `https://api.polygon.io/v3/reference/tickers?market=crypto&active=true&limit=8&apiKey=${apiKey}`;
-    fetchData(initialUrl, 0);
+    fetchData();
   }, []);
 
   const handleNextPage = () => {
-    if (currentPage + 1 < data.length) {
-      setCurrentPage(currentPage + 1);
-    } else if (nextUrl) {
-      fetchData(nextUrl, currentPage + 1);
-      setCurrentPage(currentPage + 1);
+    if ((currentPage + 1) * itemsPerPage < data.length) {
+      setCurrentPage((prev) => prev + 1);
     }
   };
 
   const handlePrevPage = () => {
     if (currentPage > 0) {
-      setCurrentPage(currentPage - 1);
+      setCurrentPage((prev) => prev - 1);
     }
   };
 
+  const filteredData = market
+    ? data.filter((ticker) => ticker.market === market)
+    : data;
+
+  const paginatedData = filteredData.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
   return (
-    <section className="px-5 py-2 bg-white rounded-xl w-full">
+    <section className="px-5 py-2 bg-white rounded-xl w-full flex flex-col justify-between">
       <Table>
         <TableHeader>
-          <TableRow className="text-nowrap">
+          <TableRow>
             <TableHead className="w-[100px]">No</TableHead>
             <TableHead>Asset Name</TableHead>
             <TableHead className="text-right">Latest Price</TableHead>
@@ -78,12 +79,30 @@ export default function TableDashboard() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data[currentPage]?.map((ticker, idx) => (
-            <TableRowDashboard key={idx} ticker={ticker.ticker} />
-          )) || (
+          {loading ? (
             <TableRow>
               <TableCell colSpan={4} className="text-center">
-                {loading ? "Loading..." : "No data available"}
+                Loading...
+              </TableCell>
+            </TableRow>
+          ) : error ? (
+            <TableRow>
+              <TableCell colSpan={4} className="text-center text-red-500">
+                {error}
+              </TableCell>
+            </TableRow>
+          ) : paginatedData.length > 0 ? (
+            paginatedData.map((ticker, idx) => (
+              <TableRowDashboard
+                key={idx}
+                index={currentPage * itemsPerPage + idx + 1}
+                ticker={ticker}
+              />
+            ))
+          ) : (
+            <TableRow>
+              <TableCell colSpan={4} className="text-center">
+                No data available
               </TableCell>
             </TableRow>
           )}
@@ -99,7 +118,7 @@ export default function TableDashboard() {
         </button>
         <button
           onClick={handleNextPage}
-          disabled={!nextUrl && currentPage + 1 === data.length}
+          disabled={(currentPage + 1) * itemsPerPage >= filteredData.length}
           className="px-4 py-2 bg-gray-300 rounded-md disabled:opacity-50"
         >
           Next

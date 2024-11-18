@@ -12,6 +12,7 @@ interface MarketData {
 interface NewsRes {
   feed: NewsItem[];
 }
+
 interface NewsItem {
   title: string;
   url: string;
@@ -42,4 +43,31 @@ interface ApiResponse {
 
 interface SearchResponse {
   results: SearchResponseItem[];
+}
+
+interface TickerDashboard {
+  currency_symbol: string;
+  name: string;
+  latest_price: number;
+  market: string;
+  change_percentage: number;
+}
+
+interface TickerDashboard {
+  currency_symbol: string;
+  name: string;
+  latest_price: number;
+  change_percentage: number;
+}
+
+interface TableRowDashboardProps {
+  index: number;
+  ticker: TickerDashboard;
+}
+
+interface TableDashboardProps {
+  market: "crypto" | "forex" | "stocks";
+}
+interface ChartDashboardProps {
+  market: "crypto" | "stocks" | "fx";
 }
