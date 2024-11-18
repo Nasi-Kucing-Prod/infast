@@ -7,7 +7,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { formatCurrency } from "@/utils/formatCurrency";
 import { ArrowDown, ArrowUp } from "lucide-react";
 import Image from "next/image";
 import LoadingMarket from "./LoadingMarket";
@@ -20,77 +19,135 @@ interface MarketData {
   current_price: string;
   market_cap_rank: number;
   market_cap_change_percentage_24h: number;
-  currency: string;
+  selectedCurrency: string;
+  currencies: [];
+  market_cap: number;
+  total_volume: number;
 }
 
+interface Currency {
+  currency: string;
+  symbol: string;
+}
 interface MarketTableProps {
   marketData: MarketData[];
   loading: boolean;
+  selectedCurrency: string;
+  currencies: Currency[];
 }
 
-const MarketTable: React.FC<MarketTableProps> = ({ marketData, loading }) => {
+const formatNumber = (number: string | number): string => {
+  return new Intl.NumberFormat("id-ID", {
+    // minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(Number(number));
+};
+
+const MarketTable: React.FC<MarketTableProps> = ({
+  marketData,
+  loading,
+  selectedCurrency,
+  currencies,
+}) => {
   return (
-    <section className="px-5 py-2 bg-white rounded-xl border">
+    <section className="px-5 py-2 bg-white rounded-xl border drop-shadow-md">
       <Table>
         <TableHeader>
           <TableRow className="text-nowrap">
-            <TableHead className="w-[100px] text-black">No</TableHead>
-            <TableHead className="w-7/12 text-black">Asset Name</TableHead>
-            <TableHead className="text-start text-black">
-              Latest Price
-            </TableHead>
+            <TableHead className="w-[100px] text-black">#</TableHead>
+            <TableHead className="w-5/12 text-black">Coin</TableHead>
+            <TableHead className="text-start text-black"></TableHead>
             <TableHead className="text-start text-black">% Change</TableHead>
+            <TableHead className="text-start text-black">Price</TableHead>
+            <TableHead className="text-start text-black">Volume</TableHead>
+            <TableHead className="text-start text-black">
+              Market Capital
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {loading ? (
-            <LoadingMarket /> // Use SkeletonLoader here while loading
+            <LoadingMarket />
           ) : (
-            marketData.map((market) => (
-              <TableRow key={market.id}>
-                <TableCell className="font-medium">
-                  {market.market_cap_rank}
-                </TableCell>
-                <TableCell>
-                  <div className="flex gap-2 items-center">
-                    <Image src={market.image} alt="" width={25} height={25} />
-                    <div className="flex gap-2 items-center">
-                      <p className="font-semibold md:text-sm text-xs">
-                        {market.name}
-                      </p>
-                      <p className="text-gray-500 md:text-sm text-xs uppercase">
-                        {market.symbol}
-                      </p>
+            marketData.map((market) => {
+              // Cari simbol mata uang yang sesuai berdasarkan simbol coin
+              const currencyInfo = currencies.find(
+                (currency: Currency) => currency.currency === selectedCurrency
+              );
+
+              return (
+                <TableRow key={market.id}>
+                  <TableCell className="font-medium">
+                    {formatNumber(market.market_cap_rank)}
+                  </TableCell>
+                  <TableCell>
+                    <div className="flex  gap-2 items-center">
+                      <Image
+                        src={market.image}
+                        alt={market.name}
+                        width={25}
+                        height={25}
+                      />
+                      <div className="flex md:flex-row flex-col gap-2 items-start">
+                        <p className="font-semibold md:text-sm text-xs">
+                          {market.name}
+                        </p>
+                        <p className="text-gray-500 md:text-sm text-xs uppercase">
+                          {market.symbol}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </TableCell>
-                <TableCell className="text-start font-semibold md:text-sm text-xs">
-                  {formatCurrency(
-                    parseFloat(market.current_price),
-                    market.currency
-                  )}
-                </TableCell>
-                <TableCell
-                  className={`text-start font-semibold md:text-sm text-xs ${
-                    market.market_cap_change_percentage_24h < 0
-                      ? "text-red-500"
-                      : "text-green-500"
-                  }`}
-                >
-                  {market.market_cap_change_percentage_24h < 0 ? (
-                    <span>
-                      <ArrowDown className="inline-block w-4 h-4 mr-1" />
-                      {market.market_cap_change_percentage_24h}%
-                    </span>
-                  ) : (
-                    <span>
-                      <ArrowUp className="inline-block w-4 h-4 mr-1" />
-                      {market.market_cap_change_percentage_24h}%
-                    </span>
-                  )}
-                </TableCell>
-              </TableRow>
-            ))
+                  </TableCell>
+                  <TableCell
+                    className={`text-start font-semibold md:text-sm text-xs text-nowrap ${
+                      market.market_cap_change_percentage_24h < 0
+                        ? ""
+                        : "text-green-500 "
+                    }`}
+                  >
+                    {market.market_cap_change_percentage_24h < 0 ? (
+                      ""
+                    ) : (
+                      <span className="border rounded-md border-green-500 px-2">
+                        Buy
+                      </span>
+                    )}
+                  </TableCell>
+                  <TableCell
+                    className={`text-start font-semibold md:text-sm text-xs text-nowrap ${
+                      market.market_cap_change_percentage_24h < 0
+                        ? "text-red-500"
+                        : "text-green-500"
+                    }`}
+                  >
+                    {market.market_cap_change_percentage_24h < 0 ? (
+                      <span>
+                        <ArrowDown className="inline-block w-4 h-4 mr-1" />
+                        {market.market_cap_change_percentage_24h}%
+                      </span>
+                    ) : (
+                      <span>
+                        <ArrowUp className="inline-block w-4 h-4 mr-1" />
+                        {market.market_cap_change_percentage_24h}%
+                      </span>
+                    )}
+                  </TableCell>
+                  <TableCell className="text-start font-semibold md:text-sm text-xs">
+                    <span>{currencyInfo?.symbol || "Unknown Currency"}</span>
+                    {formatNumber(market.current_price)}
+                  </TableCell>
+
+                  <TableCell className="text-start font-semibold md:text-sm text-xs">
+                    <span>{currencyInfo?.symbol || "Unknown Currency"}</span>
+                    {formatNumber(market.total_volume)}
+                  </TableCell>
+                  <TableCell className="text-start font-semibold md:text-sm text-xs">
+                    <span>{currencyInfo?.symbol || "Unknown Currency"}</span>
+                    {formatNumber(market.market_cap)}
+                  </TableCell>
+                </TableRow>
+              );
+            })
           )}
         </TableBody>
       </Table>

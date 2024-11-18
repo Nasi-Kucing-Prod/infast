@@ -13,6 +13,9 @@ const LoadingMarket = () => {
             <td className="animate-pulse bg-gray-300 h-6 w-40"></td>
             <td className="animate-pulse bg-gray-300 h-6 w-24"></td>
             <td className="animate-pulse bg-gray-300 h-6 w-20"></td>
+            <td className="animate-pulse bg-gray-300 h-6 w-20"></td>
+            <td className="animate-pulse bg-gray-300 h-6 w-20"></td>
+            <td className="animate-pulse bg-gray-300 h-6 w-20"></td>
           </tr>
         ))}
     </>
