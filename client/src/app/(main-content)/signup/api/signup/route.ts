@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
-import { v4 as uuidv4 } from 'uuid';
+import crypto from 'crypto';
 
 interface ISignUpData {
   id: number;
@@ -10,82 +10,87 @@ interface ISignUpData {
   phone: string;
   password: string;
   token: string;
+  message: string[];
 }
 
 const usersFilePath = path.join(process.cwd(), 'src', 'app', '(main-content)', 'signup', 'data', 'users.json');
-const idFilePath = path.join(process.cwd(), 'src', 'app', '(main-content)', 'signup', 'data', 'id.json');
 
-const getLastId = (): number => {
-  if (fs.existsSync(idFilePath)) {
-    const idData = fs.readFileSync(idFilePath, 'utf-8');
-    const parsedIdData = JSON.parse(idData);
-    return parsedIdData.lastId;
-  }
-  return 0; 
+const generateToken = (): string => {
+  return crypto.randomBytes(16).toString('hex'); 
 };
 
-const saveLastId = (lastId: number): void => {
-  fs.writeFileSync(idFilePath, JSON.stringify({ lastId }, null, 2));
+const readUsersData = async (): Promise<{ users: ISignUpData[] }> => {
+  try {
+    const data = await fs.readFile(usersFilePath, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
+      return { users: [] };
+    }
+    throw error;
+  }
+};
+
+const writeUsersData = async (data: { users: ISignUpData[] }): Promise<void> => {
+  await fs.writeFile(usersFilePath, JSON.stringify(data, null, 2), 'utf-8');
 };
 
 export async function POST(req: NextRequest) {
-  const { name, email, phone, password }: Omit<ISignUpData, 'id' | 'token'> = await req.json();
-
-  const errors: { [key in keyof ISignUpData]?: string } = {};
-
-  if (!name || !name.trim()) {
-    errors.name = 'Name is required';
-  }
-
-  if (!email || !email.trim()) {
-    errors.email = 'Email is required';
-  } else if (!/\S+@\S+\.\S+/.test(email)) {
-    errors.email = 'Email is invalid';
-  }
-
-  if (!phone || !phone.trim()) {
-    errors.phone = 'Phone number is required';
-  } else if (!/^[0-9]{10,15}$/.test(phone)) {
-    errors.phone = 'Phone number must be between 10 and 15 digits';
-  }
-
-  if (!password) {
-    errors.password = 'Password is required';
-  } else if (password.length < 6) {
-    errors.password = 'Password must be at least 6 characters';
-  }
-
-  if (Object.keys(errors).length > 0) {
-    return NextResponse.json({ message: 'Validation failed', errors }, { status: 400 });
-  }
-
   try {
-    let parsedData: { users: ISignUpData[] } = { users: [] };
-    if (fs.existsSync(usersFilePath)) {
-      const fileData = fs.readFileSync(usersFilePath, 'utf-8');
-      parsedData = JSON.parse(fileData);
+    const { name, email, phone, password }: Omit<ISignUpData, 'id' | 'token' | 'message'> = await req.json();
+
+    const errors: { [key in keyof Omit<ISignUpData, 'id' | 'token' | 'message'>]?: string } = {};
+
+    if (!name || !name.trim()) {
+      errors.name = 'Name is required';
     }
 
-    const emailExists = parsedData.users.some((user: ISignUpData) => user.email === email);
+    if (!email || !email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.email = 'Email is invalid';
+    }
+
+    if (!phone || !phone.trim()) {
+      errors.phone = 'Phone number is required';
+    } else if (!/^[0-9]{10,15}$/.test(phone)) {
+      errors.phone = 'Phone number must be between 10 and 15 digits';
+    }
+
+    if (!password) {
+      errors.password = 'Password is required';
+    } else if (password.length < 6) {
+      errors.password = 'Password must be at least 6 characters';
+    }
+
+    if (Object.keys(errors).length > 0) {
+      return NextResponse.json({ message: 'Validation failed', errors }, { status: 400 });
+    }
+
+    const usersData = await readUsersData();
+
+    const emailExists = usersData.users.some((user) => user.email === email);
     if (emailExists) {
       return NextResponse.json({ message: 'Email already exists' }, { status: 400 });
     }
 
-    const lastId = getLastId();
-    const newId = lastId + 1;
-    const token = uuidv4();
+    const newId = usersData.users.length > 0 ? usersData.users[usersData.users.length - 1].id + 1 : 1;
 
-    const newUser: ISignUpData = { id: newId, name, email, phone, password, token };
-    parsedData.users.push(newUser);
+    const token = generateToken();
 
-    fs.writeFileSync(usersFilePath, JSON.stringify(parsedData, null, 2));
+    const newUser: ISignUpData = { id: newId, name, email, phone, password, token, message: [] };
 
-    saveLastId(newId);
+    // Tambahkan pengguna baru ke array
+    usersData.users.push(newUser);
 
+    // Tulis kembali data ke users.json
+    await writeUsersData(usersData);
+
+    // Kembalikan respons sukses
     return NextResponse.json({ message: 'Sign Up Successful', token, id: newId }, { status: 201 });
 
   } catch (error) {
-    console.error('Error reading or writing to users.json:', error);
+    console.error('Error processing sign up:', error);
     return NextResponse.json({ message: 'Error saving data' }, { status: 500 });
   }
 }
