@@ -6,7 +6,19 @@
       "email": "seller3@mail.com",
       "phone": "081234567890",
       "password": "seller3",
-      "token": "7ce826ac-f20c-47ec-838d-cd268411dbc0"
+      "token": "7ce826ac-f20c-47ec-838d-cd268411dbc0",
+      "message": [
+        "test"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "seller2",
+      "email": "seller2@mail.com",
+      "phone": "081234567890",
+      "password": "seller2",
+      "token": "a8dc8250-416f-4dd2-bbd9-41f2b5830f94",
+      "message": []
     }
   ]
 }
