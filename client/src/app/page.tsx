@@ -48,11 +48,20 @@ export default async function Home() {
       <div className="px-16 max-[1017px]:px-5">
         <div className="flex flex-col font-poppins sm:gap-20 gap-10">
           {/* hero section */}
-          <div className="flex flex-col items-center h-screen justify-center gap-10 text-center">
-            <div className="flex flex-col gap-5">
+          <div className="relative flex flex-col items-center h-screen justify-center gap-10 text-center">
+            {/* Blob Background */}
+            <div className="absolute w-full max-w-lg">
+              <div className="absolute blur-xl -top-40 -left-44 w-96 h-72 bg-green-300/50 rounded-full mix-blend-multiply filter  opacity-70 animate-blob"></div>
+
+              <div className="absolute blur-xl -top-32 -right-48 w-96 h-72 bg-green-300/50 rounded-full mix-blend-multiply filter  opacity-70 animate-blob animation-delay-2000"></div>
+              <div className="absolute blur-xl -bottom-8 left-20 w-96 h-72 bg-emerald-300/50 rounded-full mix-blend-multiply filter opacity-70 animate-blob animation-delay-4000"></div>
+            </div>
+
+            {/* Main Content */}
+            <div className="relative z-10 flex flex-col gap-5">
               <div className="flex flex-col gap-2">
                 <h1 className="logo font-semibold sm:text-6xl text-4xl text-emerald-800">
-                  Self-serve & Tranparant
+                  Self-serve & Transparent
                 </h1>
                 <h2 className="logo font-semibold sm:text-3xl text-2xl text-emerald-800">
                   a new way for investing together
@@ -65,7 +74,9 @@ export default async function Home() {
                 inventore aliquam, debitis atque deleniti.
               </p>
             </div>
-            <div className="flex gap-5 font-semibold tracking-wider text-center items-center">
+
+            {/* Buttons */}
+            <div className="relative z-10 flex gap-5 font-semibold tracking-wider text-center items-center">
               <Link
                 href={"/login"}
                 className="text-white bg-emerald-800 sm:p-3 p-2 rounded-md hover:opacity-90 sm:text-base text-sm"
