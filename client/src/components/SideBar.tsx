@@ -8,8 +8,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useDashboardContext } from "@/context/DashboardContext";
+import { useRouter } from "next/navigation";
 
 export default function SideBar() {
+  const router = useRouter();
   const { sidebarMenu, toggleSidebarMenu } = useDashboardContext();
 
   return (
@@ -35,7 +37,10 @@ export default function SideBar() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-        <button className="px-2 py-1 border-2 text-left rounded-md">
+        <button
+          onClick={() => router.push("/dashboard/watchlist")}
+          className="px-2 py-1 border-2 text-left rounded-md"
+        >
           Watchlist
         </button>
         <button className="px-2 py-1 border-2 text-left rounded-md">
