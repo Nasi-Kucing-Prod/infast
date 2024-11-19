@@ -29,9 +29,9 @@ export default function SideBar() {
               Market
             </AccordionTrigger>
             <AccordionContent className="flex flex-col ml-5 pt-2">
-              <Link href="">Stock</Link>
-              <Link href="">Crypto</Link>
-              <Link href="">Forex</Link>
+              <Link href="/dashboard/stocks">Stock</Link>
+              <Link href="/dashboard/crypto">Crypto</Link>
+              <Link href="/dashboard/stocks">Forex</Link>
             </AccordionContent>
           </AccordionItem>
         </Accordion>

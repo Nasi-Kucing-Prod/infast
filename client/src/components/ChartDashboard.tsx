@@ -2,15 +2,47 @@
 import { useEffect, useRef, useState } from "react";
 import { Search } from "lucide-react";
 
-export function ChartDashboard() {
+interface ChartDashboardProps {
+  market: "crypto" | "stocks" | "fx";
+}
+
+export function ChartDashboard({ market }: ChartDashboardProps) {
   const chartContainerRef = useRef<HTMLDivElement>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [searchResults, setSearchResults] = useState<Ticker[]>([]);
-  const [chartSymbol, setChartSymbol] = useState<string>("BTCUSD");
+  const [chartSymbol, setChartSymbol] = useState<string>("");
   const [selectedCurrency, setSelectedCurrency] = useState<{
     name: string;
     symbol: string;
-  }>({ name: "GOTO/GOJEK", symbol: "GT" });
+  }>({ name: "", symbol: "" });
+
+  // Function to get default top symbol based on market type
+  const getDefaultChartSymbol = async () => {
+    try {
+      let topSymbol = "";
+      if (market === "crypto") {
+        // For crypto, default to Bitcoin (BTCUSD)
+        topSymbol = "BTCUSD";
+      } else if (market === "stocks") {
+        // For stocks, default to a top stock like Apple (AAPL)
+        topSymbol = "AAPL";
+      } else if (market === "fx") {
+        topSymbol = "EURUSD";
+      }
+
+      setChartSymbol(topSymbol);
+      setSelectedCurrency({
+        name: topSymbol,
+        symbol: topSymbol.split("/")[0] || topSymbol,
+      });
+    } catch (error) {
+      console.error("Error setting default chart symbol:", error);
+    }
+  };
+
+  useEffect(() => {
+    getDefaultChartSymbol();
+  }, [market]);
 
   useEffect(() => {
     if (typeof window !== "undefined" && chartContainerRef.current) {
@@ -54,7 +86,7 @@ export function ChartDashboard() {
 
   const fetchSearchResults = async (query: string) => {
     const apiKey = "vyXQ8mt1exG0nXMhxgiq2xaeuUKaLAT_";
-    const url = `https://api.polygon.io/v3/reference/tickers?market=crypto&search=${query}&active=true&limit=3&apiKey=${apiKey}`;
+    const url = `https://api.polygon.io/v3/reference/tickers?market=${market}&search=${query}&active=true&limit=3&apiKey=${apiKey}`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -105,7 +137,7 @@ export function ChartDashboard() {
               value={searchQuery}
               onChange={handleSearchChange}
               className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-3 pr-28 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
-              placeholder="Search crypto tickers..."
+              placeholder="Search tickers..."
             />
             <button
               onClick={handleSearchClick}
