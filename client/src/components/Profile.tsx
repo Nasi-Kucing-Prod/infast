@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/app/(main-content)/signup/context/AuthContext";
+// import { useAuth } from "@/app/(main-content)/signup/context/AuthContext";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
+import { useAuth } from "@/app/signup/context/AuthContext";
 
 interface User {
   name: string;

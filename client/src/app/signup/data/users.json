@@ -17,6 +17,15 @@
       "password": "seller2",
       "token": "a8dc8250-416f-4dd2-bbd9-41f2b5830f94",
       "message": []
+    },
+    {
+      "id": 4,
+      "name": "aishataqina",
+      "email": "aishataqina@mail.com",
+      "phone": "087654321234",
+      "password": "aishataqina",
+      "token": "92ecec0ac026c172e697761fff8de051",
+      "message": []
     }
   ]
 }

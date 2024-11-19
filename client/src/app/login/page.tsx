@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/app/(main-content)/signup/context/AuthContext";
+// import { useAuth } from "@/app/(main-content)/signup/context/AuthContext";
 import Image from "next/image";
 import loginimage from "@/image/login.png";
+import { useAuth } from "../signup/context/AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
