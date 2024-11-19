@@ -31,7 +31,7 @@ export default function SideBar() {
             <AccordionContent className="flex flex-col ml-5 pt-2">
               <Link href="/dashboard/stocks">Stock</Link>
               <Link href="/dashboard/crypto">Crypto</Link>
-              <Link href="/dashboard/forex">Forex</Link>
+              <Link href="/dashboard/stocks">Forex</Link>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
