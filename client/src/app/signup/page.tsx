@@ -3,7 +3,7 @@ import { useState, createContext, useContext } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import signupimage from "@/image/signup.png"
+import signupimage from "@/image/signup.png";
 
 interface AuthContextType {
   token: string | null;
@@ -14,9 +14,9 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType>({
   token: null,
-  setToken: () => { },
+  setToken: () => {},
   userId: null,
-  setUserId: () => { },
+  setUserId: () => {},
 });
 
 export const useAuth = () => useContext(AuthContext);
@@ -51,7 +51,8 @@ const SignUp = () => {
     if (!formData.name.trim()) validationErrors.name = "Name is required";
     if (!formData.email.trim()) validationErrors.email = "Email is required";
     if (!formData.phone.trim()) validationErrors.phone = "Phone is required";
-    if (!formData.password.trim()) validationErrors.password = "Password is required";
+    if (!formData.password.trim())
+      validationErrors.password = "Password is required";
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
@@ -107,18 +108,31 @@ const SignUp = () => {
         <meta name="description" content="Sign Up Page" />
       </Head>
 
-      <div className="h-screen flex pb-10 pt-20 rounded-lg shadow-md">
-        <div className="flex-grow p-4">
-          <Image src={signupimage} alt="signup" width={500} height={500} className="bject-cover rounded-lg" />
+      <div className="h-screen sm:flex pb-10 pt-20 rounded-lg shadow-md">
+        <div className="flex-grow p-4 sm:block hidden">
+          <Image
+            src={signupimage}
+            alt="signup"
+            width={500}
+            height={500}
+            className="bject-cover rounded-lg"
+          />
         </div>
-        <div className="w-3/5 flex flex-col gap-5 items-center justify-center">
+        <div className="sm:w-3/5 w-full flex flex-col gap-5 items-center justify-center">
           <div className="flex flex-col items-center">
             <h1 className="text-2xl tracking-tight font-bold">Signup</h1>
-            <p className="text-gray-500 text-sm">Register to continue seeing data details</p>
+            <p className="text-gray-500 text-sm">
+              Register to continue seeing data details
+            </p>
           </div>
           <form onSubmit={handleSubmit} className="w-full px-10 space-y-5">
             <div className="space-y-2">
-              <label htmlFor="name" className="text-sm tracking-tight font-semibold">Name</label>
+              <label
+                htmlFor="name"
+                className="text-sm tracking-tight font-semibold"
+              >
+                Name
+              </label>
               <input
                 id="name"
                 name="name"
@@ -132,7 +146,12 @@ const SignUp = () => {
               )}
             </div>
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm tracking-tight font-semibold">E-mail</label>
+              <label
+                htmlFor="email"
+                className="text-sm tracking-tight font-semibold"
+              >
+                E-mail
+              </label>
               <input
                 id="email"
                 name="email"
@@ -146,7 +165,12 @@ const SignUp = () => {
               )}
             </div>
             <div className="space-y-2">
-              <label htmlFor="phone" className="text-sm tracking-tight font-semibold">Phone</label>
+              <label
+                htmlFor="phone"
+                className="text-sm tracking-tight font-semibold"
+              >
+                Phone
+              </label>
               <input
                 id="phone"
                 name="phone"
@@ -160,7 +184,12 @@ const SignUp = () => {
               )}
             </div>
             <div className="space-y-2">
-              <label htmlFor="password" className="text-sm tracking-tight font-semibold">Password</label>
+              <label
+                htmlFor="password"
+                className="text-sm tracking-tight font-semibold"
+              >
+                Password
+              </label>
               <input
                 id="password"
                 name="password"
@@ -173,7 +202,13 @@ const SignUp = () => {
                 <p className="mt-1 text-sm text-red-500">{errors.password}</p>
               )}
             </div>
-            <div className="mt-0 mb-4 text-center">
+            <button
+              type="submit"
+              className="w-full px-4 py-2 font-semibold text-white bg-emerald-500 rounded hover:bg-emerald-600 transition-colors"
+            >
+              Sign Up
+            </button>
+            <div className="mt-0 mb-4 text-center text-sm">
               <span>Already have an account?</span>{" "}
               <Link
                 href="/login"
@@ -182,12 +217,6 @@ const SignUp = () => {
                 Login Here
               </Link>
             </div>
-            <button
-              type="submit"
-              className="w-full px-4 py-2 font-semibold text-white bg-emerald-500 rounded hover:bg-emerald-600 transition-colors"
-            >
-              Sign Up
-            </button>
           </form>
         </div>
       </div>

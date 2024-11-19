@@ -60,12 +60,13 @@ const Login = () => {
   };
 
   return (
-
-    <div className="h-screen flex pb-10 pt-20 rounded-lg shadow-md">
-      <div className="w-3/5 flex flex-col gap-5 items-center justify-center">
+    <div className="h-screen sm:flex pb-10 pt-20 rounded-lg shadow-md">
+      <div className="sm:w-3/5 w-full flex flex-col gap-5 items-center justify-center">
         <div className="flex flex-col items-center">
           <h1 className="text-2xl tracking-tight font-bold">Login</h1>
-          <p className="text-gray-500 text-sm">Login to continue seeing data details</p>
+          <p className="text-gray-500 text-sm">
+            Login to continue seeing data details
+          </p>
         </div>
 
         {error && (
@@ -74,14 +75,42 @@ const Login = () => {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} noValidate className="w-full px-10 space-y-5">
+        <form
+          onSubmit={handleSubmit}
+          noValidate
+          className="w-full px-10 space-y-5"
+        >
           <div className="space-y-2">
-            <label htmlFor="email" className="text-sm tracking-tight font-semibold">E-mail</label>
-            <input id="email" name="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full px-4 py-2 rounded-md border border-black" />
+            <label
+              htmlFor="email"
+              className="text-sm tracking-tight font-semibold"
+            >
+              E-mail
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-2 rounded-md border border-black"
+            />
           </div>
           <div className="space-y-2">
-            <label htmlFor="password" className="text-sm tracking-tight font-semibold">Password</label>
-            <input id="password" name="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full px-4 py-2 rounded-md border border-black" />
+            <label
+              htmlFor="password"
+              className="text-sm tracking-tight font-semibold"
+            >
+              Password
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-2 rounded-md border border-black"
+            />
           </div>
 
           <button
@@ -93,14 +122,14 @@ const Login = () => {
           </button>
 
           <p className="mt-4 text-center text-sm">
-          Dont have an account?{" "}
-          <a href="/signup" className="text-blue-500 hover:text-indigo-500">
-            Sign Up Here
-          </a>
-        </p>
+            Dont have an account?{" "}
+            <a href="/signup" className="text-blue-500 hover:text-indigo-500">
+              Sign Up Here
+            </a>
+          </p>
         </form>
       </div>
-      <div className="flex-grow p-4">
+      <div className="sm:block p-4 hidden ">
         <Image src={loginimage} alt="login" width={500} height={500} />
       </div>
     </div>
@@ -153,12 +182,12 @@ const Login = () => {
     //       </div>
     //     </form>
 
-        // <p className="mt-4 text-center text-sm">
-        //   Dont have an account?{" "}
-        //   <a href="/signup" className="text-blue-500 hover:text-indigo-500">
-        //     Sign Up Here
-        //   </a>
-        // </p>
+    // <p className="mt-4 text-center text-sm">
+    //   Dont have an account?{" "}
+    //   <a href="/signup" className="text-blue-500 hover:text-indigo-500">
+    //     Sign Up Here
+    //   </a>
+    // </p>
     //   </div>
     // </div>
   );
