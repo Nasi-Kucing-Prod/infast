@@ -46,6 +46,7 @@ interface SearchResponse {
 }
 
 interface TickerDashboard {
+  id: number;
   currency_symbol: string;
   name: string;
   latest_price: number;
@@ -70,4 +71,9 @@ interface TableDashboardProps {
 }
 interface ChartDashboardProps {
   market: "crypto" | "stocks" | "fx";
+}
+
+interface GetCurrentUserResponse {
+  userId: number;
+  watchlist: number[];
 }

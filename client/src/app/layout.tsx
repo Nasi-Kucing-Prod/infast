@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AuthProvider } from "./(main-content)/signup/context/AuthContext";
+import { DashboardProvider } from "@/context/DashboardContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,10 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={"antialiased"}>
-          <AuthProvider>
-          {children}
-          </AuthProvider>
-        </body>
+        <AuthProvider>
+          <DashboardProvider> 
+            {children}
+          </DashboardProvider>
+        </AuthProvider>
+      </body>
     </html>
   );
 }

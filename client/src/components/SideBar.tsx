@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-
 import {
   Accordion,
   AccordionContent,
@@ -10,16 +9,19 @@ import {
 import { useDashboardContext } from "@/context/DashboardContext";
 
 export default function SideBar() {
-  const { sidebarMenu, toggleSidebarMenu } = useDashboardContext();
+  const { sidebarMenu, toggleSidebarMenu, watchlist } = useDashboardContext();
 
   return (
     <section
-      className={`fixed bg-white rounded-md drop-shadow-md h-[calc(100vh-20px)]   m-5 sm:bg-transparent sm:drop-shadow-none sm:rounded-none sm:h-fit sm:m-0 md:block sm:relative space-y-4 pb-5 pt-4 px-5 my-2 z-50 md:w-3/12 w-1/2 ${
+      className={`fixed bg-white rounded-md drop-shadow-md h-[calc(100vh-20px)] m-5 sm:bg-transparent sm:drop-shadow-none sm:rounded-none sm:h-fit sm:m-0 md:block sm:relative space-y-4 pb-5 pt-4 px-5 my-2 z-50 md:w-3/12 w-1/2 ${
         !sidebarMenu ? "hidden" : ""
       }`}
     >
-      <div className="flex ">
+      <div className="flex items-center justify-between">
         <div className="text-2xl font-bold">Infast</div>
+        <button onClick={toggleSidebarMenu} className="md:hidden">
+          ✖
+        </button>
       </div>
       <hr />
       <nav className="flex flex-col gap-3">
@@ -31,13 +33,19 @@ export default function SideBar() {
             <AccordionContent className="flex flex-col ml-5 pt-2">
               <Link href="/dashboard/stocks">Stock</Link>
               <Link href="/dashboard/crypto">Crypto</Link>
-              <Link href="/dashboard/stocks">Forex</Link>
+              <Link href="/dashboard/forex">Forex</Link>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-        <button className="px-2 py-1 border-2 text-left rounded-md">
-          Watchlist
-        </button>
+        <Link
+          href="/dashboard/watchlist"
+          className="px-2 py-1 border-2 text-left rounded-md flex items-center"
+        >
+          <span role="img" aria-label="Watchlist" className="mr-2">
+            ❤️
+          </span>
+          Watchlist ({watchlist.length})
+        </Link>
         <button className="px-2 py-1 border-2 text-left rounded-md">
           Back to home
         </button>
