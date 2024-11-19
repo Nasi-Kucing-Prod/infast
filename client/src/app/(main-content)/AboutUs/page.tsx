@@ -1,13 +1,19 @@
 "use client";
 import React from "react";
+import Image from "next/image"; 
+import aishaImage from "./../../../asset/aisha.jpg"; 
+import arioImage from "./../../../asset/ario.png";
+import infriImage from "./../../../asset/Infri.jpeg";
+import wahibImage from "./../../../asset/wahib-1.jpg";
+import zalvaImage from "./../../../asset/zalva.png";
 
 const AboutUs = () => {
   const teamMembers = [
-    { name: "Aisha Taqina", github: "Aisha's Github", link: "https://github.com/aishataqina", image: "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/woman-light-skin-tone.png" },
-    { name: "Ario Bimo Prasetyo", github: "Ario's Github", link: "https://github.com/ario-g1thub", image: "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/boy-light-skin-tone.png" },
-    { name: "Infrisanti Wilson Tong", github: "Infri's Github", link: "https://github.com/INFRISANTI", image: "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/woman-light-skin-tone.png" },
-    { name: "Wahib Kurniawan", github: "Wahib's Github", link: "https://github.com/wahibkurniawan", image: "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/boy-light-skin-tone.png" },
-    { name: "Zalva Ihilani Pasha", github: "Zalva's Github", link: "https://github.com/zalvapasha", image: "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/boy-light-skin-tone.png" },
+    { name: "Aisha Taqina", github: "Aisha's Github", link: "https://github.com/aishataqina", image: aishaImage },
+    { name: "Ario Bimo Prasetyo", github: "Ario's Github", link: "https://github.com/ario-g1thub", image: arioImage },
+    { name: "Infrisanti Wilson Tong", github: "Infri's Github", link: "https://github.com/INFRISANTI", image: infriImage },
+    { name: "Wahib Kurniawan", github: "Wahib's Github", link: "https://github.com/wahibkurniawan", image: wahibImage },
+    { name: "Zalva Ihilani Pasha", github: "Zalva's Github", link: "https://github.com/zalvapasha", image: zalvaImage },
   ];
 
   return (
@@ -20,32 +26,18 @@ const AboutUs = () => {
       </h2>
       <div className="flex flex-wrap justify-center gap-8">
         {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className="w-48 p-4 bg-green-100 border rounded-lg text-center shadow-md"
-          >
-            {member.image ? (
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-              />
-            ) : (
-              <div className="w-24 h-24 bg-green-200 rounded-full mx-auto mb-4"></div>
-            )}
+          <div key={index} className="w-48 p-4 bg-green-100 border rounded-lg text-center shadow-md">
+            <Image
+              src={member.image} 
+              alt={member.name}
+              width={96} 
+              height={96} 
+              className="rounded-full mx-auto mb-4 object-cover"
+            />
             <h3 className="text-lg font-semibold">{member.name}</h3>
-            {member.link ? (
-              <a
-                href={member.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-emerald-700 hover:underline"
-              >
-                {member.github}
-              </a>
-            ) : (
-              <p className="text-gray-600">{member.github}</p>
-            )}
+            <a href={member.link} target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:underline">
+              {member.github}
+            </a>
           </div>
         ))}
       </div>
