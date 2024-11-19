@@ -163,6 +163,12 @@ const Profile = () => {
   };
 
   const handleDeleteMessage = async (index: number) => {
+    // Validasi indeks yang diberikan
+    if (index < 0 || index >= user!.message.length) {
+      await Swal.fire("Error", "Indeks pesan tidak valid.", "error");
+      return;
+    }
+
     const result = await Swal.fire({
       title: "Hapus Pesan",
       text: "Anda yakin ingin menghapus pesan ini?",
@@ -200,6 +206,12 @@ const Profile = () => {
   };
 
   const handleEditMessage = async (index: number) => {
+    // Validasi indeks yang diberikan
+    if (index < 0 || index >= user!.message.length) {
+      await Swal.fire("Error", "Indeks pesan tidak valid.", "error");
+      return;
+    }
+
     const currentMessage = user!.message[index] || "";
 
     const { value: editedMessage, isConfirmed } = await Swal.fire({
