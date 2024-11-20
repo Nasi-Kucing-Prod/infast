@@ -54,7 +54,7 @@ export default function TableRowDashboard({
           : [...watchlist, uniqueId];
         
         setWatchlist([...new Set(updatedWatchlist)]);
-        setIsInWatchlist(!isInWatchlist);  // Toggle state for watchlist
+        setIsInWatchlist(!isInWatchlist); 
         console.log("Watchlist setelah toggle:", [...new Set(updatedWatchlist)]);
       } else {
         const errorData = await response.json();
@@ -74,12 +74,8 @@ export default function TableRowDashboard({
 
   return (
     <TableRow>
-      <TableCell onClick={toggleWatchlist} className="cursor-pointer">
-        {isInWatchlist ? (
-          <Star className="size-5 text-yellow-500" />
-        ) : (
-          <StarOutline className="size-5" />
-        )}
+      <TableCell className="cursor-pointer">
+      1
       </TableCell>
       <TableCell className="line-clamp-1 break-all">{ticker.name}</TableCell>
       <TableCell className="text-right">
@@ -104,7 +100,7 @@ export default function TableRowDashboard({
               aria-label="Unwatch"
               style={{ fontSize: "1.5rem", color: "red" }}
             >
-              ❤️
+              <Star className="size-5 text-yellow-500" />
             </span>
           ) : (
             <span
@@ -112,7 +108,7 @@ export default function TableRowDashboard({
               aria-label="Watch"
               style={{ fontSize: "1.5rem", color: "gray" }}
             >
-              🤍
+              <StarOutline className="size-5" />
             </span>
           )}
         </button>

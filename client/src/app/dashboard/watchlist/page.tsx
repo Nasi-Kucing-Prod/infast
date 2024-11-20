@@ -1,8 +1,8 @@
-<<<<<<< HEAD
 "use client";
 
 import React, { useEffect, useState } from "react";
 import { useDashboardContext } from "@/context/DashboardContext";
+import { DashboardHeader } from "@/components/DashboardHeader"; 
 
 interface TickerDashboard {
   currency_symbol: string;
@@ -28,7 +28,7 @@ export default function Watchlist() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("http://localhost:8000/dashboard"); 
+      const response = await fetch("http://localhost:8000/dashboard"); // Fetch data from your API
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status} - ${response.statusText}`);
       }
@@ -88,10 +88,11 @@ export default function Watchlist() {
         <p>No items in your watchlist</p>
       )}
     </section>
-=======
-import { DashboardHeader } from "@/components/DashboardHeader";
+  );
+}
 
-export default function MarketCrypto() {
+
+export function MarketCrypto() {
   return (
     <main className="bg-gray-100 w-full px-5 pb-5 m-2 rounded-3xl">
       <DashboardHeader />
@@ -99,6 +100,5 @@ export default function MarketCrypto() {
         <h1>Render datanya di sini</h1>
       </div>
     </main>
->>>>>>> 712a9457aed9a6ed43ec1c04f175b3fcf8f855c1
   );
 }

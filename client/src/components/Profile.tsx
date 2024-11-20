@@ -96,7 +96,7 @@ const Profile = () => {
 
     if (result.isConfirmed) {
       try {
-        const response = await fetch("/api/delete-account", { 
+        const response = await fetch("/signup/api/delete-account", { 
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -131,7 +131,7 @@ const Profile = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("signup/api/message/add-message", { 
+      const response = await fetch("/signup/api/message/add-message", { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -182,7 +182,7 @@ const Profile = () => {
     if (result.isConfirmed) {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch(`signup/api/message/delete-message?token=${token}&index=${index}`, { 
+        const response = await fetch(`/signup/api/message/delete-message?token=${token}&index=${index}`, { 
           method: "DELETE",
         });
 
@@ -232,7 +232,7 @@ const Profile = () => {
     if (isConfirmed && editedMessage) {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch("signup/api/message/edit-message", {
+        const response = await fetch("/signup/api/message/edit-message", {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
