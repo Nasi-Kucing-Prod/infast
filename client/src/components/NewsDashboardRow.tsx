@@ -41,7 +41,7 @@ export const NewsDashboardRow = ({ item }: { item: NewsItem }) => {
         </p>
       </div>
       <button className="mr-2">
-        <ChevronRight className="size-8 text-emerald-800" />
+        <ChevronRight className="size-8 text-primary-infast" />
       </button>
     </article>
   );

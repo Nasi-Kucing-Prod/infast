@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import noimage from "@/image/no-image-product.webp";
 
 interface NewsCardAllProp {
   title: string;
@@ -60,7 +61,7 @@ const NewsCardAll: React.FC<NewsCardAllProp> = ({
             </p>
             <p className="sm:text-sm text-xs">
               Author :{" "}
-              <span className="text-emerald-800 font-semibold">
+              <span className="text-primary-infast font-semibold">
                 {authors.join(", ")}
               </span>
             </p>
@@ -75,7 +76,7 @@ const NewsCardAll: React.FC<NewsCardAllProp> = ({
               <h2 className="hover:underline">{title}</h2>
             </Link>
             <p className="text-xs sm:text-sm text-gray-500">{summary}</p>
-            <div className="text-xs sm:text-sm font-semibold text-emerald-800">
+            <div className="text-xs sm:text-sm font-semibold text-primary-infast">
               {ticker_sentiment?.map((item, index) => (
                 <span key={index}>
                   {item.ticker}
@@ -90,12 +91,21 @@ const NewsCardAll: React.FC<NewsCardAllProp> = ({
             <Image
               src={banner_image}
               alt={title}
-              width={50}
-              height={50}
+              width={1000}
+              height={1000}
               className="w-full rounded object-cover aspect-video"
             />
           ) : (
-            <div className="w-full h-full bg-gray-200 rounded aspect-video" />
+            // <div className="w-full h-full bg-gray-200 rounded aspect-video" />
+            <div>
+              <Image
+                src={noimage}
+                alt={title}
+                width={1000}
+                height={1000}
+                className="w-full rounded object-cover aspect-video"
+              />
+            </div>
           )}
         </div>
       </div>

@@ -19,6 +19,9 @@ const config: Config = {
         poppins: ["Poppins", "sans-serif"],
       },
       colors: {
+        "primary-infast": "#0A8E56",
+        "secondary-infast": "#13a869",
+        "black-infast": "#333333",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

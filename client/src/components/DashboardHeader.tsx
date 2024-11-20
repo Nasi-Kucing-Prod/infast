@@ -44,7 +44,7 @@ export const DashboardHeader = () => {
                 <Slash />
               </BreadcrumbSeparator>
               <BreadcrumbItem>
-                <BreadcrumbPage className="text-emerald-800 capitalize">
+                <BreadcrumbPage className="text-primary-infast capitalize">
                   {menu}
                 </BreadcrumbPage>
               </BreadcrumbItem>

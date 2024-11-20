@@ -30,20 +30,20 @@ export default function SideBar() {
       <nav className="flex flex-col gap-3">
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
-            <AccordionTrigger className="hover:text-emerald-800 border-2 px-2 rounded-md">
+            <AccordionTrigger className="hover:text-primary-infast border-2 px-2 rounded-md">
               Market
             </AccordionTrigger>
             <AccordionContent className="flex flex-col ml-5 pt-2 gap-3">
               <Link
                 href="/dashboard/crypto"
-                className="hover:text-emerald-800 "
+                className="hover:text-primary-infast "
               >
                 Crypto
               </Link>
-              <Link href="/dashboard/forex" className="hover:text-emerald-800">
+              <Link href="/dashboard/forex" className="hover:text-primary-infast">
                 Forex
               </Link>
-              <Link href="/dashboard/stocks" className="hover:text-emerald-800">
+              <Link href="/dashboard/stocks" className="hover:text-primary-infast">
                 Stock
               </Link>
             </AccordionContent>
@@ -51,13 +51,13 @@ export default function SideBar() {
         </Accordion>
         <button
           onClick={() => router.push("/dashboard/watchlist")}
-          className="px-2 py-1 border-2 text-left rounded-md hover:text-emerald-800 hover:underline font-medium"
+          className="px-2 py-1 border-2 text-left rounded-md hover:text-primary-infast hover:underline font-medium"
         >
           Watchlist ({watchlist.length})
         </button>
         <Link
           href={"/"}
-          className="px-2 py-1 border-2 text-left rounded-md hover:text-emerald-800 hover:underline font-medium"
+          className="px-2 py-1 border-2 text-left rounded-md hover:text-primary-infast hover:underline font-medium"
         >
           Back to home
         </Link>

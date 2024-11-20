@@ -161,7 +161,7 @@ const Page = () => {
           <div className="flex gap-2 items-center text-center justify-between sm:w-fit w-full">
             <h1 className="font-semibold md:text-2xl text-xl">Crypto</h1>
             <DropdownMenu>
-              <DropdownMenuTrigger className="border-emerald-800 rounded-md px-2 py-1 text-emerald-800 text-sm border font-semibold cursor-pointer sm:text-base">
+              <DropdownMenuTrigger className="border-primary-infast rounded-md px-2 py-1 text-primary-infast text-sm border font-semibold cursor-pointer sm:text-base">
                 {selectedCurrency.toUpperCase()}
               </DropdownMenuTrigger>
               <DropdownMenuContent className="max-h-96 overflow-y-auto border border-gray-200 rounded-md shadow-md bg-white">
@@ -192,7 +192,7 @@ const Page = () => {
             />
             <button
               onClick={handleSearch}
-              className="bg-emerald-800 text-white px-2 py-1 rounded-md  sm:text-base text-sm"
+              className="bg-primary-infast text-white px-2 py-1 rounded-md font-semibold sm:text-base text-sm"
             >
               Search
             </button>

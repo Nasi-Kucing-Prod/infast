@@ -277,7 +277,7 @@ const Profile = () => {
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={toggleDropdown}
-          className="bg-emerald-200/30 text-emerald-800 border-2 border-emerald-400/30 rounded-full p-2 w-14 h-14 flex items-center justify-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          className="bg-emerald-200/30 text-primary-infast border-2 border-emerald-400/30 rounded-full p-2 w-14 h-14 flex items-center justify-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500"
         >
           ?
         </button>

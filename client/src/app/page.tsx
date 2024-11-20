@@ -50,7 +50,7 @@ export default async function Home() {
           {/* hero section */}
           <div className="relative flex flex-col items-center h-screen justify-center gap-10 text-center">
             {/* Blob Background */}
-            <div className="absolute w-full max-w-lg">
+            <div className="sm:absolute hidden w-full max-w-lg z-0">
               <div className="absolute blur-xl -top-40 -left-44 w-96 h-72 bg-green-300/50 rounded-full mix-blend-multiply filter  opacity-70 animate-blob"></div>
 
               <div className="absolute blur-xl -top-32 -right-48 w-96 h-72 bg-green-300/50 rounded-full mix-blend-multiply filter  opacity-70 animate-blob animation-delay-2000"></div>
@@ -60,18 +60,17 @@ export default async function Home() {
             {/* Main Content */}
             <div className="relative z-10 flex flex-col gap-5">
               <div className="flex flex-col gap-2">
-                <h1 className="logo font-semibold sm:text-6xl text-4xl text-emerald-800">
+                <h1 className="logo font-semibold sm:text-6xl text-4xl text-primary-infast">
                   Self-serve & Transparent
                 </h1>
-                <h2 className="logo font-semibold sm:text-3xl text-2xl text-emerald-800">
+                <h2 className="logo font-semibold sm:text-3xl text-2xl text-primary-infast">
                   a new way for investing together
                 </h2>
               </div>
               <p className="text-sm sm:text-lg text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-                corporis sapiente doloribus possimus! Vitae saepe aliquam
-                voluptatem. Sed iusto odit ipsum aut, illo quasi dolore,
-                inventore aliquam, debitis atque deleniti.
+                Infast being a self-serve with our services and one of, if not
+                the most important thing being transparent with our stock market
+                data makes us your best choice for the job!
               </p>
             </div>
 
@@ -79,13 +78,13 @@ export default async function Home() {
             <div className="relative z-10 flex gap-5 font-semibold tracking-wider text-center items-center">
               <Link
                 href={"/login"}
-                className="text-white bg-emerald-800 sm:p-3 p-2 rounded-md hover:opacity-90 sm:text-base text-sm"
+                className="text-white bg-primary-infast sm:p-3 p-2 rounded-md hover:bg-secondary-infast sm:text-base text-sm"
               >
                 Get Started
               </Link>
               <Link
                 href={"/AboutUs"}
-                className="text-emerald-800 border border-emerald-800 sm:p-3 p-2 rounded-md sm:text-base text-sm"
+                className="text-primary-infast border border-primary-infast sm:p-3 p-2 rounded-md sm:text-base text-sm"
               >
                 About Us
               </Link>
@@ -98,13 +97,13 @@ export default async function Home() {
               <p className="text-sm sm:text-lg text-gray-500">
                 Your trust is very important to us
               </p>
-              <h1 className="logo font-semibold sm:text-6xl text-3xl text-emerald-800">
+              <h1 className="logo font-semibold sm:text-6xl text-3xl text-primary-infast">
                 #InfastWeTrade
               </h1>
             </div>
             <div className="flex flex-wrap gap-10 items-center text-center justify-center">
               <div className="flex-col">
-                <h1 className="font-semibold sm:text-5xl text-3xl text-emerald-800">
+                <h1 className="font-semibold sm:text-5xl text-3xl text-primary-infast">
                   #1
                 </h1>
                 <p className="text-sm sm:text-lg text-gray-500">
@@ -112,7 +111,7 @@ export default async function Home() {
                 </p>
               </div>
               <div className="flex-col">
-                <h1 className="font-semibold sm:text-5xl text-3xl text-emerald-800">
+                <h1 className="font-semibold sm:text-5xl text-3xl text-primary-infast">
                   93M+
                 </h1>
                 <p className="text-sm sm:text-lg text-gray-500">
@@ -120,7 +119,7 @@ export default async function Home() {
                 </p>
               </div>
               <div className="flex-col">
-                <h1 className="font-semibold sm:text-5xl text-3xl text-emerald-800">
+                <h1 className="font-semibold sm:text-5xl text-3xl text-primary-infast">
                   2.5M+
                 </h1>
                 <p className="text-sm sm:text-lg text-gray-500">
@@ -128,7 +127,7 @@ export default async function Home() {
                 </p>
               </div>
               <div className="flex-col">
-                <h1 className="font-semibold sm:text-5xl text-3xl text-emerald-800">
+                <h1 className="font-semibold sm:text-5xl text-3xl text-primary-infast">
                   15M+
                 </h1>
                 <p className="text-sm sm:text-lg text-gray-500">
@@ -153,7 +152,7 @@ export default async function Home() {
           <div className="flex flex-col gap-5">
             <div className="">
               <Link href="/news">
-                <h1 className="font-semibold sm:text-2xl text-xl hover:text-emerald-800 cursor-pointer">
+                <h1 className="font-semibold sm:text-2xl text-xl hover:text-primary-infast cursor-pointer">
                   News Flash &gt;
                 </h1>
               </Link>
