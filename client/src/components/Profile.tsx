@@ -96,7 +96,7 @@ const Profile = () => {
 
     if (result.isConfirmed) {
       try {
-        const response = await fetch("/signup/api/delete-account", { 
+        const response = await fetch("/signup/api/delete-account", {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -113,11 +113,19 @@ const Profile = () => {
           setAuthToken("");
           router.push("/login");
         } else {
-          await Swal.fire("Gagal!", data.message || "Terjadi kesalahan saat menghapus akun.", "error");
+          await Swal.fire(
+            "Gagal!",
+            data.message || "Terjadi kesalahan saat menghapus akun.",
+            "error"
+          );
         }
       } catch (error) {
         console.error("Error deleting account:", error);
-        await Swal.fire("Error!", "Terjadi kesalahan, silakan coba lagi.", "error");
+        await Swal.fire(
+          "Error!",
+          "Terjadi kesalahan, silakan coba lagi.",
+          "error"
+        );
       }
     }
   };
@@ -131,7 +139,7 @@ const Profile = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("/signup/api/message/add-message", { 
+      const response = await fetch("/signup/api/message/add-message", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -150,11 +158,19 @@ const Profile = () => {
         localStorage.setItem("user", JSON.stringify(updatedUser));
         setNewMessage("");
       } else {
-        await Swal.fire("Gagal", data.message || "Gagal menambahkan pesan.", "error");
+        await Swal.fire(
+          "Gagal",
+          data.message || "Gagal menambahkan pesan.",
+          "error"
+        );
       }
     } catch (error) {
       console.error("Error adding message:", error);
-      await Swal.fire("Error!", "Terjadi kesalahan saat menambahkan pesan.", "error");
+      await Swal.fire(
+        "Error!",
+        "Terjadi kesalahan saat menambahkan pesan.",
+        "error"
+      );
     }
   };
 
@@ -182,9 +198,12 @@ const Profile = () => {
     if (result.isConfirmed) {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch(`/signup/api/message/delete-message?token=${token}&index=${index}`, { 
-          method: "DELETE",
-        });
+        const response = await fetch(
+          `/signup/api/message/delete-message?token=${token}&index=${index}`,
+          {
+            method: "DELETE",
+          }
+        );
 
         const data = await response.json();
 
@@ -195,11 +214,19 @@ const Profile = () => {
           setUser(updatedUser);
           localStorage.setItem("user", JSON.stringify(updatedUser));
         } else {
-          await Swal.fire("Gagal!", data.message || "Gagal menghapus pesan.", "error");
+          await Swal.fire(
+            "Gagal!",
+            data.message || "Gagal menghapus pesan.",
+            "error"
+          );
         }
       } catch (error) {
         console.error("Error deleting message:", error);
-        await Swal.fire("Error!", "Terjadi kesalahan saat menghapus pesan.", "error");
+        await Swal.fire(
+          "Error!",
+          "Terjadi kesalahan saat menghapus pesan.",
+          "error"
+        );
       }
     }
   };
@@ -255,11 +282,19 @@ const Profile = () => {
           setUser(updatedUser);
           localStorage.setItem("user", JSON.stringify(updatedUser));
         } else {
-          await Swal.fire("Gagal", data.message || "Gagal mengubah pesan.", "error");
+          await Swal.fire(
+            "Gagal",
+            data.message || "Gagal mengubah pesan.",
+            "error"
+          );
         }
       } catch (error) {
         console.error("Error editing message:", error);
-        await Swal.fire("Error!", "Terjadi kesalahan saat mengubah pesan.", "error");
+        await Swal.fire(
+          "Error!",
+          "Terjadi kesalahan saat mengubah pesan.",
+          "error"
+        );
       }
     }
   };
@@ -269,72 +304,24 @@ const Profile = () => {
   }
 
   return (
-    <div className="flex items-center relative px-4 gap-4">
-      <div className="mb-4">
-        <h2 className="text-lg font-semibold">{user.name || "User 1"}</h2>
-        <h3 className="text-sm text-gray-500">ID: {user.id || "3133"}</h3>
+    <div className="flex items-center relative  gap-4">
+      <div>
+        <h2 className="text-base md:text-lg font-semibold">
+          {user.name || "User 1"}
+        </h2>
+        <h3 className="text-xs md:text-sm text-gray-500">
+          ID: {user.id || "3133"}
+        </h3>
       </div>
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={toggleDropdown}
-          className="bg-emerald-200/30 text-emerald-800 border-2 border-emerald-400/30 rounded-full p-2 w-14 h-14 flex items-center justify-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          className="bg-emerald-200/30 text-emerald-800 border-2 border-emerald-400/30 rounded-full p-2 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500"
         >
           ?
         </button>
         {isDropdownOpen && (
           <div className="absolute right-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-20">
-            <div className="p-4 border-b border-gray-200">
-              <h3 className="text-md font-semibold mb-2">List Your Messages:</h3>
-              {user.message.length > 0 ? (
-                <ul className="space-y-2">
-                  {user.message.map((msg, index) => (
-                    <li
-                      key={index}
-                      className="flex items-center justify-between bg-gray-100 p-2 rounded-md"
-                    >
-                      <span className="text-sm text-gray-700">{msg}</span>
-                      <div className="space-x-2">
-                        <button
-                          onClick={() => handleEditMessage(index)}
-                          className="text-blue-600 hover:text-blue-800 font-semibold"
-                        >
-                          Edit
-                        </button>
-                        <button
-                          onClick={() => handleDeleteMessage(index)}
-                          className="text-red-600 hover:text-red-800 font-semibold"
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-sm text-gray-500">No messages yet.</p>
-              )}
-            </div>
-            <div className="p-4">
-              <form onSubmit={handleAddMessage} className="flex flex-col space-y-2">
-                <label htmlFor="newMessage" className="text-sm font-medium text-gray-700">
-                  Add a new message:
-                </label>
-                <input
-                  type="text"
-                  id="newMessage"
-                  value={newMessage}
-                  onChange={(e) => setNewMessage(e.target.value)}
-                  className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                  placeholder="Type your message..."
-                />
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition-colors"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
             <div className="p-4 space-y-2">
               <button
                 onClick={handleLogout}

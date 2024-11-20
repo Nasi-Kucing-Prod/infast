@@ -8,7 +8,7 @@ export default async function NewsDashboard() {
   const data = await (await resp).json();
 
   return (
-    <section className="w-full md:w-8/12 h-[543.5px] bg-white rounded-xl p-5 flex flex-col ">
+    <section className="w-full md:w-6/12 h-[543.5px] bg-white rounded-xl p-5 flex flex-col ">
       <div className="space-y-2">
         <h2 className="text-lg font-semibold text-emerald-800">News</h2>
         <hr className="border-emerald-800" />

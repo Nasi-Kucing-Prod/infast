@@ -1,98 +1,71 @@
 import React from "react";
-import { ChartDashboard } from "@/components/ChartDashboard";
 import { DashboardHeader } from "@/components/DashboardHeader";
 
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import NewsDashboard from "@/components/NewsDashboard";
+// Define the TypeScript interface for the data
+interface DashboardItem {
+  currency_symbol: string;
+  name: string;
+  market: string;
+  latest_price: number;
+  change_percentage: number;
+  change_amount: number;
+}
 
-const invoices = [
-  {
-    invoice: "INV001",
-    Assest: "DOGE",
-    LastPrice: "$250.00",
-    Percentage: "+51.00%",
-  },
-  {
-    invoice: "INV002",
-    Assest: "USTD",
-    LastPrice: "$150.00",
-    Percentage: "-0.67%",
-  },
-  {
-    invoice: "INV003",
-    Assest: "BTC",
-    LastPrice: "$350.00",
-    Percentage: "-4.25%",
-  },
-  {
-    invoice: "INV004",
-    Assest: "PEPE",
-    LastPrice: "$450.00",
-    Percentage: "+31.03%",
-  },
-  {
-    invoice: "INV005",
-    Assest: "ETH",
-    LastPrice: "$550.00",
-    Percentage: "-1.10%",
-  },
-  {
-    invoice: "INV006",
-    Assest: "CTRN",
-    LastPrice: "$200.00",
-    Percentage: "+51.00%",
-  },
-  {
-    invoice: "INV007",
-    Assest: "MNTB",
-    LastPrice: "$300.00",
-    Percentage: "-4.25%",
-  },
-];
+export default async function Dashboard() {
+  const resp = await fetch("http://localhost:8000/dashboard");
+  const { result }: { result: DashboardItem[] } = await resp.json();
 
-export default function Dashboard() {
+  // Find the biggest change for each market
+  const markets = ["crypto", "forex", "stocks"];
+  const biggestChanges = markets
+    .map((market) => {
+      return result
+        .filter((item) => item.market === market)
+        .reduce((prev, current) =>
+          Math.abs(current.change_amount) > Math.abs(prev.change_amount)
+            ? current
+            : prev
+        );
+    })
+    .filter(Boolean); // Remove undefined results if a market has no items
+
   return (
     <main className="bg-gray-100 w-full px-5 pb-5 m-2 rounded-3xl">
       <DashboardHeader />
-      <div className="space-y-5">
-        <ChartDashboard market="crypto" />
-        <div className="flex flex-col md:flex-row w-full gap-5 ">
-          <NewsDashboard />
-          <section className="px-5 py-2 bg-white rounded-xl w-full">
-            <Table>
-              <TableHeader>
-                <TableRow className="text-nowrap">
-                  <TableHead className="w-[100px]">No</TableHead>
-                  <TableHead>Assest Name</TableHead>
-                  <TableHead className="text-right">Lastest Price</TableHead>
-                  <TableHead className="text-right">% Change</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {invoices.map((invoice, idx) => (
-                  <TableRow key={idx}>
-                    <TableCell className="font-medium">
-                      {invoice.invoice}
-                    </TableCell>
-                    <TableCell>{invoice.Assest}</TableCell>
-                    <TableCell className="text-right">
-                      {invoice.LastPrice}
-                    </TableCell>
-                    <TableCell className="text-right">
-                      {invoice.Percentage}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </section>
+      <div className="space-y-5 h-[calc(100vh-130px)] overflow-auto">
+        <h1 className="text-xl font-bold">Biggest Changes by Market</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {biggestChanges.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-md rounded-xl p-4 flex flex-col space-y-3"
+            >
+              <h2 className="text-lg font-semibold text-gray-700">
+                {item.name}
+              </h2>
+              <p className="text-gray-500">Symbol: {item.currency_symbol}</p>
+              <p className="text-gray-500">Market: {item.market}</p>
+              <p className="text-gray-500">
+                Latest Price: ${item.latest_price.toFixed(2)}
+              </p>
+              <p
+                className={`text-lg font-bold ${
+                  item.change_amount > 0 ? "text-green-500" : "text-red-500"
+                }`}
+              >
+                Change Amount: {item.change_amount > 0 ? "+" : ""}
+                {item.change_amount.toFixed(2)}
+              </p>
+              <p
+                className={`text-sm ${
+                  item.change_percentage > 0 ? "text-green-500" : "text-red-500"
+                }`}
+              >
+                ({item.change_percentage > 0 ? "+" : ""}
+                {item.change_percentage.toFixed(2)}%)
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </main>

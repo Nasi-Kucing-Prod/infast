@@ -81,15 +81,17 @@ export default function TableDashboard({ market }: TableDashboardProps) {
   );
 
   return (
-    <section className="px-5 py-2 bg-white rounded-xl w-full flex flex-col justify-between">
+    <section className=" py-2 bg-white rounded-xl w-full  flex flex-col justify-between">
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[100px]">No</TableHead>
             <TableHead>Asset Name</TableHead>
-            <TableHead className="text-right">Latest Price</TableHead>
-            <TableHead className="text-right">% Change</TableHead>
-            <TableHead className="text-center">Watchlist</TableHead>
+            <TableHead className="text-right whitespace-nowrap">
+              Latest Price
+            </TableHead>
+            <TableHead className="text-right whitespace-nowrap">
+              % Change
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -122,7 +124,7 @@ export default function TableDashboard({ market }: TableDashboardProps) {
           )}
         </TableBody>
       </Table>
-      <div className="flex justify-between mt-4">
+      <div className="flex justify-between mt-4 px-2">
         <button
           onClick={handlePrevPage}
           disabled={currentPage === 0}

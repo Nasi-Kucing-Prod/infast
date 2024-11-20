@@ -27,7 +27,7 @@ export const DashboardHeader = () => {
       <button className="block md:hidden" onClick={() => toggleSidebarMenu()}>
         <PanelLeftOpen />
       </button>
-      <Breadcrumb>
+      <Breadcrumb className="px-4">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Home</BreadcrumbLink>

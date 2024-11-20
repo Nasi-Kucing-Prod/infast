@@ -16,7 +16,7 @@ export default function SideBar() {
 
   return (
     <section
-      className={`fixed bg-white rounded-md drop-shadow-md h-[calc(100vh-20px)] m-5 sm:bg-transparent sm:drop-shadow-none sm:rounded-none sm:h-fit sm:m-0 md:block sm:relative space-y-4 pb-5 pt-4 px-5 my-2 z-50 md:w-3/12 w-1/2 ${
+      className={`fixed bg-white rounded-md drop-shadow-md h-[calc(100vh-20px)] m-5 sm:bg-transparent sm:drop-shadow-none sm:rounded-none sm:h-fit sm:m-0 md:block sm:relative space-y-4 pb-5 pt-4 px-5 my-2 z-50 md:w-5/12 w-1/2 ${
         !sidebarMenu ? "hidden" : ""
       }`}
     >
