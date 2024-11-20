@@ -18,7 +18,8 @@ interface TableRowDashboardProps {
   ticker: TickerDashboard;
 }
 
-const getUniqueId = (symbol: string, name: string): string => `${symbol}-${name}`;
+const getUniqueId = (symbol: string, name: string): string =>
+  `${symbol}-${name}`;
 
 export default function TableRowDashboard({
   index,
@@ -52,10 +53,12 @@ export default function TableRowDashboard({
         const updatedWatchlist = isWatched
           ? watchlist.filter((id) => id !== uniqueId)
           : [...watchlist, uniqueId];
-        
+
         setWatchlist([...new Set(updatedWatchlist)]);
-        setIsInWatchlist(!isInWatchlist); 
-        console.log("Watchlist setelah toggle:", [...new Set(updatedWatchlist)]);
+        setIsInWatchlist(!isInWatchlist);
+        console.log("Watchlist setelah toggle:", [
+          ...new Set(updatedWatchlist),
+        ]);
       } else {
         const errorData = await response.json();
         alert(errorData.message || "Gagal memperbarui watchlist.");
@@ -68,15 +71,9 @@ export default function TableRowDashboard({
     }
   };
 
-  const toggleWatchlist = () => {
-    setIsInWatchlist((prev) => !prev);
-  };
-
   return (
     <TableRow>
-      <TableCell className="cursor-pointer">
-      1
-      </TableCell>
+      <TableCell className="cursor-pointer">1</TableCell>
       <TableCell className="line-clamp-1 break-all">{ticker.name}</TableCell>
       <TableCell className="text-right">
         {ticker.latest_price.toFixed(2)}

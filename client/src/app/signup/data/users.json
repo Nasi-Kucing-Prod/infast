@@ -17,7 +17,9 @@
       "phone": "081234567890",
       "password": "seller2",
       "token": "a8dc8250-416f-4dd2-bbd9-41f2b5830f94",
-      "watchlist": [],
+      "watchlist": [
+        "EUR/USD-Euro to US Dollar"
+      ],
       "message": []
     },
     {

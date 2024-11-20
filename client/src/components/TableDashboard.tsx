@@ -52,7 +52,7 @@ export default function TableDashboard({ market }: TableDashboardProps) {
   }, []);
 
   const handleNextPage = () => {
-    if ((currentPage + 1) * itemsPerPage < data.length) {
+    if ((currentPage + 1) * itemsPerPage < filteredData.length) {
       setCurrentPage((prev) => prev + 1);
     }
   };
@@ -66,6 +66,14 @@ export default function TableDashboard({ market }: TableDashboardProps) {
   const filteredData = market
     ? data.filter((ticker) => ticker.market === market)
     : data;
+
+  // Recalculate currentPage if filtered data changes
+  useEffect(() => {
+    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+    if (currentPage >= totalPages && totalPages > 0) {
+      setCurrentPage(totalPages - 1);
+    }
+  }, [filteredData, currentPage, itemsPerPage]);
 
   const paginatedData = filteredData.slice(
     currentPage * itemsPerPage,
@@ -124,7 +132,7 @@ export default function TableDashboard({ market }: TableDashboardProps) {
         </button>
         <button
           onClick={handleNextPage}
-          disabled={(currentPage + 1) * itemsPerPage >= filteredData.length}
+          disabled={paginatedData.length < itemsPerPage}
           className="px-4 py-2 bg-gray-300 rounded-md disabled:opacity-50"
         >
           Next
