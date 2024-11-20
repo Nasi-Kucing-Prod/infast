@@ -11,6 +11,7 @@ interface MarketData {
 
 interface NewsRes {
   feed: NewsItem[];
+  Information?: string;
 }
 
 interface NewsItem {

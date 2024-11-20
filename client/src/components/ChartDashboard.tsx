@@ -123,7 +123,7 @@ export function ChartDashboard({ market }: ChartDashboardProps) {
     <section className="w-full bg-white rounded-xl p-5 flex flex-col justify-between h-full">
       <div className="flex justify-between">
         <div className="flex gap-2 mb-5">
-          <div className="bg-emerald-200/30 text-emerald-800 border-2 border-emerald-400/30 rounded-full p-2 w-10 h-10 flex items-center justify-center">
+          <div className="bg-emerald-200/30 text-primary-infast border-2 border-emerald-400/30 rounded-full p-2 w-10 h-10 flex items-center justify-center">
             {selectedCurrency.symbol[0]}
           </div>
           <div>

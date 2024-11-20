@@ -10,8 +10,8 @@ export default async function NewsDashboard() {
   return (
     <section className="w-full md:w-6/12 h-[543.5px] bg-white rounded-xl p-5 flex flex-col ">
       <div className="space-y-2">
-        <h2 className="text-lg font-semibold text-emerald-800">News</h2>
-        <hr className="border-emerald-800" />
+        <h2 className="text-lg font-semibold text-primary-infast">News</h2>
+        <hr className="border-primary-infast" />
       </div>
       <ScrollArea className="flex-1 mt-2 ">
         {data.feed.map((item: NewsItem, idx: number) => (

@@ -27,7 +27,7 @@ const Login = () => {
     setLoading(true);
 
     if (!email || !password) {
-      setError("Email dan password harus diisi.");
+      setError("Email and password must be filled in.");
       setLoading(false);
       return;
     }

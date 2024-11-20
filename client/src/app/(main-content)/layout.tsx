@@ -16,7 +16,7 @@ export default function Layout({
   return (
     <>
       <Navbar />
-      <div className="px-16 max-[1017px]:px-5 min-h-screen">
+      <div className="px-16 max-[1017px]:px-5 min-h-screen mt-20">
         {children}
       </div>
       <Footer />

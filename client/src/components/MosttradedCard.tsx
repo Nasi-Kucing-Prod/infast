@@ -47,7 +47,7 @@ const MostTradedCard = ({ traded }: MostTradedProps) => {
               <div key={trade.ticker}>
                 <div className="flex justify-between">
                   <div className="flex gap-2 text-center items-center">
-                    <div className="w-14 h-14 rounded-full bg-emerald-800 flex justify-center items-center">
+                    <div className="w-14 h-14 rounded-full bg-primary-infast flex justify-center items-center">
                       <p className="font-semibold sm:text-2xl text-base text-white">
                         {trade.ticker.charAt(0).toUpperCase()}
                       </p>
@@ -67,8 +67,8 @@ const MostTradedCard = ({ traded }: MostTradedProps) => {
                       {trade.price}
                     </p>
                     {/* change_percentage */}
-                    <p className="border border-emerald-800 p-1 text-emerald-800 rounded-md sm:text-sm text-xs">
-                      {trade.change_percentage}%
+                    <p className="border border-primary-infast p-1 text-primary-infast rounded-md sm:text-sm text-xs">
+                      {trade.change_percentage}
                     </p>
                   </div>
                 </div>
@@ -90,7 +90,7 @@ const MostTradedCard = ({ traded }: MostTradedProps) => {
           )}
           {traded.length > currentPage * pageSize && (
             <button
-              className="px-4 py-2 bg-emerald-800 rounded-md text-white font-semibold hover:bg-emerald-700"
+              className="px-4 py-2 bg-primary-infast rounded-md text-white font-semibold hover:bg-emerald-700"
               onClick={handleShowNext}
             >
               Next

@@ -65,11 +65,11 @@ const Profile = () => {
   const handleLogout = () => {
     Swal.fire({
       title: "Logout",
-      text: "Anda yakin ingin logout? Anda akan diarahkan ke halaman login.",
+      text: "Are you sure you want to log out? You will be redirected to the login page.",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: "Ya, Logout",
-      cancelButtonText: "Batal",
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
       confirmButtonColor: "#d33",
       cancelButtonColor: "#3085d6",
     }).then((result) => {
@@ -77,19 +77,19 @@ const Profile = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         setAuthToken("");
-        router.push("/login");
+        router.push("/");
       }
     });
   };
 
   const handleDeleteAccount = async () => {
     const result = await Swal.fire({
-      title: "Hapus Akun",
-      text: "Anda yakin ingin menghapus akun? Akun Anda akan terhapus secara permanen.",
+      title: "Delete Account",
+      text: "Are you sure you want to delete your account? Your account will be permanently deleted.",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: "Ya, Hapus",
-      cancelButtonText: "Batal",
+      confirmButtonText: "Yes",
+      cancelButtonText: "Cancel",
       confirmButtonColor: "#d33",
       cancelButtonColor: "#3085d6",
     });
@@ -107,15 +107,19 @@ const Profile = () => {
         const data = await response.json();
 
         if (response.ok && data.message === "Account deleted successfully") {
-          await Swal.fire("Dihapus!", "Akun Anda telah dihapus.", "success");
+          await Swal.fire(
+            "Deleted!",
+            "Your account has been deleted..",
+            "success"
+          );
           localStorage.removeItem("token");
           localStorage.removeItem("user");
           setAuthToken("");
           router.push("/login");
         } else {
           await Swal.fire(
-            "Gagal!",
-            data.message || "Terjadi kesalahan saat menghapus akun.",
+            "Failed!",
+            data.message || "An error occurred while deleting the account.",
             "error"
           );
         }
@@ -123,7 +127,7 @@ const Profile = () => {
         console.error("Error deleting account:", error);
         await Swal.fire(
           "Error!",
-          "Terjadi kesalahan, silakan coba lagi.",
+          "An error occurred, please try again.",
           "error"
         );
       }
@@ -133,7 +137,11 @@ const Profile = () => {
   const handleAddMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (newMessage.trim() === "") {
-      await Swal.fire("Validasi Gagal", "Pesan tidak boleh kosong.", "warning");
+      await Swal.fire(
+        "Validation Failed.",
+        "The message cannot be empty.",
+        "warning"
+      );
       return;
     }
 
@@ -159,8 +167,8 @@ const Profile = () => {
         setNewMessage("");
       } else {
         await Swal.fire(
-          "Gagal",
-          data.message || "Gagal menambahkan pesan.",
+          "Failed",
+          data.message || "Failed to add the message.",
           "error"
         );
       }
@@ -168,7 +176,7 @@ const Profile = () => {
       console.error("Error adding message:", error);
       await Swal.fire(
         "Error!",
-        "Terjadi kesalahan saat menambahkan pesan.",
+        "An error occurred while adding the message.",
         "error"
       );
     }
@@ -185,12 +193,12 @@ const Profile = () => {
     }
 
     const result = await Swal.fire({
-      title: "Hapus Pesan",
-      text: "Anda yakin ingin menghapus pesan ini?",
+      title: "Delete Message",
+      text: "Are you sure you want to delete this message?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: "Ya, Hapus",
-      cancelButtonText: "Batal",
+      confirmButtonText: "Yes",
+      cancelButtonText: "Cancel",
       confirmButtonColor: "#d33",
       cancelButtonColor: "#3085d6",
     });
@@ -208,15 +216,19 @@ const Profile = () => {
         const data = await response.json();
 
         if (response.ok && data.message === "Message deleted successfully") {
-          await Swal.fire("Dihapus!", "Pesan berhasil dihapus.", "success");
+          await Swal.fire(
+            "Deleted!",
+            "The message has been successfully deleted.",
+            "success"
+          );
           const updatedMessages = user!.message.filter((_, i) => i !== index);
           const updatedUser: User = { ...user!, message: updatedMessages };
           setUser(updatedUser);
           localStorage.setItem("user", JSON.stringify(updatedUser));
         } else {
           await Swal.fire(
-            "Gagal!",
-            data.message || "Gagal menghapus pesan.",
+            "Failed!",
+            data.message || "Failed to delete the message.",
             "error"
           );
         }
@@ -224,7 +236,7 @@ const Profile = () => {
         console.error("Error deleting message:", error);
         await Swal.fire(
           "Error!",
-          "Terjadi kesalahan saat menghapus pesan.",
+          "An error occurred while deleting the message.",
           "error"
         );
       }
@@ -234,14 +246,14 @@ const Profile = () => {
   const handleEditMessage = async (index: number) => {
     // Validasi indeks yang diberikan
     if (index < 0 || index >= user!.message.length) {
-      await Swal.fire("Error", "Indeks pesan tidak valid.", "error");
+      await Swal.fire("Error", "The message index is invalid.", "error");
       return;
     }
 
     const currentMessage = user!.message[index] || "";
 
     const { value: editedMessage, isConfirmed } = await Swal.fire({
-      title: "Edit Pesan",
+      title: "Edit Message",
       input: "text",
       inputLabel: "Ubah pesan Anda:",
       inputValue: currentMessage,
@@ -274,7 +286,11 @@ const Profile = () => {
         const data = await response.json();
 
         if (response.ok && data.message === "Message edited successfully") {
-          await Swal.fire("Berhasil", "Pesan berhasil diubah.", "success");
+          await Swal.fire(
+            "Success",
+            "The message has been successfully updated.",
+            "success"
+          );
           const updatedMessages = user!.message.map((msg, i) =>
             i === index ? editedMessage.trim() : msg
           );
@@ -304,8 +320,8 @@ const Profile = () => {
   }
 
   return (
-    <div className="flex items-center relative  gap-4">
-      <div>
+    <div className="flex items-center relative  gap-4 z-50">
+      <div className="sm:block hidden text-end">
         <h2 className="text-base md:text-lg font-semibold">
           {user.name || "User 1"}
         </h2>
@@ -316,22 +332,30 @@ const Profile = () => {
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={toggleDropdown}
-          className="bg-emerald-200/30 text-emerald-800 border-2 border-emerald-400/30 rounded-full p-2 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          className="bg-emerald-200/30 text-emerald-800 border-2 border-emerald-400/30 rounded-full p-2 w-10 h-10 flex items-center justify-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500"
         >
           ?
         </button>
         {isDropdownOpen && (
           <div className="absolute right-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-20">
             <div className="p-4 space-y-2">
+              <div className="sm:hidden block text-start">
+                <h2 className="text-base md:text-lg font-semibold">
+                  {user.name || "User 1"}
+                </h2>
+                <h3 className="text-xs md:text-sm text-gray-500">
+                  ID: {user.id || "3133"}
+                </h3>
+              </div>
               <button
                 onClick={handleLogout}
-                className="w-full text-left text-red-600 hover:text-red-800 font-semibold px-3 py-2 rounded-md"
+                className="w-full text-left text-red-600 hover:text-red-800 font-semibold py-2 rounded-md"
               >
                 Logout
               </button>
               <button
                 onClick={handleDeleteAccount}
-                className="w-full text-left text-red-600 hover:text-red-800 font-semibold px-3 py-2 rounded-md"
+                className="w-full text-left text-red-600 hover:text-red-800 font-semibold py-2 rounded-md"
               >
                 Delete Account
               </button>
