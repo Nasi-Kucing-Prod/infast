@@ -11,9 +11,14 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import TableRowDashboard from "./TableRowDashboard";
+import { useDashboardContext } from "@/context/DashboardContext";
+
+interface TableDashboardProps {
+  market: "crypto" | "forex" | "stocks";
+}
 
 export default function TableDashboard({ market }: TableDashboardProps) {
-  const [data, setData] = useState<TickerDashboard[]>([]);
+  const { data, setData } = useDashboardContext();
   const [currentPage, setCurrentPage] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -76,32 +81,33 @@ export default function TableDashboard({ market }: TableDashboardProps) {
             <TableHead>Asset Name</TableHead>
             <TableHead className="text-right">Latest Price</TableHead>
             <TableHead className="text-right">% Change</TableHead>
+            <TableHead className="text-center">Watchlist</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {loading ? (
             <TableRow>
-              <TableCell colSpan={4} className="text-center">
+              <TableCell colSpan={5} className="text-center">
                 Loading...
               </TableCell>
             </TableRow>
           ) : error ? (
             <TableRow>
-              <TableCell colSpan={4} className="text-center text-red-500">
+              <TableCell colSpan={5} className="text-center text-red-500">
                 {error}
               </TableCell>
             </TableRow>
           ) : paginatedData.length > 0 ? (
             paginatedData.map((ticker, idx) => (
               <TableRowDashboard
-                key={idx}
+                key={ticker.currency_symbol}
                 index={currentPage * itemsPerPage + idx + 1}
                 ticker={ticker}
               />
             ))
           ) : (
             <TableRow>
-              <TableCell colSpan={4} className="text-center">
+              <TableCell colSpan={5} className="text-center">
                 No data available
               </TableCell>
             </TableRow>

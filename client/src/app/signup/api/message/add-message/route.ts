@@ -13,7 +13,7 @@ interface ISignUpData {
   message: string[];
 }
 
-const usersFilePath = path.join(process.cwd(), 'src', 'app', '(main-content)', 'signup', 'data', 'users.json');
+const usersFilePath = path.join(process.cwd(), 'src', 'app', 'signup', 'data', 'users.json');
 
 const verifyToken = async (token: string): Promise<ISignUpData | null> => {
   try {

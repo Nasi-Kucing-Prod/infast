@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-// import { useAuth } from "@/app/(main-content)/signup/context/AuthContext";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import { useAuth } from "@/app/signup/context/AuthContext";
@@ -97,7 +96,7 @@ const Profile = () => {
 
     if (result.isConfirmed) {
       try {
-        const response = await fetch("/api/delete-account", { 
+        const response = await fetch("/signup/api/delete-account", { 
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -132,7 +131,7 @@ const Profile = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("signup/api/message/add-message", { 
+      const response = await fetch("/signup/api/message/add-message", { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -164,7 +163,6 @@ const Profile = () => {
   };
 
   const handleDeleteMessage = async (index: number) => {
-    // Validasi indeks yang diberikan
     if (index < 0 || index >= user!.message.length) {
       await Swal.fire("Error", "Indeks pesan tidak valid.", "error");
       return;
@@ -184,7 +182,7 @@ const Profile = () => {
     if (result.isConfirmed) {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch(`signup/api/message/delete-message?token=${token}&index=${index}`, { 
+        const response = await fetch(`/signup/api/message/delete-message?token=${token}&index=${index}`, { 
           method: "DELETE",
         });
 
@@ -234,7 +232,7 @@ const Profile = () => {
     if (isConfirmed && editedMessage) {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch("signup/api/message/edit-message", {
+        const response = await fetch("/signup/api/message/edit-message", {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

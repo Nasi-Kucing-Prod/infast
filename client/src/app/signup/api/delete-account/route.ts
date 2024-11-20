@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-const usersFilePath = path.join(process.cwd(), 'src', 'app', '(main-content)', 'signup', 'data', 'users.json');
+const usersFilePath = path.join(process.cwd(), 'src', 'app', 'signup', 'data', 'users.json');
 
 export async function DELETE(req: NextRequest) {
   const { userId } = await req.json(); 
