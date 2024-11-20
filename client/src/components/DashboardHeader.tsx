@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { Slash } from "lucide-react";
 import { PanelLeftOpen } from "lucide-react";
 
@@ -16,29 +17,42 @@ import Profile from "./Profile";
 
 export const DashboardHeader = () => {
   const { sidebarMenu, toggleSidebarMenu } = useDashboardContext();
+  const pathname = usePathname(); // Mendapatkan path URL saat ini
+
+  // Ambil bagian terakhir dari path
+  const menu = pathname.split("/").pop();
 
   return (
-    <section className="flex justify-between  items-center px-5 p-3">
+    <section className="flex justify-between items-center px-5 p-3">
       <button className="block md:hidden" onClick={() => toggleSidebarMenu()}>
         <PanelLeftOpen />
       </button>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">Dashboard</BreadcrumbLink>
+            <BreadcrumbLink href="/">Home</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator>
             <Slash />
           </BreadcrumbSeparator>
           <BreadcrumbItem>
-            <BreadcrumbPage className="text-emerald-800">Market</BreadcrumbPage>
+            <BreadcrumbLink href="/dashboard">Dashboard</BreadcrumbLink>
           </BreadcrumbItem>
+          {menu && menu !== "dashboard" && (
+            <>
+              <BreadcrumbSeparator>
+                <Slash />
+              </BreadcrumbSeparator>
+              <BreadcrumbItem>
+                <BreadcrumbPage className="text-emerald-800 capitalize">
+                  {menu}
+                </BreadcrumbPage>
+              </BreadcrumbItem>
+            </>
+          )}
         </BreadcrumbList>
       </Breadcrumb>
-      <div className="flex gap-5 items-center">
-        <button className="block md:hidden" onClick={() => toggleSidebarMenu()}>
-          <PanelLeftOpen />
-        </button>
+      <div className="flex gap-5 items-center text-end">
         <Profile />
       </div>
     </section>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { AuthProvider } from "./(main-content)/signup/context/AuthContext";
+import { AuthProvider } from "./signup/context/AuthContext";
 import { DashboardProvider } from "@/context/DashboardContext";
 
 export const metadata: Metadata = {

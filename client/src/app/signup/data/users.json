@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "name": "wahib kurniawan",
+      "email": "seller3@mail.com",
+      "phone": "081234567890",
+      "password": "seller3",
+      "token": "7ce826ac-f20c-47ec-838d-cd268411dbc0",
+      "watchlist": [
+        "FB-Meta Platforms",
+        "MSFT-Microsoft Corp.",
+        "NVDA-NVIDIA Corp.",
+        "SOL-Solana",
+        "XRP-Ripple",
+        "LINK-Chainlink"
+      ],
+      "message": []
+    },
+    {
+      "id": 3,
+      "name": "seller2",
+      "email": "seller2@mail.com",
+      "phone": "081234567890",
+      "password": "seller2",
+      "token": "a8dc8250-416f-4dd2-bbd9-41f2b5830f94",
+      "watchlist": [],
+      "message": []
+    },
+    {
+      "id": 4,
+      "name": "aishataqina",
+      "email": "aishataqina@mail.com",
+      "phone": "087654321234",
+      "password": "aishataqina",
+      "token": "92ecec0ac026c172e697761fff8de051",
+      "message": []
+    }
+  ]
+}

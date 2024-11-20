@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/app/(main-content)/signup/context/AuthContext";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
+import { useAuth } from "@/app/signup/context/AuthContext";
 
 interface User {
   name: string;
@@ -163,7 +163,6 @@ const Profile = () => {
   };
 
   const handleDeleteMessage = async (index: number) => {
-    // Validasi indeks yang diberikan
     if (index < 0 || index >= user!.message.length) {
       await Swal.fire("Error", "Indeks pesan tidak valid.", "error");
       return;

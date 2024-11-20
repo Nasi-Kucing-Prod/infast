@@ -62,7 +62,7 @@ export default function Dashboard() {
     <main className="bg-gray-100 w-full px-5 pb-5 m-2 rounded-3xl">
       <DashboardHeader />
       <div className="space-y-5">
-        <ChartDashboard />
+        <ChartDashboard market="crypto" />
         <div className="flex flex-col md:flex-row w-full gap-5 ">
           <NewsDashboard />
           <section className="px-5 py-2 bg-white rounded-xl w-full">
