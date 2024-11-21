@@ -6,6 +6,7 @@ import MosttradedCard from "@/components/MosttradedCard";
 import Navbar from "@/components/Navbar";
 import NewsCard from "@/components/NewsCard";
 import Link from "next/link";
+import { useAuth } from "./signup/context/AuthContext";
 
 interface NewsRes {
   feed: NewsItem[];
@@ -36,14 +37,7 @@ interface AssetData {
 }
 
 export default function Home() {
-  const [token, setToken] = useState<string | null>(null); // Declare state for token
-
-  useEffect(() => {
-    // This will run only on the client-side
-    const storedToken = window.localStorage.getItem("token");
-    setToken(storedToken); // Set token from localStorage
-  }, []); // Empty dependency array ensures this runs only once on mount
-
+  const { token } = useAuth();
   const [newsData, setNewsData] = useState<NewsRes | null>(null);
   const [assetData, setAssetData] = useState<AssetData | null>(null);
 
