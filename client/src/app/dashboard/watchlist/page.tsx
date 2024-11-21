@@ -82,7 +82,7 @@ export default function Watchlist() {
                 >
                   <span className="font-semibold">{ticker.name}</span>
                   <span className="text-right">
-                    {ticker.latest_price.toFixed(2)} (
+                    ${ticker.latest_price.toFixed(2)} (
                     <span
                       className={
                         ticker.change_percentage > 0

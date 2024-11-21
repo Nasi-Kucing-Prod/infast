@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
 import {
   Table,
   TableBody,
@@ -19,7 +18,7 @@ interface TableDashboardProps {
 
 export default function TableDashboard({ market }: TableDashboardProps) {
   const { data, setData } = useDashboardContext();
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const itemsPerPage = 8;
@@ -51,37 +50,28 @@ export default function TableDashboard({ market }: TableDashboardProps) {
     fetchData();
   }, []);
 
-  const handleNextPage = () => {
-    if ((currentPage + 1) * itemsPerPage < filteredData.length) {
-      setCurrentPage((prev) => prev + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 0) {
-      setCurrentPage((prev) => prev - 1);
-    }
-  };
-
   const filteredData = market
     ? data.filter((ticker) => ticker.market === market)
-    : data;
+    : data || [];
 
-  // Recalculate currentPage if filtered data changes
-  useEffect(() => {
-    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
-    if (currentPage >= totalPages && totalPages > 0) {
-      setCurrentPage(totalPages - 1);
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+  const getPaginatedData = () => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return filteredData.slice(startIndex, endIndex);
+  };
+
+  const handlePageChange = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
     }
-  }, [filteredData, currentPage, itemsPerPage]);
+  };
 
-  const paginatedData = filteredData.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
+  const paginatedData = getPaginatedData();
 
   return (
-    <section className=" py-2 bg-white rounded-xl w-full  flex flex-col justify-between">
+    <section className="py-2 bg-white rounded-xl w-full flex flex-col justify-between">
       <Table>
         <TableHeader>
           <TableRow>
@@ -97,13 +87,13 @@ export default function TableDashboard({ market }: TableDashboardProps) {
         <TableBody>
           {loading ? (
             <TableRow>
-              <TableCell colSpan={5} className="text-center">
+              <TableCell colSpan={3} className="text-center">
                 Loading...
               </TableCell>
             </TableRow>
           ) : error ? (
             <TableRow>
-              <TableCell colSpan={5} className="text-center text-red-500">
+              <TableCell colSpan={3} className="text-center text-red-500">
                 {error}
               </TableCell>
             </TableRow>
@@ -111,30 +101,33 @@ export default function TableDashboard({ market }: TableDashboardProps) {
             paginatedData.map((ticker, idx) => (
               <TableRowDashboard
                 key={ticker.currency_symbol}
-                index={currentPage * itemsPerPage + idx + 1}
+                index={(currentPage - 1) * itemsPerPage + idx + 1}
                 ticker={ticker}
               />
             ))
           ) : (
             <TableRow>
-              <TableCell colSpan={5} className="text-center">
+              <TableCell colSpan={3} className="text-center">
                 No data available
               </TableCell>
             </TableRow>
           )}
         </TableBody>
       </Table>
-      <div className="flex justify-between mt-4 px-2">
+      <div className="flex justify-between items-center mt-4 px-4">
         <button
-          onClick={handlePrevPage}
-          disabled={currentPage === 0}
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
           className="px-4 py-2 bg-gray-300 rounded-md disabled:opacity-50"
         >
           Prev
         </button>
+        <span className="text-sm">
+          Page {currentPage} of {totalPages}
+        </span>
         <button
-          onClick={handleNextPage}
-          disabled={paginatedData.length < itemsPerPage}
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
           className="px-4 py-2 bg-gray-300 rounded-md disabled:opacity-50"
         >
           Next

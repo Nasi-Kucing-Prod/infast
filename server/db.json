@@ -5080,14 +5080,6 @@
         "change_amount": 0.32
       },
       {
-        "currency_symbol": "ORCL",
-        "name": "Oracle Corporation",
-        "market": "stocks",
-        "latest_price": 119.34,
-        "change_percentage": 1.03,
-        "change_amount": 1.22
-      },
-      {
         "currency_symbol": "BA",
         "name": "The Boeing Company",
         "market": "stocks",
