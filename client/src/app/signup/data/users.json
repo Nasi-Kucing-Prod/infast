@@ -63,9 +63,13 @@
       "password": "jungkook",
       "token": "6a31f26ee90a899c76fab93c23b4c746",
       "watchlist": [
-        "LTC-Litecoin",
-        "BCH-Bitcoin Cash",
-        "AVAX-Avalanche"
+        "USD/CAD-US Dollar to Canadian Dollar",
+        "AUD/USD-Australian Dollar to US Dollar",
+        "GBP/USD-British Pound to US Dollar",
+        "USD/CHF-US Dollar to Swiss Franc",
+        "AAPL-Apple Inc.",
+        "ADBE-Adobe Inc.",
+        "GOOGL-Alphabet Inc. Class A"
       ],
       "message": []
     }

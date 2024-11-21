@@ -78,9 +78,17 @@ export default function Watchlist() {
               {watchlistItems.map((ticker, idx) => (
                 <li
                   key={ticker.uniqueId}
-                  className="flex justify-between items-center p-2 border rounded-md"
+                  className="flex justify-between items-end p-2 border rounded-md"
                 >
-                  <span className="font-semibold">{ticker.name}</span>
+                  <div>
+                    <div className="text-gray-500 text-sm">{ticker.market}</div>
+                    <div className="flex gap-2 items-center text-center">
+                      <span className="font-semibold">{ticker.name}</span>
+                      <span className="text-gray-500 text-sm">
+                        ({ticker.currency_symbol})
+                      </span>
+                    </div>
+                  </div>
                   <span className="text-right">
                     ${ticker.latest_price.toFixed(2)} (
                     <span

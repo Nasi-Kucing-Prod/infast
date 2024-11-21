@@ -5008,6 +5008,14 @@
   "dashboard": {
     "result": [
       {
+        "currency_symbol": "ADBE",
+        "name": "Adobe Inc.",
+        "market": "stocks",
+        "latest_price": 532.12,
+        "change_percentage": 1.87,
+        "change_amount": 9.76
+      },
+      {
         "currency_symbol": "AAPL",
         "name": "Apple Inc.",
         "market": "stocks",
