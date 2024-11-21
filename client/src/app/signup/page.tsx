@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import signupimage from "@/image/signup.png";
+import { useRouter } from "next/navigation";
 
 interface AuthContextType {
   token: string | null;
@@ -32,6 +33,7 @@ const SignUp = () => {
   const [errors, setErrors] = useState<any>({});
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [serverError, setServerError] = useState<string | null>(null);
+  const router = useRouter();
 
   const { setToken, setUserId } = useAuth();
 
@@ -92,6 +94,7 @@ const SignUp = () => {
           password: "",
         });
         setErrors({});
+        router.push("/login");
       } else {
         setServerError(result.message || "Something went wrong");
       }

@@ -30,6 +30,39 @@
       "phone": "087654321234",
       "password": "aishataqina",
       "token": "92ecec0ac026c172e697761fff8de051",
+      "watchlist": [
+        "AAPL-Apple Inc."
+      ],
+      "message": []
+    },
+    {
+      "id": 5,
+      "name": "agus budiono",
+      "email": "agusbudiono@mail.com",
+      "phone": "082187654234",
+      "password": "agusbudiono",
+      "token": "87e9b048173b34e7a485305e90512b81",
+      "watchlist": [],
+      "message": []
+    },
+    {
+      "id": 6,
+      "name": "dadang",
+      "email": "dadang@mail.com",
+      "phone": "082134789234",
+      "password": "dadang",
+      "token": "dc95f081a267c0963baba54a87da542f",
+      "watchlist": [],
+      "message": []
+    },
+    {
+      "id": 7,
+      "name": "jungkook",
+      "email": "jungkook@mail.com",
+      "phone": "081234567891",
+      "password": "jungkook",
+      "token": "b1e00c3611789fc51a7c727c254426a3",
+      "watchlist": [],
       "message": []
     }
   ]

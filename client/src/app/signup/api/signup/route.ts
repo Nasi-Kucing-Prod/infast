@@ -10,6 +10,7 @@ interface ISignUpData {
   phone: string;
   password: string;
   token: string;
+  watchlist: [];
   message: string[];
 }
 
@@ -110,6 +111,7 @@ export async function POST(req: NextRequest) {
       phone,
       password,
       token,
+      watchlist: [],
       message: [],
     };
 
