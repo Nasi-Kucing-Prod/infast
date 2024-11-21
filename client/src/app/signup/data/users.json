@@ -60,8 +60,12 @@
       "email": "jungkook@mail.com",
       "phone": "081234567891",
       "password": "jungkook",
-      "token": "b1e00c3611789fc51a7c727c254426a3",
-      "watchlist": [],
+      "token": "6a31f26ee90a899c76fab93c23b4c746",
+      "watchlist": [
+        "LTC-Litecoin",
+        "BCH-Bitcoin Cash",
+        "AVAX-Avalanche"
+      ],
       "message": []
     }
   ]

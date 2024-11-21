@@ -7,16 +7,24 @@ import { usePathname } from "next/navigation";
 import logo from "@/image/logo.png";
 import { Menu } from "lucide-react";
 import Profile from "./Profile";
+import { useAuth } from "@/app/signup/context/AuthContext";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [token, setToken] = useState<string | null>(null);
+  // const [token, setToken] = useState<string | null>(null);
+  const { token, logout } = useAuth();
+  
 
-  useEffect(() => {
-    const storedToken = window.localStorage.getItem("token");
-    setToken(storedToken);
-  }, []);
+  // useEffect(() => {
+  //   const storedToken = window.localStorage.getItem("token");
+  //   setToken(storedToken);
+  // }, []);
+
+  // const handleLogout = () => {
+  //   window.localStorage.removeItem("token");
+  //   setToken(null);
+  // };
 
   return (
     <nav className="fixed w-screen bg-white drop-shadow-md flex justify-between items-center px-16 py-2 max-[1017px]:px-5 text-center z-50 top-0">

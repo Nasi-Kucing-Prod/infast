@@ -18,7 +18,6 @@ interface User {
 const Profile = () => {
   const [user, setUser] = useState<User | null>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [newMessage, setNewMessage] = useState("");
   const { setToken: setAuthToken } = useAuth();
   const router = useRouter();
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -65,7 +64,7 @@ const Profile = () => {
   const handleLogout = () => {
     Swal.fire({
       title: "Logout",
-      text: "Are you sure you want to log out? You will be redirected to the login page.",
+      text: "Are you sure you want to log out?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: "Yes",
@@ -134,185 +133,8 @@ const Profile = () => {
     }
   };
 
-  const handleAddMessage = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (newMessage.trim() === "") {
-      await Swal.fire(
-        "Validation Failed.",
-        "The message cannot be empty.",
-        "warning"
-      );
-      return;
-    }
-
-    try {
-      const token = localStorage.getItem("token");
-      const response = await fetch("/signup/api/message/add-message", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ inputString: newMessage }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        await Swal.fire("Berhasil", "Pesan berhasil ditambahkan.", "success");
-        const updatedMessages = [...user!.message, newMessage];
-        const updatedUser: User = { ...user!, message: updatedMessages };
-        setUser(updatedUser);
-        localStorage.setItem("user", JSON.stringify(updatedUser));
-        setNewMessage("");
-      } else {
-        await Swal.fire(
-          "Failed",
-          data.message || "Failed to add the message.",
-          "error"
-        );
-      }
-    } catch (error) {
-      console.error("Error adding message:", error);
-      await Swal.fire(
-        "Error!",
-        "An error occurred while adding the message.",
-        "error"
-      );
-    }
-  };
-
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const handleDeleteMessage = async (index: number) => {
-    if (index < 0 || index >= user!.message.length) {
-      await Swal.fire("Error", "Indeks pesan tidak valid.", "error");
-      return;
-    }
-
-    const result = await Swal.fire({
-      title: "Delete Message",
-      text: "Are you sure you want to delete this message?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Yes",
-      cancelButtonText: "Cancel",
-      confirmButtonColor: "#d33",
-      cancelButtonColor: "#3085d6",
-    });
-
-    if (result.isConfirmed) {
-      try {
-        const token = localStorage.getItem("token");
-        const response = await fetch(
-          `/signup/api/message/delete-message?token=${token}&index=${index}`,
-          {
-            method: "DELETE",
-          }
-        );
-
-        const data = await response.json();
-
-        if (response.ok && data.message === "Message deleted successfully") {
-          await Swal.fire(
-            "Deleted!",
-            "The message has been successfully deleted.",
-            "success"
-          );
-          const updatedMessages = user!.message.filter((_, i) => i !== index);
-          const updatedUser: User = { ...user!, message: updatedMessages };
-          setUser(updatedUser);
-          localStorage.setItem("user", JSON.stringify(updatedUser));
-        } else {
-          await Swal.fire(
-            "Failed!",
-            data.message || "Failed to delete the message.",
-            "error"
-          );
-        }
-      } catch (error) {
-        console.error("Error deleting message:", error);
-        await Swal.fire(
-          "Error!",
-          "An error occurred while deleting the message.",
-          "error"
-        );
-      }
-    }
-  };
-
-  const handleEditMessage = async (index: number) => {
-    // Validasi indeks yang diberikan
-    if (index < 0 || index >= user!.message.length) {
-      await Swal.fire("Error", "The message index is invalid.", "error");
-      return;
-    }
-
-    const currentMessage = user!.message[index] || "";
-
-    const { value: editedMessage, isConfirmed } = await Swal.fire({
-      title: "Edit Message",
-      input: "text",
-      inputLabel: "Ubah pesan Anda:",
-      inputValue: currentMessage,
-      showCancelButton: true,
-      confirmButtonText: "Simpan",
-      cancelButtonText: "Batal",
-      inputValidator: (value) => {
-        if (!value || value.trim() === "") {
-          return "Pesan tidak boleh kosong!";
-        }
-        return null;
-      },
-    });
-
-    if (isConfirmed && editedMessage) {
-      try {
-        const token = localStorage.getItem("token");
-        const response = await fetch("/signup/api/message/edit-message", {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            token: token,
-            index: index,
-            newMessage: editedMessage.trim(),
-          }),
-        });
-
-        const data = await response.json();
-
-        if (response.ok && data.message === "Message edited successfully") {
-          await Swal.fire(
-            "Success",
-            "The message has been successfully updated.",
-            "success"
-          );
-          const updatedMessages = user!.message.map((msg, i) =>
-            i === index ? editedMessage.trim() : msg
-          );
-          const updatedUser: User = { ...user!, message: updatedMessages };
-          setUser(updatedUser);
-          localStorage.setItem("user", JSON.stringify(updatedUser));
-        } else {
-          await Swal.fire(
-            "Gagal",
-            data.message || "Gagal mengubah pesan.",
-            "error"
-          );
-        }
-      } catch (error) {
-        console.error("Error editing message:", error);
-        await Swal.fire(
-          "Error!",
-          "Terjadi kesalahan saat mengubah pesan.",
-          "error"
-        );
-      }
-    }
   };
 
   if (!user) {
