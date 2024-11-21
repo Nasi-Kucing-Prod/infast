@@ -7,6 +7,8 @@ import Navbar from "@/components/Navbar";
 import NewsCard from "@/components/NewsCard";
 import Link from "next/link";
 import { useAuth } from "./signup/context/AuthContext";
+import Image from "next/image";
+import infast from "@/image/infast.png";
 
 interface NewsRes {
   feed: NewsItem[];
@@ -43,15 +45,21 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:8000/news", {
-        cache: "no-cache",
-      });
+      const res = await fetch(
+        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&apikey=${process.env.PRIVATE_KEY_ALPHA}`,
+        {
+          // cache: "no-cache",
+        }
+      );
       const data: NewsRes = await res.json();
       setNewsData(data);
 
-      const assetRes = await fetch("http://localhost:8000/assets", {
-        cache: "no-cache",
-      });
+      const assetRes = await fetch(
+        `https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=${process.env.PRIVATE_KEY_ALPHA}`,
+        {
+          // cache: "no-cache",
+        }
+      );
       const assetData: AssetData = await assetRes.json();
       setAssetData(assetData);
     };
@@ -62,62 +70,63 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="px-16 max-[1017px]:px-5">
+      <div className="px-16 max-[1017px]:px-5 overflow-hidden">
         <div className="flex flex-col font-poppins sm:gap-20 gap-10">
-          {/* hero section */}
-          <div className="relative flex flex-col items-center h-screen justify-center gap-10 text-center">
-            {/* Blob Background */}
-            <div className="absolute sm:block hidden w-full max-w-lg z-0">
-              <div className="absolute blur-xl -top-40 -left-44 w-96 h-72 bg-green-300/50 rounded-full mix-blend-multiply filter opacity-70 animate-blob"></div>
-
-              <div className="absolute blur-xl -top-32 -right-48 w-96 h-72 bg-green-300/50 rounded-full mix-blend-multiply filter opacity-70 animate-blob animation-delay-2000"></div>
-              <div className="absolute blur-xl -bottom-8 left-20 w-96 h-72 bg-emerald-300/50 rounded-full mix-blend-multiply filter opacity-70 animate-blob animation-delay-4000"></div>
-            </div>
-
-            {/* Main Content */}
-            <div className="relative z-10 flex flex-col gap-5">
-              <div className="flex flex-col gap-2">
-                <h1 className="logo font-semibold sm:text-6xl text-4xl text-primary-infast">
-                  Self-serve & Transparent
-                </h1>
-                <h2 className="logo font-semibold sm:text-3xl text-2xl text-primary-infast">
-                  a new way for investing together
-                </h2>
+          {/* Main Content */}
+          <div className="flex justify-between items-center xs:text-start text-center gap-2 min-h-screen">
+            <div className="absolute blur-xl  w-80 h-80 bg-green-300/50 rounded-full mix-blend-multiply filter opacity-70 "></div>
+            <div className="xs:w-1/2 w-full xs:items-start items-center gap-10 flex flex-col z-10">
+              <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-2">
+                  <h1 className="logo font-semibold text-6xl max-[1017px]:text-4xl text-primary-infast text-wrap">
+                    Self-serve & Transparent
+                  </h1>
+                  <h2 className="logo font-semibold text-3xl max-[1017px]:text-2xl text-primary-infast">
+                    a new way for investing together
+                  </h2>
+                </div>
+                <p className="max-[1017px]:text-sm text-lg text-black-infast font-normal">
+                  Infast being a self-serve with our services and one of, if not
+                  the most important thing being transparent with our stock
+                  market data makes us your best choice for the job!
+                </p>
               </div>
-              <p className="text-sm sm:text-lg text-gray-500">
-                Infast being a self-serve with our services and one of, if not
-                the most important thing being transparent with our stock market
-                data makes us your best choice for the job!
-              </p>
+              {/* Buttons */}
+              <div className=" flex gap-5 font-semibold tracking-wider text-center items-center">
+                {token ? (
+                  <Link
+                    href={"/dashboard"}
+                    className="text-white bg-primary-infast p-3 max-[1017px]:p-2 rounded-md hover:bg-secondary-infast sm:text-base text-sm"
+                  >
+                    Dashboard
+                  </Link>
+                ) : (
+                  <Link
+                    href={"/login"}
+                    className="text-white bg-primary-infast p-3 max-[1017px]:p-2 rounded-md hover:bg-secondary-infast sm:text-base text-sm"
+                  >
+                    Get Started
+                  </Link>
+                )}
+
+                <Link
+                  href={"/AboutUs"}
+                  className="text-primary-infast border border-primary-infast p-3 max-[1017px]:p-2 rounded-md sm:text-base text-sm"
+                >
+                  About Us
+                </Link>
+              </div>
             </div>
-
-            {/* Buttons */}
-            <div className="relative z-10 flex gap-5 font-semibold tracking-wider text-center items-center">
-              {token ? (
-                <Link
-                  href={"/dashboard"}
-                  className="text-white bg-primary-infast sm:p-3 p-2 rounded-md hover:bg-secondary-infast sm:text-base text-sm"
-                >
-                  Dashboard
-                </Link>
-              ) : (
-                <Link
-                  href={"/login"}
-                  className="text-white bg-primary-infast sm:p-3 p-2 rounded-md hover:bg-secondary-infast sm:text-base text-sm"
-                >
-                  Get Started
-                </Link>
-              )}
-
-              <Link
-                href={"/AboutUs"}
-                className="text-primary-infast border border-primary-infast sm:p-3 p-2 rounded-md sm:text-base text-sm"
-              >
-                About Us
-              </Link>
+            <div className="relative -mx-16 -right-40">
+              <Image
+                src={infast}
+                alt="infast"
+                width={1000}
+                height={1000}
+                className="w-full h-auto xs:block hidden"
+              />
             </div>
           </div>
-
           {/* branding section */}
           <div className="text-center items-center flex flex-col sm:gap-10 gap-5">
             <div>
@@ -200,6 +209,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* </div> */}
       <Footer />
     </>
   );

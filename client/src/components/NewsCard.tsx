@@ -52,8 +52,8 @@ const NewsCard: React.FC<NewsCardProp> = ({
             <Image
               src={banner_image}
               alt={title}
-              width={50}
-              height={50}
+              width={1000}
+              height={1000}
               className="w-full rounded object-cover aspect-video"
             />
           ) : (

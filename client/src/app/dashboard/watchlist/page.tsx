@@ -20,7 +20,7 @@ const getUniqueId = (symbol: string, name: string): string =>
   `${symbol}-${name}`;
 
 export default function Watchlist() {
-  const { watchlist, data, setData, userId } = useDashboardContext();
+  const { watchlist, setData } = useDashboardContext();
   const [watchlistItems, setWatchlistItems] = useState<WatchlistItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

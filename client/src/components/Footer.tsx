@@ -6,13 +6,13 @@ import logo from "@/image/logo.png";
 
 export default function Footer() {
   return (
-    <footer className="w-screen bg-white drop-shadow-md flex justify-between items-center px-16 py-8 font-medium text-gray-600 mt-20 border-t-4">
+    <footer className="w-screen bg-white drop-shadow-md flex md:flex-row flex-col justify-between items-center px-16 py-8 font-medium text-gray-600 mt-20 border-t-4 gap-5">
       <div className="flex flex-col items-center">
         <Image src={logo} alt="logo" width={180} height={180} />
         <div className="text-sm text-gray-500">Self-serve & Transparent</div>
       </div>
 
-      <div className="text-sm text-right">
+      <div className="text-sm md:text-right text-center">
         <p>Copyright ©2024 Infast.inc</p>
         <p>
           This is a website project for a Final Project assignment from Hacktiv8

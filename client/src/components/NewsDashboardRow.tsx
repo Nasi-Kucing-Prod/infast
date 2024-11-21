@@ -1,5 +1,6 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export const NewsDashboardRow = ({ item }: { item: NewsItem }) => {
   return (
@@ -8,8 +9,6 @@ export const NewsDashboardRow = ({ item }: { item: NewsItem }) => {
         <h3 className="line-clamp-1">{item.title}</h3>
         <p className="line-clamp-1 space-x-3">
           {item.ticker_sentiment?.map((el, idx) => {
-            console;
-
             let sentimentClass = "";
 
             switch (el.ticker_sentiment_label.toLocaleLowerCase()) {
@@ -40,9 +39,9 @@ export const NewsDashboardRow = ({ item }: { item: NewsItem }) => {
           })}
         </p>
       </div>
-      <button className="mr-2">
+      <Link href={item.url} className="mr-2">
         <ChevronRight className="size-8 text-primary-infast" />
-      </button>
+      </Link>
     </article>
   );
 };
