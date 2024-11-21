@@ -14,7 +14,6 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   // const [token, setToken] = useState<string | null>(null);
   const { token, logout } = useAuth();
-  
 
   // useEffect(() => {
   //   const storedToken = window.localStorage.getItem("token");
@@ -101,14 +100,24 @@ export default function Navbar() {
         <Image
           src={logo}
           alt="logo"
-          width={1000}
-          height={1000}
+          width={500}
+          height={500}
           className="w-32"
         />
       </Link>
 
       {/* Navigation for larger screens */}
       <div className="sm:flex gap-4 font-medium hidden text-center items-center">
+        <Link
+          href={"/"}
+          className={
+            pathname === "/"
+              ? "text-primary-infast border-b border-primary-infast"
+              : "text-black"
+          }
+        >
+          Home
+        </Link>
         <Link
           href={"/market"}
           className={
@@ -128,16 +137,6 @@ export default function Navbar() {
           }
         >
           News
-        </Link>
-        <Link
-          href={"/AboutUs"}
-          className={
-            pathname === "/AboutUs"
-              ? "text-primary-infast border-b border-primary-infast"
-              : "text-black"
-          }
-        >
-          About Us
         </Link>
       </div>
 

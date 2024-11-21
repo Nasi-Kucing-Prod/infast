@@ -9,9 +9,11 @@ import Link from "next/link";
 import { useAuth } from "./signup/context/AuthContext";
 import Image from "next/image";
 import infast from "@/image/infast.png";
+import Error from "@/components/Error";
 
 interface NewsRes {
   feed: NewsItem[];
+  Information: string;
 }
 interface NewsItem {
   title: string;
@@ -43,10 +45,13 @@ export default function Home() {
   const [newsData, setNewsData] = useState<NewsRes | null>(null);
   const [assetData, setAssetData] = useState<AssetData | null>(null);
 
+  console.log(newsData, "iniii");
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
-        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&apikey=${process.env.PRIVATE_KEY_ALPHA}`,
+        // `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&apikey=${process.env.PRIVATE_KEY_ALPHA}`,
+        "http://localhost:8000/news",
         {
           // cache: "no-cache",
         }
@@ -54,8 +59,17 @@ export default function Home() {
       const data: NewsRes = await res.json();
       setNewsData(data);
 
+      if (data.Information) {
+        return <Error />;
+      }
+
+      if (!res.ok) {
+        return <Error />;
+      }
+
       const assetRes = await fetch(
-        `https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=${process.env.PRIVATE_KEY_ALPHA}`,
+        // `https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=${process.env.PRIVATE_KEY_ALPHA}`,
+        "http://localhost:8000/assets",
         {
           // cache: "no-cache",
         }
@@ -121,8 +135,8 @@ export default function Home() {
               <Image
                 src={infast}
                 alt="infast"
-                width={1000}
-                height={1000}
+                width={610}
+                height={610}
                 className="w-full h-auto xs:block hidden"
               />
             </div>
@@ -196,7 +210,7 @@ export default function Home() {
               </p>
             </div>
             <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 max-[500px]:grid-cols-1 justify-start gap-10 place-items-center">
-              {newsData && newsData.feed.length > 0 ? (
+              {newsData && newsData?.feed?.length > 0 ? (
                 newsData.feed
                   .slice(0, 8)
                   .map((news, index) => <NewsCard key={index} {...news} />)

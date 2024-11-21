@@ -6,8 +6,9 @@ import Link from "next/link";
 
 const Page = async () => {
   const res = await fetch(
-    `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&apikey=${process.env.PRIVATE_KEY_ALPHA}`
-    // { cache: "no-cache" }
+    // `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&apikey=${process.env.PRIVATE_KEY_ALPHA}`
+    "http://localhost:8000/news",
+    { cache: "no-cache" }
   );
   const data: NewsRes = (await res.json()) || [];
   console.log(data, "ini berhasil");
