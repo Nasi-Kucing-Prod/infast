@@ -73,7 +73,7 @@ export default function Home() {
           {/* hero section */}
           <div className="relative flex flex-col items-center h-screen justify-center gap-10 text-center">
             {/* Blob Background */}
-            <div className="sm:absolute hidden w-full max-w-lg z-0">
+            <div className="absolute sm:block hidden w-full max-w-lg z-0">
               <div className="absolute blur-xl -top-40 -left-44 w-96 h-72 bg-green-300/50 rounded-full mix-blend-multiply filter opacity-70 animate-blob"></div>
 
               <div className="absolute blur-xl -top-32 -right-48 w-96 h-72 bg-green-300/50 rounded-full mix-blend-multiply filter opacity-70 animate-blob animation-delay-2000"></div>
