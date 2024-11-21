@@ -53,6 +53,16 @@
       "token": "dc95f081a267c0963baba54a87da542f",
       "watchlist": [],
       "message": []
+    },
+    {
+      "id": 7,
+      "name": "jungkook",
+      "email": "jungkook@mail.com",
+      "phone": "081234567891",
+      "password": "jungkook",
+      "token": "b1e00c3611789fc51a7c727c254426a3",
+      "watchlist": [],
+      "message": []
     }
   ]
 }
