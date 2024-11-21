@@ -30,7 +30,7 @@ export default async function Dashboard() {
     .filter(Boolean); // Remove undefined results if a market has no items
 
   return (
-    <main className="bg-gray-100 w-full px-5 pb-5 m-2 rounded-3xl">
+    <main className="bg-gray-100 w-full px-5 pb-5 xs:m-2 m-0 rounded-3xl">
       <DashboardHeader />
       <div className="space-y-5 h-[calc(100vh-130px)] overflow-auto">
         <h1 className="text-xl font-bold">Biggest Changes by Market</h1>
