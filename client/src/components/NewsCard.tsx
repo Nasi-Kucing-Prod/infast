@@ -46,7 +46,7 @@ const NewsCard: React.FC<NewsCardProp> = ({
   }
   return (
     <>
-      <div className="border rounded-md p-5 flex flex-col w-full gap-3 bg-white drop-shadow-md h-80">
+      <div className="border rounded-md p-5 flex flex-col w-full gap-3 bg-white drop-shadow-md h-fit">
         <div className="w-full">
           {banner_image ? (
             <Image
@@ -71,9 +71,12 @@ const NewsCard: React.FC<NewsCardProp> = ({
             <h2 className="hover:underline">{title}</h2>
           </Link>
           {/* summary */}
-          <p className="line-clamp-3 text-gray-500 sm:text-sm text-xs">
-            {summary}
-          </p>
+          <div className="h-[60px]">
+            <p className="line-clamp-3 text-gray-500 sm:text-sm text-xs">
+              {summary}
+            </p>
+          </div>
+
           {/* overall_sentiment_label */}
           <p
             className={`border ${borderColor} p-1 px-2 rounded-md ${sentimentClass} font-semibold sm:text-sm text-xs w-fit`}

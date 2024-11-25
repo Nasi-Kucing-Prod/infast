@@ -117,7 +117,7 @@ export default function Home() {
                 )}
 
                 <Link
-                  href={"/AboutUs"}
+                  href={"/aboutus"}
                   className="text-primary-infast border border-primary-infast p-3 max-[1017px]:p-2 rounded-md sm:text-base text-sm"
                 >
                   About Us
