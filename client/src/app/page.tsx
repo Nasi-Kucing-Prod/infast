@@ -49,15 +49,18 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:8000/news", {
-        cache: "no-cache",
-      });
+      const res = await fetch(
+        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=${process.env.AVKEY_ONE}`
+      );
       const data: NewsRes = await res.json();
       setNewsData(data);
 
-      const assetRes = await fetch("http://localhost:8000/assets", {
-        cache: "no-cache",
-      });
+      const assetRes = await fetch(
+        `https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=${process.env.AVKEY_TWO}`,
+        {
+          cache: "no-cache",
+        }
+      );
       const assetData: AssetData = await assetRes.json();
       setAssetData(assetData);
     };

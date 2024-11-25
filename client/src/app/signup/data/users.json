@@ -17,10 +17,7 @@
       "phone": "081234567890",
       "password": "seller2",
       "token": "a8dc8250-416f-4dd2-bbd9-41f2b5830f94",
-      "watchlist": [
-        "ORCL-Oracle Corporation",
-        "XOM-Exxon Mobil Corporation"
-      ],
+      "watchlist": [],
       "message": []
     },
     {
@@ -62,6 +59,16 @@
       "phone": "081234567891",
       "password": "jungkook",
       "token": "b1e00c3611789fc51a7c727c254426a3",
+      "watchlist": [],
+      "message": []
+    },
+    {
+      "id": 8,
+      "name": "usertest",
+      "email": "usertest@mail.com",
+      "phone": "081234567890",
+      "password": "usertest",
+      "token": "9098e19650b8219cb405dae1adfac05d",
       "watchlist": [],
       "message": []
     }

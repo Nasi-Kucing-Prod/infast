@@ -1,10 +1,11 @@
 import React from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { ChevronRight } from "lucide-react";
 import { NewsDashboardRow } from "./NewsDashboardRow";
 
 export default async function NewsDashboard() {
-  const resp = fetch("http://localhost:8000/news");
+  const resp = fetch(
+    `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=${process.env.AVKEY_THREE}`
+  );
   const data = await (await resp).json();
 
   return (

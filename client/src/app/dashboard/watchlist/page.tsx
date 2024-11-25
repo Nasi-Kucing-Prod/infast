@@ -29,7 +29,9 @@ export default function Watchlist() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("http://localhost:8000/dashboard"); // Fetch data from your API
+      const response = await fetch(
+        "https://woolly-nervous-smoke.glitch.me/dashboard"
+      );
       if (!response.ok) {
         throw new Error(
           `HTTP error: ${response.status} - ${response.statusText}`

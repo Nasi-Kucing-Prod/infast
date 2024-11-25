@@ -5,11 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Page = async () => {
-  const res = await fetch("http://localhost:8000/news", { cache: "no-cache" });
+  const res = await fetch(
+    `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=${process.env.AVKEY_ONE}`
+  );
   const data: NewsRes = (await res.json()) || [];
-  console.log(data, "ini berhasil");
 
-  console.log(res.status, "wawwww");
   if (data.Information) {
     return <Error />;
   }

@@ -1,7 +1,6 @@
 import React from "react";
 import { DashboardHeader } from "@/components/DashboardHeader";
 
-// Define the TypeScript interface for the data
 interface DashboardItem {
   currency_symbol: string;
   name: string;
@@ -12,10 +11,9 @@ interface DashboardItem {
 }
 
 export default async function Dashboard() {
-  const resp = await fetch("http://localhost:8000/dashboard");
+  const resp = await fetch("https://woolly-nervous-smoke.glitch.me/dashboard");
   const { result }: { result: DashboardItem[] } = await resp.json();
 
-  // Find the biggest change for each market
   const markets = ["crypto", "forex", "stocks"];
   const biggestChanges = markets
     .map((market) => {
@@ -27,7 +25,7 @@ export default async function Dashboard() {
             : prev
         );
     })
-    .filter(Boolean); // Remove undefined results if a market has no items
+    .filter(Boolean);
 
   return (
     <main className="bg-gray-100 w-full px-5 pb-5 xs:m-2 m-0 rounded-3xl">
