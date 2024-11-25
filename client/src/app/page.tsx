@@ -6,10 +6,10 @@ import MosttradedCard from "@/components/MosttradedCard";
 import Navbar from "@/components/Navbar";
 import NewsCard from "@/components/NewsCard";
 import Link from "next/link";
-import { useAuth } from "./signup/context/AuthContext";
 import Image from "next/image";
 import infast from "@/image/infast.png";
 import Error from "@/components/Error";
+import { useAuth } from "./signup/context/AuthContext";
 
 interface NewsRes {
   feed: NewsItem[];

@@ -4,7 +4,7 @@ import path from "path";
 
 type User = {
   id: string;
-  [key: string]: any;
+  [key: string]: string;
 };
 
 const usersFilePath = path.join(
