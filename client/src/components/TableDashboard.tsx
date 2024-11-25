@@ -102,7 +102,7 @@ export default function TableDashboard({ market }: TableDashboardProps) {
           ) : paginatedData.length > 0 ? (
             paginatedData.map((ticker, idx) => (
               <TableRowDashboard
-                key={ticker.currency_symbol}
+                key={idx}
                 index={(currentPage - 1) * itemsPerPage + idx + 1}
                 ticker={ticker}
               />

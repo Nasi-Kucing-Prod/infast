@@ -46,14 +46,14 @@ const NewsCard: React.FC<NewsCardProp> = ({
   }
   return (
     <>
-      <div className="border rounded-md p-5 flex flex-col w-full gap-3 bg-white drop-shadow-md">
+      <div className="border rounded-md p-5 flex flex-col w-full gap-3 bg-white drop-shadow-md h-80">
         <div className="w-full">
           {banner_image ? (
             <Image
               src={banner_image}
               alt={title}
-              width={50}
-              height={50}
+              width={1000}
+              height={1000}
               className="w-full rounded object-cover aspect-video"
             />
           ) : (
