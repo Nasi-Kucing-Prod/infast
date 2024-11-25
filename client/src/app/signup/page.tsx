@@ -1,17 +1,12 @@
+// signup/page.tsx
 "use client";
-import { useState, createContext, useContext } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import signupimage from "@/image/signup.png";
 import { useRouter } from "next/navigation";
-
-interface AuthContextType {
-  token: string | null;
-  setToken: (token: string | null) => void;
-  userId: string | null;
-  setUserId: (userId: string | null) => void;
-}
+import { useAuth } from "./context/AuthContext";
 
 interface FormErrors {
   name?: string;
@@ -19,15 +14,6 @@ interface FormErrors {
   phone?: string;
   password?: string;
 }
-
-const AuthContext = createContext<AuthContextType>({
-  token: null,
-  setToken: () => {},
-  userId: null,
-  setUserId: () => {},
-});
-
-export const useAuth = () => useContext(AuthContext);
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -91,7 +77,7 @@ const SignUp = () => {
         }
 
         if (result.id) {
-          setUserId(result.id);
+          setUserId(result.id); // set user ID in context
         }
 
         setFormData({
@@ -226,9 +212,9 @@ const SignUp = () => {
               <span>Already have an account?</span>{" "}
               <Link
                 href="/login"
-                className="text-blue-500 hover:text-indigo-500"
+                className="text-emerald-500 hover:text-emerald-600"
               >
-                Login Here
+                Login
               </Link>
             </div>
           </form>

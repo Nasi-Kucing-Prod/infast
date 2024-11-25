@@ -50,13 +50,13 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
-        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=${process.env.AVKEY_ONE}`
+        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=${process.env.NEXT_PUBLIC_PRIVATE_KEY_AVKEY_THREE}`
       );
       const data: NewsRes = await res.json();
       setNewsData(data);
 
       const assetRes = await fetch(
-        `https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=${process.env.AVKEY_TWO}`
+        `https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=${process.env.NEXT_PUBLIC_PRIVATE_KEY_AVKEY_FOUR}`
       );
 
       if (data.Information) {

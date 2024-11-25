@@ -90,10 +90,10 @@ export function ChartDashboard({ market }: ChartDashboardProps) {
   }, [chartSymbol]);
 
   const fetchSearchResults = async (query: string) => {
-    // const apiKey = "vyXQ8mt1exG0nXMhxgiq2xaeuUKaLAT_";
-    const url = `https://api.polygon.io/v3/reference/tickers?market=${market}&search=${query}&active=true&limit=3&apiKey=${process.env.PRIVATE_KEY_POLYGON}`;
     try {
-      const response = await fetch(url);
+      const response = await fetch(
+        `https://api.polygon.io/v3/reference/tickers?market=${market}&search=${query}&active=true&limit=3&apiKey=${process.env.NEXT_PUBLIC_PRIVATE_KEY_POLYGON}`
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch search results");
       }

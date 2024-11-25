@@ -27,7 +27,9 @@
       "phone": "087654321234",
       "password": "aishataqina",
       "token": "92ecec0ac026c172e697761fff8de051",
-      "watchlist": ["AAPL-Apple Inc."],
+      "watchlist": [
+        "AAPL-Apple Inc."
+      ],
       "message": []
     },
     {

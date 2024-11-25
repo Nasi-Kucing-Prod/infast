@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Page = async () => {
   const res = await fetch(
-    `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=${process.env.AVKEY_ONE}`
+    `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=${process.env.PRIVATE_KEY_AVKEY_ONE}`
   );
   const data: NewsRes = (await res.json()) || [];
 

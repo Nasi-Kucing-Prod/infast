@@ -107,7 +107,7 @@ const Page = () => {
 
       const res = await fetch(url, {
         headers: {
-          "x-cg-demo-api-key": `${process.env.PRIVATE_KEY_COINGECKO}`,
+          "x-cg-demo-api-key": `${process.env.NEXT_PUBLIC_PRIVATE_KEY_COINGECKO}`,
           accept: "application/json",
         },
       });

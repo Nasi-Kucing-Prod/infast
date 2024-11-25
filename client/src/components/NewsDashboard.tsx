@@ -4,7 +4,7 @@ import { NewsDashboardRow } from "./NewsDashboardRow";
 
 export default async function NewsDashboard() {
   const resp = fetch(
-    `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=${process.env.AVKEY_THREE}`
+    `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=${process.env.PRIVATE_KEY_AVKEY_ONE}`
   );
   const data = await (await resp).json();
 
