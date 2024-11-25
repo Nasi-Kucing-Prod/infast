@@ -16,7 +16,7 @@ import { useDashboardContext } from "@/context/DashboardContext";
 import Profile from "./Profile";
 
 export const DashboardHeader = () => {
-  const { sidebarMenu, toggleSidebarMenu } = useDashboardContext();
+  const { toggleSidebarMenu } = useDashboardContext();
   const pathname = usePathname(); // Mendapatkan path URL saat ini
 
   // Ambil bagian terakhir dari path

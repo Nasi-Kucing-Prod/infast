@@ -72,7 +72,7 @@ export default function TableRowDashboard({
   };
 
   return (
-    <TableRow>
+    <TableRow key={index}>
       <TableCell className="flex gap-3">
         {" "}
         <button

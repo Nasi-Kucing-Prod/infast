@@ -94,7 +94,6 @@ const Page = () => {
   const [marketData, setMarketData] = useState<MarketData[]>([]);
   const [selectedCurrency, setSelectedCurrency] = useState<string>("usd");
   const [loading, setLoading] = useState<boolean>(false);
-  const [searchQuery, setSearchQuery] = useState<string>("");
   const [tempQuery, setTempQuery] = useState<string>("");
 
   const fetchMarketData = async (currency: string, coinIds?: string[]) => {
@@ -147,66 +146,66 @@ const Page = () => {
 
   useEffect(() => {
     fetchMarketData(selectedCurrency);
-    console.log(marketData);
   }, [selectedCurrency]);
 
+  useEffect(() => {
+    console.log(marketData);
+  }, [marketData]);
+
   const handleSearch = () => {
-    setSearchQuery(tempQuery);
     fetchSearchResults(tempQuery);
   };
 
   return (
-    <>
-      <div className="my-10 flex flex-col gap-5">
-        <div className="flex sm:flex-row flex-col justify-between mb-3 gap-2 text-center items-center">
-          <div className="flex gap-2 items-center text-center justify-between sm:w-fit w-full">
-            <h1 className="font-semibold md:text-2xl text-xl">Crypto</h1>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="border-primary-infast rounded-md px-2 py-1 text-primary-infast text-sm border font-semibold cursor-pointer sm:text-base">
-                {selectedCurrency.toUpperCase()}
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="max-h-96 overflow-y-auto border border-gray-200 rounded-md shadow-md bg-white">
-                <DropdownMenuLabel className="sm:text-base text-sm">
-                  Currencies
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                {currencies.map(({ currency }) => (
-                  <DropdownMenuItem
-                    key={currency}
-                    onClick={() => setSelectedCurrency(currency)}
-                    className="cursor-pointer sm:text-base text-sm"
-                  >
-                    {currency.toUpperCase()}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-
-          <div className="flex gap-2 items-center text-center justify-between sm:w-fit w-full ">
-            <input
-              type="text"
-              value={tempQuery}
-              onChange={(e) => setTempQuery(e.target.value)}
-              placeholder="Search for a coin"
-              className="border px-2 py-1 rounded-md sm:text-base text-sm w-full"
-            />
-            <button
-              onClick={handleSearch}
-              className="bg-primary-infast text-white px-2 py-1 rounded-md font-semibold sm:text-base text-sm"
-            >
-              Search
-            </button>
-          </div>
+    <div className="my-10 flex flex-col gap-5">
+      <div className="flex sm:flex-row flex-col justify-between mb-3 gap-2 text-center items-center">
+        <div className="flex gap-2 items-center text-center justify-between sm:w-fit w-full">
+          <h1 className="font-semibold md:text-2xl text-xl">Crypto</h1>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="border-primary-infast rounded-md px-2 py-1 text-primary-infast text-sm border font-semibold cursor-pointer sm:text-base">
+              {selectedCurrency.toUpperCase()}
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="max-h-96 overflow-y-auto border border-gray-200 rounded-md shadow-md bg-white">
+              <DropdownMenuLabel className="sm:text-base text-sm">
+                Currencies
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              {currencies.map(({ currency }) => (
+                <DropdownMenuItem
+                  key={currency}
+                  onClick={() => setSelectedCurrency(currency)}
+                  className="cursor-pointer sm:text-base text-sm"
+                >
+                  {currency.toUpperCase()}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
-        <MarketTable
-          marketData={marketData}
-          loading={loading}
-          selectedCurrency={selectedCurrency}
-          currencies={currencies}
-        />
+
+        <div className="flex gap-2 items-center text-center justify-between sm:w-fit w-full">
+          <input
+            type="text"
+            value={tempQuery}
+            onChange={(e) => setTempQuery(e.target.value)}
+            placeholder="Search for a coin"
+            className="border px-2 py-1 rounded-md sm:text-base text-sm w-full"
+          />
+          <button
+            onClick={handleSearch}
+            className="bg-primary-infast text-white px-2 py-1 rounded-md font-semibold sm:text-base text-sm"
+          >
+            Search
+          </button>
+        </div>
       </div>
-    </>
+      <MarketTable
+        marketData={marketData}
+        loading={loading}
+        selectedCurrency={selectedCurrency}
+        currencies={currencies}
+      />
+    </div>
   );
 };
 

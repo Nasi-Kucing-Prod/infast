@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   Table,
   TableBody,
@@ -23,7 +23,7 @@ export default function TableDashboard({ market }: TableDashboardProps) {
   const [error, setError] = useState<string | null>(null);
   const itemsPerPage = 8;
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -41,16 +41,20 @@ export default function TableDashboard({ market }: TableDashboardProps) {
       } else {
         throw new Error("Unexpected response format");
       }
-    } catch (err: any) {
-      setError(err.message || "An error occurred while fetching data.");
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message || "An error occurred while fetching data.");
+      } else {
+        setError("An unknown error occurred.");
+      }
     } finally {
       setLoading(false);
     }
-  };
+  }, [setData]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const filteredData = market
     ? data.filter((ticker) => ticker.market === market)

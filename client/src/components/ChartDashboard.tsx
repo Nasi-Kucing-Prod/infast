@@ -1,6 +1,14 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { Search } from "lucide-react";
+
+declare global {
+  interface Window {
+    TradingView?: {
+      widget: new (config: Record<string, unknown>) => void;
+    };
+  }
+}
 
 interface ChartDashboardProps {
   market: "crypto" | "stocks" | "fx";
@@ -16,15 +24,12 @@ export function ChartDashboard({ market }: ChartDashboardProps) {
     symbol: string;
   }>({ name: "", symbol: "" });
 
-  // Function to get default top symbol based on market type
-  const getDefaultChartSymbol = async () => {
+  const getDefaultChartSymbol = useCallback(async () => {
     try {
       let topSymbol = "";
       if (market === "crypto") {
-        // For crypto, default to Bitcoin (BTCUSD)
         topSymbol = "BTCUSD";
       } else if (market === "stocks") {
-        // For stocks, default to a top stock like Apple (AAPL)
         topSymbol = "AAPL";
       } else if (market === "fx") {
         topSymbol = "EURUSD";
@@ -38,11 +43,11 @@ export function ChartDashboard({ market }: ChartDashboardProps) {
     } catch (error) {
       console.error("Error setting default chart symbol:", error);
     }
-  };
+  }, [market]);
 
   useEffect(() => {
     getDefaultChartSymbol();
-  }, [market]);
+  }, [getDefaultChartSymbol]);
 
   useEffect(() => {
     if (typeof window !== "undefined" && chartContainerRef.current) {
@@ -50,8 +55,8 @@ export function ChartDashboard({ market }: ChartDashboardProps) {
       script.src = "https://s3.tradingview.com/tv.js";
       script.async = true;
       script.onload = () => {
-        if ((window as any).TradingView) {
-          new (window as any).TradingView.widget({
+        if (window.TradingView) {
+          new window.TradingView.widget({
             container_id: chartContainerRef.current?.id,
             symbol: chartSymbol,
             interval: "5",
@@ -86,7 +91,7 @@ export function ChartDashboard({ market }: ChartDashboardProps) {
 
   const fetchSearchResults = async (query: string) => {
     // const apiKey = "vyXQ8mt1exG0nXMhxgiq2xaeuUKaLAT_";
-    const url = `https://api.polygon.io/v3/reference/tickers?market=${market}&search=${query}&active=true&limit=3&apiKey=${process.env.NEXT_PUBLIC_PRIVATE_KEY_POLYGON}`;
+    const url = `https://api.polygon.io/v3/reference/tickers?market=${market}&search=${query}&active=true&limit=3&apiKey=${process.env.PRIVATE_KEY_POLYGON}`;
     try {
       const response = await fetch(url);
       if (!response.ok) {

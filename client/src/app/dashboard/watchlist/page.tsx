@@ -51,13 +51,17 @@ export default function Watchlist() {
             ...ticker,
             uniqueId: getUniqueId(ticker.currency_symbol, ticker.name),
           }));
-        console.log("Filtered Watchlist Items:", filtered); // Debugging
+        console.log("Filtered Watchlist Items:", filtered);
         setWatchlistItems(filtered);
       } else {
         throw new Error("Unexpected response format");
       }
-    } catch (err: any) {
-      setError(err.message || "An error occurred while fetching data.");
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred while fetching data.");
+      }
     } finally {
       setLoading(false);
     }
@@ -191,7 +195,9 @@ export default function Watchlist() {
                           : "bg-red-500 hover:bg-red-600 text-white"
                       }`}
                     >
-                      {removingId === ticker.uniqueId ? "Removing..." : "Remove"}
+                      {removingId === ticker.uniqueId
+                        ? "Removing..."
+                        : "Remove"}
                     </button>
                   </div>
                 </li>

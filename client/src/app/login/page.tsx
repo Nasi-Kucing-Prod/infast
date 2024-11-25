@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-// import { useAuth } from "@/app/(main-content)/signup/context/AuthContext";
 import Image from "next/image";
 import loginimage from "@/image/login.png";
 import { useAuth } from "../signup/context/AuthContext";
@@ -19,7 +18,7 @@ const Login = () => {
     if (storedToken) {
       router.push("/dashboard");
     }
-  }, []);
+  }, [router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
